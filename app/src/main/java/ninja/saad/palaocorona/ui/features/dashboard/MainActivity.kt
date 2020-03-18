@@ -1,9 +1,10 @@
-package ninja.saad.myapplication
+package ninja.saad.palaocorona.ui.features.dashboard
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ninja.saad.palaocorona.R
+import ninja.saad.palaocorona.base.ui.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
