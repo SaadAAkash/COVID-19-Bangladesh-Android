@@ -1,4 +1,4 @@
-package ninja.saad.myapplication
+package ninja.saad.palaocorona
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
