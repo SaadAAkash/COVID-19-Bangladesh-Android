@@ -1,4 +1,4 @@
-package ninja.saad.myapplication
+package ninja.saad.palaocorona
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
