@@ -12,7 +12,7 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
     
     @Inject
     lateinit var factory: ViewModelProvider.Factory
-    lateinit var viewModel: ViewModel
+    protected lateinit var viewModel: ViewModel
     abstract val layoutId: Int
     
     override fun onCreate(savedInstanceState: Bundle?) {
