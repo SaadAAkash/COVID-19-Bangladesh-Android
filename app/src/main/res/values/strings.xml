@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">পালাও করোনা</string>
+    <string name="test">Test</string>
+    <string name="news">News</string>
+    <string name="dos">Do\'s and Dont\'s</string>
+    <string name="quarantine">Quarantine</string>
+    <string name="faq">FAQ</string>
+    <string name="message">Message</string>
+    <string name="lang">বাংলা</string>
 </resources>
