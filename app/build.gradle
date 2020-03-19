@@ -42,7 +42,7 @@ dependencies {
     def lifecycleVersion = '1.1.1'
     def ankoVersion = '0.10.8'
     def lottieVersion = '3.0.7'
-    def dagger2Version = '2.23.2'
+    def dagger2Version = '2.25.2'
     def supportLibraryVersion = '1.2.0-alpha05'
     //test
     def junitVersion = '4.12'
