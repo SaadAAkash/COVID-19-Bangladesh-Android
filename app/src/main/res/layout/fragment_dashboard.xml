@@ -4,13 +4,19 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.smarteist.autoimageslider.SliderView
+        android:layout_height="@dimen/_150sdp"
+        android:layout_width="0dp"
+        android:id="@+id/gujobSlider"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Hello dashboard"/>
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderScrollTimeInSec="1"
+        app:sliderIndicatorGravity="center_horizontal|bottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
