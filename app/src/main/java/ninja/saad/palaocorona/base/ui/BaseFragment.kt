@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerFragment
 import java.lang.reflect.ParameterizedType
+import java.util.*
 import javax.inject.Inject
 
 abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
@@ -37,6 +38,10 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(layoutId, container, false)
+    }
+    
+    fun toggleLanguage() {
+        communicator.toggleLanguage()
     }
     
     private fun getViewModelClass(): Class<ViewModel> {
