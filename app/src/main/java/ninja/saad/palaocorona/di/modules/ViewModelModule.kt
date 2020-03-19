@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import ninja.saad.palaocorona.di.annotations.ViewModelKey
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardViewModel
+import ninja.saad.palaocorona.ui.features.faq.FaqViewModel
 import ninja.saad.palaocorona.ui.features.main.MainViewModel
 
 @Module
@@ -20,4 +21,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(DashboardViewModel::class)
     abstract fun bindDashboardViewModel(viewModel: DashboardViewModel): ViewModel
+    
+    @Binds
+    @IntoMap
+    @ViewModelKey(FaqViewModel::class)
+    abstract fun bindFaqViewModel(viewModel: FaqViewModel): ViewModel
 }

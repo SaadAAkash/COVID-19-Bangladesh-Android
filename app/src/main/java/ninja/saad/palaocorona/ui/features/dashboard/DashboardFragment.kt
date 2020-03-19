@@ -5,7 +5,9 @@ import android.view.View
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.act
 
 class DashboardFragment: BaseFragment<DashboardViewModel>() {
 
@@ -37,7 +39,10 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
         
         }
         btnFaq.onClick {
-        
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.mainFragmentContainer, FaqFragment())
+                ?.addToBackStack(null)
+                ?.commit()
         }
         btnMessage.onClick {
         
