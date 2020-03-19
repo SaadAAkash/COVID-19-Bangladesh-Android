@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">পালাও করোনা</string>
+    <string name="test">পরীক্ষা</string>
+    <string name="news">খবর</string>
+    <string name="dos">করনীয়</string>
+    <string name="quarantine">কোয়ারেন্টাইন</string>
+    <string name="faq">প্রশ্ন</string>
+    <string name="message">মেসেজ</string>
+    <string name="lang">English</string>
+</resources>
