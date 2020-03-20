@@ -8,4 +8,19 @@
     <string name="feature_06_message">Group Discussion</string>
     <string name="okay">Okay</string>
     <string name="lang">বাংলা</string>
+    <string name="enter_your_phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="verify">Verify</string>
+    <string name="name">Name</string>
+    <string name="personal_phone_optional">Home Phone Number (Optional)</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="pref_name">corona_pref</string>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
 </resources>
