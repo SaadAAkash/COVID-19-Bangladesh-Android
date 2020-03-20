@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
@@ -39,6 +39,8 @@
                 android:id="@+id/tilPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:hint="@string/mobile_number">
@@ -51,12 +53,12 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:textColor="@android:color/white" />
+            android:layout_margin="@dimen/_10sdp"
+            android:text="@string/login" />
 
     </LinearLayout>
 
