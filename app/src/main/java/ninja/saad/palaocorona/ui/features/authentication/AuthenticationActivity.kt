@@ -16,7 +16,6 @@ class AuthenticationActivity : BaseActivity<AuthenticationViewModel>() {
         
         supportFragmentManager.beginTransaction()
             .replace(authenticationFragmentContainer.id, LoginFragment())
-            .addToBackStack(null)
             .commit()
     }
 }
