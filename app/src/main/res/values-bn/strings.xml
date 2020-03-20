@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">পালাও করোনা</string>
-    <string name="test">পরীক্ষা</string>
-    <string name="news">খবর</string>
-    <string name="dos">করনীয়</string>
-    <string name="quarantine">কোয়ারেন্টাইন</string>
-    <string name="faq">প্রশ্ন</string>
-    <string name="message">মেসেজ</string>
+    <string name="feature_01_test">ভাইরাস আক্রান্ত কিনা জানুন</string>
+    <string name="feature_02_news">সাম্প্রতিক তথ্য</string>
+    <string name="feature_03_dos">কী করবেন, কী করবেন না</string>
+    <string name="feature_04_quarantine">কোয়ারান্টাইন-এ কীভাবে যাবেন</string>
+    <string name="feature_05_faq">প্রশ্ন-উত্তর</string>
+    <string name="feature_06_message">আলোচনা</string>
     <string name="lang">English</string>
 </resources>
