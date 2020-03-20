@@ -5,6 +5,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import ninja.saad.palaocorona.di.annotations.ViewModelKey
+import ninja.saad.palaocorona.ui.features.about.AboutCovidViewModel
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardViewModel
 import ninja.saad.palaocorona.ui.features.faq.FaqViewModel
@@ -38,4 +39,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AuthenticationViewModel::class)
     abstract fun bindAuthenticationViewModel(viewModel: AuthenticationViewModel): ViewModel
+    
+    @Binds
+    @IntoMap
+    @ViewModelKey(AboutCovidViewModel::class)
+    abstract fun bindAboutCovidViewModel(viewModel: AboutCovidViewModel): ViewModel
 }
