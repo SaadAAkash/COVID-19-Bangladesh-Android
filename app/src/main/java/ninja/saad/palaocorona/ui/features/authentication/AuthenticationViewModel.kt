@@ -11,6 +11,8 @@ import javax.inject.Inject
 class AuthenticationViewModel @Inject constructor(private val repository: AuthenticationRepository): BaseViewModel() {
     
     var verificationId = MutableLiveData<String>()
+    var userExists = MutableLiveData<Boolean>()
+    var profileSaved = MutableLiveData<Boolean>()
     
     fun sendOtp(text: String) {
         if(text.isNotEmpty()) {
@@ -34,11 +36,25 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    Logger.d(it)
+                    userExists.value = it.name.isNotEmpty()
                 }, {
+                    userExists.value = false
                     it.printStackTrace()
                 })
             compositeDisposable.add(disposable)
         }
+    }
+    
+    fun saveProfile(name: String, age: String, gender: Int, phoneNumber: String) {
+        val disposable = repository.saveProfile(name, age, gender, phoneNumber)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                profileSaved.value = true
+            }, {
+                profileSaved.value = false
+                it.printStackTrace()
+            })
+        compositeDisposable.add(disposable)
     }
 }
