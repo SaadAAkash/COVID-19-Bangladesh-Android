@@ -3,6 +3,7 @@ package ninja.saad.palaocorona.di.modules
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import ninja.saad.palaocorona.di.annotations.PerFragment
+import ninja.saad.palaocorona.ui.features.authentication.CreateProfileFragment
 import ninja.saad.palaocorona.ui.features.authentication.otpverification.OtpVerificationFragment
 import ninja.saad.palaocorona.ui.features.authentication.login.LoginFragment
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
@@ -31,6 +32,10 @@ abstract class FragmentModule {
     @PerFragment
     @ContributesAndroidInjector
     abstract fun bindOtpVerificationFragment(): OtpVerificationFragment
+    
+    @PerFragment
+    @ContributesAndroidInjector
+    abstract fun bindCreateProfileFragment(): CreateProfileFragment
     
     
 }
