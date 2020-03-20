@@ -9,11 +9,9 @@ import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.support.v4.act
 
 class DashboardFragment: BaseFragment<DashboardViewModel>() {
-
-
+    
     override val layoutId: Int
         get() = R.layout.fragment_dashboard
     
@@ -27,30 +25,29 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
     
     private fun setClickListener() {
         
-        btnTest.onClick {
-            startActivity(AuthenticationActivity::class.java, null)
+        btnAboutCovid.onClick {
         }
         
-        btnNews.onClick {
+        btnVirusTest.onClick {
+            startActivity(AuthenticationActivity::class.java, null)
+        }
+        btnRecentNews.onClick {
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.mainFragmentContainer, NewsFragment())
                 ?.addToBackStack(null)
                 ?.commit()
         }
-        btnDos.onClick {
+        btnDosNDonts.onClick {
         
         }
         btnQuarantine.onClick {
         
         }
-        btnFaq.onClick {
+        btnFAQ.onClick {
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.mainFragmentContainer, FaqFragment())
                 ?.addToBackStack(null)
                 ?.commit()
-        }
-        btnMessage.onClick {
-        
         }
     }
 }

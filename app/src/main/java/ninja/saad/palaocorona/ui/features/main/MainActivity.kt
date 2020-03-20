@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import com.franmontiel.localechanger.LocaleChanger
+import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
@@ -25,6 +27,13 @@ class MainActivity : BaseActivity<MainViewModel>() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    
+        /*val toolbar = findViewById<MaterialToolbar>(R.id.toolbar_main)
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp)
+        toolbar.setNavigationOnClickListener {
+            view -> finish()
+        }
+        toolbar.title = HtmlCompat.fromHtml(getString(R.string.app_name_top_bar), HtmlCompat.FROM_HTML_MODE_LEGACY)*/
         
         supportFragmentManager.addOnBackStackChangedListener {
             fragments = supportFragmentManager.fragments
