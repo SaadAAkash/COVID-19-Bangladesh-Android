@@ -5,6 +5,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.ui.features.about.AboutCovidFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
@@ -26,6 +27,10 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
     private fun setClickListener() {
         
         btnAboutCovid.onClick {
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.mainFragmentContainer, AboutCovidFragment())
+                ?.addToBackStack(null)
+                ?.commit()
         }
         
         btnVirusTest.onClick {
