@@ -50,7 +50,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="@string/test" />
+                android:text="@string/feature_01_test" />
 
         </LinearLayout>
 
@@ -87,7 +87,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="@string/news" />
+                android:text="@string/feature_02_news" />
 
         </LinearLayout>
 
@@ -124,7 +124,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="@string/dos" />
+                android:text="@string/feature_03_dos" />
 
         </LinearLayout>
 
@@ -161,7 +161,7 @@
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="@string/quarantine" />
+                android:text="@string/feature_04_quarantine" />
 
         </LinearLayout>
 
@@ -198,7 +198,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="@string/faq" />
+                android:text="@string/feature_05_faq" />
 
         </LinearLayout>
 
@@ -235,7 +235,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
-                android:text="@string/message" />
+                android:text="@string/feature_06_message" />
 
         </LinearLayout>
 
