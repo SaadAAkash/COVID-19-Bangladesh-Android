@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">পালাও করোনা</string>
+    <string name="app_name_top_bar">
+    <![CDATA[
+    পালাও করোনা <font color=\'#ef3f3e\'>!</font>]]>
+    </string>
     <string name="feature_01_test">Get Yourself Tested</string>
     <string name="feature_02_news">Recent News</string>
     <string name="feature_03_dos">DOs and DON\'Ts</string>

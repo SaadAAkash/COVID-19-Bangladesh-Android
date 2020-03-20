@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">পালাও করোনা</string>
+    <string name="app_name_top_bar">
+    <![CDATA[
+    পালাও করোনা <font color=\'#ef3f3e\'>!</font>]]>
+    </string>
     <string name="feature_01_test">ভাইরাস আক্রান্ত কিনা জানুন</string>
     <string name="feature_02_news">সাম্প্রতিক তথ্য</string>
     <string name="feature_03_dos">কী করবেন, কী করবেন না</string>
