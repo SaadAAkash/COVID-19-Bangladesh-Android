@@ -2,6 +2,8 @@ package ninja.saad.palaocorona.ui.features.dashboard
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.Toolbar
+import androidx.core.text.HtmlCompat
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
@@ -10,10 +12,10 @@ import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.act
+import org.jetbrains.anko.support.v4.find
 
 class DashboardFragment: BaseFragment<DashboardViewModel>() {
-
-
+    
     override val layoutId: Int
         get() = R.layout.fragment_dashboard
     
