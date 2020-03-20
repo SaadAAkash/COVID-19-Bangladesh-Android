@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/gujobSlider"
@@ -20,15 +21,15 @@
         app:sliderScrollTimeInSec="1"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnTest"
+        android:id="@+id/btnAboutCovid"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
-        app:layout_constraintBottom_toTopOf="@id/btnDos"
-        app:layout_constraintEnd_toStartOf="@id/btnNews"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/btnRecentNews"
+        app:layout_constraintEnd_toStartOf="@id/btnVirusTest"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gujobSlider">
 
@@ -39,17 +40,17 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_covid_19" />
 
             <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:text="@string/feature_01_about_corona" />
 
         </LinearLayout>
@@ -57,16 +58,16 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnNews"
+        android:id="@+id/btnVirusTest"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_2sdp"
         android:layout_marginEnd="@dimen/_2sdp"
         android:layout_marginBottom="@dimen/_3sdp"
         app:cardBackgroundColor="@color/grey_100"
-        app:layout_constraintBottom_toTopOf="@id/btnQuarantine"
+        app:layout_constraintBottom_toTopOf="@id/btnDosNDonts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnTest"
+        app:layout_constraintStart_toEndOf="@id/btnAboutCovid"
         app:layout_constraintTop_toBottomOf="@id/gujobSlider">
 
         <LinearLayout
@@ -94,17 +95,17 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnDos"
+        android:id="@+id/btnRecentNews"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_2sdp"
         android:layout_marginEnd="@dimen/_2sdp"
         android:layout_marginBottom="@dimen/_3sdp"
         app:cardBackgroundColor="@color/grey_100"
-        app:layout_constraintBottom_toTopOf="@id/btnFaq"
-        app:layout_constraintEnd_toStartOf="@id/btnQuarantine"
+        app:layout_constraintBottom_toTopOf="@id/btnQuarantine"
+        app:layout_constraintEnd_toStartOf="@id/btnDosNDonts"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTest">
+        app:layout_constraintTop_toBottomOf="@id/btnAboutCovid">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -131,17 +132,17 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnQuarantine"
+        android:id="@+id/btnDosNDonts"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_2sdp"
         android:layout_marginEnd="@dimen/_2sdp"
         android:layout_marginBottom="@dimen/_3sdp"
         app:cardBackgroundColor="@color/grey_100"
-        app:layout_constraintBottom_toTopOf="@id/btnMessage"
+        app:layout_constraintBottom_toTopOf="@id/btnFAQ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnDos"
-        app:layout_constraintTop_toBottomOf="@id/btnNews">
+        app:layout_constraintStart_toEndOf="@id/btnRecentNews"
+        app:layout_constraintTop_toBottomOf="@id/btnVirusTest">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -168,17 +169,17 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnFaq"
+        android:id="@+id/btnQuarantine"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_2sdp"
         android:layout_marginEnd="@dimen/_2sdp"
         android:layout_marginBottom="@dimen/_3sdp"
         app:cardBackgroundColor="@color/grey_100"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnMessage"
+        app:layout_constraintBottom_toTopOf="@+id/btnDiscussion"
+        app:layout_constraintEnd_toStartOf="@id/btnFAQ"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnDos">
+        app:layout_constraintTop_toBottomOf="@id/btnRecentNews">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -205,17 +206,17 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnMessage"
+        android:id="@+id/btnFAQ"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_2sdp"
         android:layout_marginEnd="@dimen/_2sdp"
         android:layout_marginBottom="@dimen/_3sdp"
         app:cardBackgroundColor="@color/grey_100"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnEmergency"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnFaq"
-        app:layout_constraintTop_toBottomOf="@id/btnQuarantine">
+        app:layout_constraintStart_toEndOf="@id/btnQuarantine"
+        app:layout_constraintTop_toBottomOf="@id/btnDosNDonts">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -236,6 +237,80 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="@string/feature_06_faq" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnDiscussion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        app:cardBackgroundColor="@color/grey_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnFAQ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnQuarantine">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/feature_07_discussion" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnEmergency"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        app:cardBackgroundColor="@color/grey_100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnDiscussion"
+        app:layout_constraintTop_toBottomOf="@id/btnFAQ">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/feature_08_emergency" />
 
         </LinearLayout>
 
