@@ -7,4 +7,7 @@
     <string name="feature_05_faq">FAQ</string>
     <string name="feature_06_message">Group Discussion</string>
     <string name="lang">বাংলা</string>
+    <string name="enter_your_phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="verify">Verify</string>
 </resources>
