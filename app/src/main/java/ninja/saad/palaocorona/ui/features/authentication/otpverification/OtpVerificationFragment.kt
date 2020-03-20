@@ -7,9 +7,8 @@ import kotlinx.android.synthetic.main.fragment_otp_verification.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
-import ninja.saad.palaocorona.ui.features.authentication.CreateProfileFragment
+import ninja.saad.palaocorona.ui.features.authentication.createprofile.CreateProfileFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.support.v4.act
 
 class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
     companion object {
@@ -29,7 +28,9 @@ class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
         viewModel.userExists.observe(viewLifecycleOwner, Observer {
             if(!it) {
                 activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.authenticationFragmentContainer, CreateProfileFragment())
+                    ?.replace(R.id.authenticationFragmentContainer,
+                        CreateProfileFragment()
+                    )
                     ?.commit()
             } else {
                 activity?.finish()

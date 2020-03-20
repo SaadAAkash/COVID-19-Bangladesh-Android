@@ -36,6 +36,7 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
+                    Logger.d(it)
                     userExists.value = it.name.isNotEmpty()
                 }, {
                     userExists.value = false

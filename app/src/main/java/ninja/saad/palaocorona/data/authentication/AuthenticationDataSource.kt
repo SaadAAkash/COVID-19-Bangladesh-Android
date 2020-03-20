@@ -24,6 +24,7 @@ class AuthenticationDataSource @Inject constructor() {
     }
     
     fun sendOtp(phoneNumber: String): Single<String> {
+        FirebaseAuth.getInstance().signOut()
         return Single.create<String>(object: SingleOnSubscribe<String> {
             override fun subscribe(emitter: SingleEmitter<String>) {
                 val executor = Executors.newSingleThreadExecutor()
@@ -33,7 +34,6 @@ class AuthenticationDataSource @Inject constructor() {
                     TimeUnit.SECONDS, executor,
                     object: PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                         override fun onVerificationCompleted(p0: PhoneAuthCredential) {
-                            Logger.d("Completed")
                             executor.shutdown()
                         }
             
@@ -43,13 +43,12 @@ class AuthenticationDataSource @Inject constructor() {
                         }
             
                         override fun onCodeSent(verificationId: String, p1: PhoneAuthProvider.ForceResendingToken) {
-                            Logger.d("Code Sent $verificationId")
+                            
                             executor.shutdown()
                             emitter.onSuccess(verificationId)
                         }
             
                         override fun onCodeAutoRetrievalTimeOut(p0: String) {
-                            Logger.d("Timeout")
                             executor.shutdown()
                             emitter.onError(TimeoutException())
                         }
@@ -82,7 +81,9 @@ class AuthenticationDataSource @Inject constructor() {
                 .document(userId)
                 .addSnapshotListener { documentSnapshot, firebaseFirestoreException ->
                     if(firebaseFirestoreException != null) {
-                        emitter.onError(firebaseFirestoreException)
+                        if(!emitter.isDisposed) {
+                            emitter.onError(firebaseFirestoreException)
+                        }
                     } else {
                         if(documentSnapshot?.exists() == true) {
                             try {
