@@ -5,8 +5,11 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_faq.*
+import kotlinx.android.synthetic.main.item_faq_2.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.util.AnimationManager
+import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class FaqFragment: BaseFragment<FaqViewModel>() {
     
