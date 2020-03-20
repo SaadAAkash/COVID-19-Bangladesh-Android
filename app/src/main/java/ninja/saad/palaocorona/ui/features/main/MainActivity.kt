@@ -2,8 +2,11 @@ package ninja.saad.palaocorona.ui.features.main
 
 import android.content.Context
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentFactory
 import com.franmontiel.localechanger.LocaleChanger
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
@@ -13,6 +16,7 @@ import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
 class MainActivity : BaseActivity<MainViewModel>() {
     
     override val layoutId: Int = R.layout.activity_main
+    private var fragments: MutableList<Fragment> = mutableListOf()
     
     override fun attachBaseContext(base: Context?) {
         val nBase = LocaleChanger.configureBaseContext(base)
@@ -22,8 +26,16 @@ class MainActivity : BaseActivity<MainViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        supportFragmentManager.beginTransaction().replace(mainFragmentContainer.id,
-            DashboardFragment()).commit()
+        supportFragmentManager.addOnBackStackChangedListener {
+            fragments = supportFragmentManager.fragments
+        }
+        
+        if(savedInstanceState == null) {
+            supportFragmentManager.beginTransaction().replace(
+                mainFragmentContainer.id,
+                DashboardFragment()
+            ).commit()
+        }
     }
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

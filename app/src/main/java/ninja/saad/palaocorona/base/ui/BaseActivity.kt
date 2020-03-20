@@ -38,7 +38,7 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
         }
     }
     
-    override fun startActivity(clz: Class<*>?, bundle: Bundle?) {
+    override fun startActivity(clz: Class<*>, bundle: Bundle?) {
         val intent = Intent(this, clz)
         if (bundle != null) {
             intent.putExtras(bundle)

@@ -5,6 +5,6 @@ import java.util.*
 
 interface FragmentCommunicator {
 
-    fun startActivity(clz: Class<*>?, bundle: Bundle?)
+    fun startActivity(clz: Class<*>, bundle: Bundle? = null)
     fun toggleLanguage()
 }
