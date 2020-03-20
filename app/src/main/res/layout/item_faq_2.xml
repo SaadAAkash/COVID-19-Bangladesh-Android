@@ -33,7 +33,7 @@
                 app:srcCompat="@drawable/ic_faq" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvTitle"
+                android:id="@+id/faqTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,7 +64,7 @@
             android:visibility="gone">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvBody"
+                android:id="@+id/faqBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_4sdp"
@@ -74,22 +74,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/grey_700" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_hide"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/okay" />
-
-            </LinearLayout>
 
         </LinearLayout>
 
