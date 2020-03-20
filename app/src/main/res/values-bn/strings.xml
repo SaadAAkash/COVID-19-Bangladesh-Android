@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">পালাও করোনা</string>
-    <string name="feature_01_test">ভাইরাস আক্রান্ত কিনা জানুন</string>
-    <string name="feature_02_news">সাম্প্রতিক তথ্য</string>
-    <string name="feature_03_dos">কী করবেন, কী করবেন না</string>
-    <string name="feature_04_quarantine">কোয়ারান্টাইন-এ কীভাবে যাবেন</string>
-    <string name="feature_05_faq">প্রশ্ন-উত্তর</string>
-    <string name="feature_06_message">আলোচনা</string>
+    <string name="app_name_top_bar">
+    <![CDATA[
+    পালাও করোনা <font color=\'#ef3f3e\'>!</font>]]>
+    </string>
+
+    <string name="feature_01_about_corona">করোনা ভাইরাস</string>
+    <string name="feature_02_test">পরীক্ষা</string>
+    <string name="feature_03_news">সাম্প্রতিক তথ্য</string>
+    <string name="feature_04_dos">উচিত-অনুচিত</string>
+    <string name="feature_05_quarantine">কোয়ারান্টাইন কি</string>
+    <string name="feature_06_faq">প্রশ্ন-উত্তর</string>
+    <string name="feature_07_discussion">আলোচনা</string>
+    <string name="feature_08_emergency">জরুরি</string>
+
     <string name="okay">আচ্ছা</string>
-    <string name="lang">English</string>
-    <string name="enter_your_phone_number">ফোন নাম্বার</string>
+    <string name="lang">En</string>
+
+    <string name="enter_your_phone_number">আপনার ফোন নম্বরটি প্রয়োজন</string>
+    <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
+    <string name="mobile_number">মোবাইল নম্বর</string>
     <string name="login">লগইন</string>
 </resources>
