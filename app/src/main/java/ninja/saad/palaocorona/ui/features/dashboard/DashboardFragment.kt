@@ -26,11 +26,10 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
     private fun setClickListener() {
         
         btnAboutCovid.onClick {
-            startActivity(AuthenticationActivity::class.java, null)
         }
         
         btnVirusTest.onClick {
-        
+            startActivity(AuthenticationActivity::class.java, null)
         }
         btnRecentNews.onClick {
             activity?.supportFragmentManager?.beginTransaction()

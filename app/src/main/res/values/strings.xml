@@ -4,6 +4,7 @@
     <![CDATA[
     পালাও করোনা <font color=\'#ef3f3e\'>!</font>]]>
     </string>
+
     <string name="feature_01_about_corona">About COVID-19</string>
     <string name="feature_02_test">Virus Test</string>
     <string name="feature_03_news">Recent News</string>
@@ -12,10 +13,15 @@
     <string name="feature_06_faq">FAQ</string>
     <string name="feature_07_discussion">Discussion</string>
     <string name="feature_08_emergency">Emergency</string>
+
     <string name="okay">Okay</string>
     <string name="lang">বাংলা</string>
-    <string name="enter_your_phone_number">Phone Number</string>
+
+    <string name="enter_your_phone_number">Your Phone Number Please?</string>
+    <string name="please_enter_your_mobile_number">Please enter your mobile number to receive a verification code and proceed with the test</string>
+    <string name="mobile_number">Mobile Number</string>
     <string name="login">Login</string>
+
     <string name="verify">Verify</string>
     <string name="name">Name</string>
     <string name="personal_phone_optional">Home Phone Number (Optional)</string>
