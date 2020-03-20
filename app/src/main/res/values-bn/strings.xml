@@ -9,4 +9,6 @@
     <string name="feature_06_message">আলোচনা</string>
     <string name="okay">আচ্ছা</string>
     <string name="lang">English</string>
+    <string name="enter_your_phone_number">ফোন নাম্বার</string>
+    <string name="login">লগইন</string>
 </resources>
