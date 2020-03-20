@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#80000000</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorPrimary">#002b41</color>
+    <color name="colorPrimaryDark">#002b41</color>
+    <color name="colorAccent">#ef3f3e</color>
 
     <!--Material color list from https://material.io/guidelines/style/color.html-->
 

@@ -8,6 +8,7 @@ import ninja.saad.palaocorona.di.annotations.ViewModelKey
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardViewModel
 import ninja.saad.palaocorona.ui.features.faq.FaqViewModel
 import ninja.saad.palaocorona.ui.features.main.MainViewModel
+import ninja.saad.palaocorona.ui.features.news.NewsViewModel
 
 @Module
 abstract class ViewModelModule {
@@ -26,4 +27,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(FaqViewModel::class)
     abstract fun bindFaqViewModel(viewModel: FaqViewModel): ViewModel
+    
+    @Binds
+    @IntoMap
+    @ViewModelKey(NewsViewModel::class)
+    abstract fun bindNewsViewModel(viewModel: NewsViewModel): ViewModel
 }
