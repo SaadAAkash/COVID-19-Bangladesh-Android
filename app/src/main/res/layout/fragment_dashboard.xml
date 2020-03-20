@@ -24,6 +24,7 @@
         android:id="@+id/btnAboutCovid"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/_2sdp"
         app:strokeWidth="0dp"
         app:strokeColor="@color/white"
         app:cardPreventCornerOverlap="false"
@@ -61,10 +62,11 @@
         android:id="@+id/btnVirusTest"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/btnDosNDonts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnAboutCovid"
@@ -77,17 +79,17 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_virus_test" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:text="@string/feature_02_test" />
 
         </LinearLayout>
@@ -98,10 +100,11 @@
         android:id="@+id/btnRecentNews"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/btnQuarantine"
         app:layout_constraintEnd_toStartOf="@id/btnDosNDonts"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,12 +117,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_recent_news" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -135,10 +138,11 @@
         android:id="@+id/btnDosNDonts"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/btnFAQ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnRecentNews"
@@ -151,12 +155,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_dos" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -172,10 +176,11 @@
         android:id="@+id/btnQuarantine"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnDiscussion"
         app:layout_constraintEnd_toStartOf="@id/btnFAQ"
         app:layout_constraintStart_toStartOf="parent"
@@ -188,12 +193,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_quarantine" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -209,10 +214,11 @@
         android:id="@+id/btnFAQ"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnEmergency"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnQuarantine"
@@ -225,12 +231,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_faq" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -246,10 +252,11 @@
         android:id="@+id/btnDiscussion"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnFAQ"
         app:layout_constraintStart_toStartOf="parent"
@@ -262,12 +269,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_discussion" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -283,10 +290,11 @@
         android:id="@+id/btnEmergency"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_3sdp"
-        app:cardBackgroundColor="@color/grey_100"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnDiscussion"
@@ -299,12 +307,12 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
+                android:layout_width="@dimen/_56sdp"
+                android:layout_height="@dimen/_56sdp"
                 android:layout_gravity="center_horizontal"
-                android:src="@mipmap/ic_launcher_round" />
+                android:src="@drawable/ic_icons_emergency" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
