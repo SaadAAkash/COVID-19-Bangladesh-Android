@@ -2,6 +2,7 @@ package ninja.saad.palaocorona.ui.features.authentication.login
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_login.*
 import ninja.saad.palaocorona.R
@@ -19,7 +20,7 @@ class LoginFragment: BaseFragment<AuthenticationViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         
         btnLogin.onClick {
-            viewModel.sendOtp(etPhoneNumber.text.toString())
+            validateUser(etPhoneNumber.text.toString())
         }
         
         viewModel.verificationId.observe(viewLifecycleOwner, Observer {
@@ -32,5 +33,20 @@ class LoginFragment: BaseFragment<AuthenticationViewModel>() {
                 ?.replace(R.id.authenticationFragmentContainer, fragment)
                 ?.commit()
         })
+    }
+    
+    private fun validateUser(number : String) {
+        when {
+            number.length <= 10 ->
+                Toast.makeText(context, "Invalid Phone Number. Please input a valid phone number", Toast.LENGTH_SHORT).show()
+            number.length == 11 -> {
+                number.let {
+                    if ( ! (it.startsWith("01", true)) )
+                        Toast.makeText(context,"Invalid Phone Number. Please input a valid phone number", Toast.LENGTH_SHORT).show()
+                    else
+                        viewModel.sendOtp(etPhoneNumber.text.toString())
+                }
+            }
+        }
     }
 }
