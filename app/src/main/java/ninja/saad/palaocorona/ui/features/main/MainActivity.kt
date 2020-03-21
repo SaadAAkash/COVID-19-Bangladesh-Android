@@ -3,8 +3,12 @@ package ninja.saad.palaocorona.ui.features.main
 import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import android.view.MenuItem
+import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
@@ -18,7 +22,6 @@ import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
 class MainActivity : BaseActivity<MainViewModel>() {
     
     override val layoutId: Int = R.layout.activity_main
-    private var fragments: MutableList<Fragment> = mutableListOf()
     
     override fun attachBaseContext(base: Context?) {
         val nBase = LocaleChanger.configureBaseContext(base)
@@ -27,17 +30,12 @@ class MainActivity : BaseActivity<MainViewModel>() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    
-        /*val toolbar = findViewById<MaterialToolbar>(R.id.toolbar_main)
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp)
-        toolbar.setNavigationOnClickListener {
-            view -> finish()
-        }
-        toolbar.title = HtmlCompat.fromHtml(getString(R.string.app_name_top_bar), HtmlCompat.FROM_HTML_MODE_LEGACY)*/
         
-        supportFragmentManager.addOnBackStackChangedListener {
-            fragments = supportFragmentManager.fragments
-        }
+        val spannable = SpannableString(getString(R.string.app_name_top_bar))
+        spannable.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(applicationContext, R.color.colorAccent)),
+            spannable.length -1, spannable.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        title = spannable
         
         if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction().replace(
