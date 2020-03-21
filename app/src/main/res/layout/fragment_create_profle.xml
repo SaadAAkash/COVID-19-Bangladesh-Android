@@ -14,10 +14,10 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_180sdp"
             android:layout_margin="@dimen/_8sdp"
-            android:src="@drawable/logo"
+            android:src="@drawable/bg_welcome_profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -109,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btnCreateProfile"
-            android:text="@string/create_profile"
+            android:text="@string/start_taking_test"
             android:layout_margin="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/tilPersonalPhone"
             app:layout_constraintBottom_toBottomOf="parent"/>
