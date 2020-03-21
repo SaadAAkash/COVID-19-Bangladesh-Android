@@ -44,7 +44,9 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                     Logger.d(it)
                     userExists.value = it.name.isNotEmpty()
                 }, {
-                    userExists.value = false
+                    if(!it.localizedMessage.contains("otp", true)) {
+                        userExists.value = false
+                    }
                     it.printStackTrace()
                 })
             compositeDisposable.add(disposable)
