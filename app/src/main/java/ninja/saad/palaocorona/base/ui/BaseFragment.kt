@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerFragment
+import org.jetbrains.anko.support.v4.toast
 import java.lang.reflect.ParameterizedType
 import java.util.*
 import javax.inject.Inject
@@ -18,6 +19,7 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     private lateinit var communicator: FragmentCommunicator
     protected lateinit var viewModel: ViewModel
     protected abstract val layoutId: Int
+    var isActivityAsViewModelLifeCycleOwner = false
     
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -28,7 +30,13 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this, factory).get(getViewModelClass())
+        if(!isActivityAsViewModelLifeCycleOwner) {
+            viewModel = ViewModelProvider(this, factory).get(getViewModelClass())
+        } else {
+            activity?.let {
+                viewModel = ViewModelProvider(it, factory).get(getViewModelClass())
+            }
+        }
         
     }
     
@@ -38,6 +46,13 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(layoutId, container, false)
+    }
+    
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.toastMessage.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            toast(it)
+        })
     }
     
     fun toggleLanguage() {

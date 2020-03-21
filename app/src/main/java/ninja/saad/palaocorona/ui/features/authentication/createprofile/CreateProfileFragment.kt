@@ -1,5 +1,7 @@
 package ninja.saad.palaocorona.ui.features.authentication.createprofile
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -29,6 +31,7 @@ class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
         
         viewModel.profileSaved.observe(viewLifecycleOwner, Observer {
             if(it) {
+                activity?.setResult(Activity.RESULT_OK)
                 activity?.finish()
             } else {
             
