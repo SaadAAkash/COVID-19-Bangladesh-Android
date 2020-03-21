@@ -10,7 +10,7 @@ import ninja.saad.palaocorona.R
 
 class SliderAdapter : SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
     
-    val items = mutableListOf<Int>(R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground)
+    val items = mutableListOf<Int>(R.drawable.image_news, R.drawable.image_news, R.drawable.logo,  R.drawable.image_news)
     
     override fun onCreateViewHolder(parent: ViewGroup): SliderViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_slider, parent, false)
