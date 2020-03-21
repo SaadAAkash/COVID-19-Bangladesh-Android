@@ -50,7 +50,7 @@
                     android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
+                    android:inputType="numberDecimal"
                     android:maxLength="11"
                     android:maxLines="1"
                     android:singleLine="true"/>
