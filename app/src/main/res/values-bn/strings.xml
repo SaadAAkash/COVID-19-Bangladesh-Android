@@ -20,12 +20,12 @@
     <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
     <string name="mobile_number">মোবাইল নম্বর</string>
     <string name="login">লগইন</string>
-    <string name="verify">যাচাই করুন</string>
+    <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
+
+    <string name="verify">নিশ্চিত করুন</string>
     <string name="name">নাম</string>
-    <string name="personal_phone_optional">বাসার ফোন নাম্বার (অপশনাল)</string>
+    <string name="personal_phone_optional">বাসার ফোন নম্বর (ঐচ্ছিক)</string>
     <string name="gender">লিঙ্গ</string>
     <string name="age">বয়স</string>
-    <string name="create_profile">প্রোফাইল তৈরি করুন</string>
-    <string name="phone_number_invalid">ফোন নাম্বারটি সঠিক নয়। অনুগ্রহ করে সঠিক ফোন নাম্বার প্রবেশ করুন।</string>
-    <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>
+    <string name="start_taking_test">পরীক্ষা শুরু করুন</string>
 </resources>
