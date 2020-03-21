@@ -32,7 +32,6 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
                 ?.addToBackStack(null)
                 ?.commit()
         }
-        
         btnVirusTest.onClick {
             startActivity(AuthenticationActivity::class.java, null)
         }
