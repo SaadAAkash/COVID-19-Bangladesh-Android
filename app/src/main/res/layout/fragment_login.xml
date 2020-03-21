@@ -13,10 +13,10 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
             android:layout_margin="@dimen/_8sdp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/bg_mobile_verification" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
