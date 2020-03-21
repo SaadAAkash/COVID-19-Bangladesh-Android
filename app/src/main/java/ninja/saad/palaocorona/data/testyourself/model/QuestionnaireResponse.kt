@@ -6,6 +6,6 @@ import ninja.saad.palaocorona.data.base.BaseResponse
 data class QuestionnaireResponse(
     
     @SerializedName("views")
-    var views: MutableList<Questionnaire> = mutableListOf()
+    var views: MutableList<Question> = mutableListOf()
 
 ): BaseResponse()

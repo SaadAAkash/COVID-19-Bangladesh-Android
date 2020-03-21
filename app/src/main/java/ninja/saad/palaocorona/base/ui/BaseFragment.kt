@@ -19,6 +19,7 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     private lateinit var communicator: FragmentCommunicator
     protected lateinit var viewModel: ViewModel
     protected abstract val layoutId: Int
+    var isActivityAsViewModelLifeCycleOwner = false
     
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -29,7 +30,13 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this, factory).get(getViewModelClass())
+        if(!isActivityAsViewModelLifeCycleOwner) {
+            viewModel = ViewModelProvider(this, factory).get(getViewModelClass())
+        } else {
+            activity?.let {
+                viewModel = ViewModelProvider(it, factory).get(getViewModelClass())
+            }
+        }
         
     }
     

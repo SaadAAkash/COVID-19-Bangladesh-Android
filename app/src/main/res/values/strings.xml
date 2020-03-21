@@ -45,6 +45,7 @@
 শুরুর দিকের উপসর্গ সাধারণ সর্দিজ্বর এবং ফ্লু’য়ের সাথে সাদৃশ্যপূর্ণ হওয়ায় রোগ নির্ণয়ের ক্ষেত্রে দ্বিধাগ্রস্থ হওয়া স্বাভাবিক।</string>
     <string name="phone_number_invalid">Invalid Phone Number. Please enter a valid phone number.</string>
     <string name="invalid_otp">Invalid OTP. Please enter the 6 digits OTP.</string>
+    <string name="previous">Previous</string>
 
 
 </resources>

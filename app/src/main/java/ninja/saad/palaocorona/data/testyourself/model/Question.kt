@@ -1,8 +1,10 @@
 package ninja.saad.palaocorona.data.testyourself.model
 
 import com.google.gson.annotations.SerializedName
+import ninja.saad.palaocorona.util.TYPE
+import ninja.saad.palaocorona.util.VIEW_TYPE
 
-data class Questionnaire(
+data class Question(
 
 	@SerializedName("images")
 	val images: MutableList<String> = mutableListOf(),
@@ -31,4 +33,8 @@ data class Questionnaire(
 	@SerializedName("check_on")
 	var checkOn: Int = 0
 
-)
+) {
+	
+	var selectedAnswerPosition = 0
+	var selectedAnswer: String = ""
+}
