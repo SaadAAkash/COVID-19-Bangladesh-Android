@@ -5,16 +5,18 @@
     android:layout_height="match_parent">
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/viewPool"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
 
     </androidx.core.widget.NestedScrollView>
 
@@ -27,6 +29,7 @@
         android:insetRight="0dp"
         android:insetBottom="0dp"
         android:text="@string/previous"
+        android:visibility="gone"
         app:backgroundTint="@color/colorAccent"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
