@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">পালাও করোনা</string>
-    <string name="app_name_top_bar">
-    <![CDATA[
-    পালাও করোনা <font color=\'#ef3f3e\'>!</font>]]>
-    </string>
+    <string name="app_name_top_bar">পালাও করোনা !</string>
 
     <string name="feature_01_about_corona">About COVID-19</string>
     <string name="feature_02_test">Virus Test</string>
@@ -16,23 +13,39 @@
 
     <string name="okay">Okay</string>
     <string name="lang">বাংলা</string>
+    <string name="next">Next</string>
 
     <string name="enter_your_phone_number">Your Phone Number Please?</string>
     <string name="please_enter_your_mobile_number">Please enter your mobile number to receive a verification code and proceed with the test</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="login">Login</string>
 
-    <string name="verify">Verify</string>
-    <string name="name">Name</string>
-    <string name="personal_phone_optional">Home Phone Number (Optional)</string>
-    <string name="gender">Gender</string>
-    <string name="age">Age</string>
-    <string name="create_profile">Create Profile</string>
-    <string name="pref_name">corona_pref</string>
-
     <string-array name="genders">
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
     </string-array>
+
+    <string name="verify">Verify</string>
+    <string name="name">Name</string>
+    <string name="personal_phone_optional">Home Phone Number (Optional)</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="pref_name" translatable="false">corona_pref</string>
+    <string name="start_taking_test">Start Taking Test</string>
+
+    <!-- temporary resources -->
+    <string name="medium_lorem_ipsum" translatable="false">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
+    <string name="long_lorem_ipsum" translatable="false">
+        বিশ্ব স্বাস্থ্য সংস্থা বলছে, ভাইরাসটির ইনকিউবেশন পিরিয়ড ১৪দিন পর্যন্ত স্থায়ী থাকে। তবে কিছু কিছু গবেষকের মতে এর স্থায়িত্ব ২৪দিন পর্যন্ত থাকতে পারে।\n\n
+মানুষের মধ্যে যখন ভাইরাসের উপসর্গ দেখা দেবে তখন বেশি মানুষকে সংক্রমণের সম্ভাবনা থাকবে তাদের। তবে এমন ধারণাও করা হচ্ছে যে নিজেরা অসুস্থ না থাকার সময়ও সুস্থ মানুষের দেহে ভাইরাস সংক্রমিত করতে পারে মানুষ।
+শুরুর দিকের উপসর্গ সাধারণ সর্দিজ্বর এবং ফ্লু’য়ের সাথে সাদৃশ্যপূর্ণ হওয়ায় রোগ নির্ণয়ের ক্ষেত্রে দ্বিধাগ্রস্থ হওয়া স্বাভাবিক।</string>
+    <string name="phone_number_invalid">Invalid Phone Number. Please enter a valid phone number.</string>
+    <string name="invalid_otp">Invalid OTP. Please enter the 6 digits OTP.</string>
+    <string name="previous">Previous</string>
+    <string name="choose_an_option">Choose an option</string>
+    <string name="form_not_completed">Please give answer of all questions</string>
+    <string name="give_otp_code">Please check your phone and give your verification code below</string>
+
+
 </resources>
