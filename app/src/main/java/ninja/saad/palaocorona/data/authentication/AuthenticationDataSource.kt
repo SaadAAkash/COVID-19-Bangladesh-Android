@@ -6,6 +6,10 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.orhanobut.logger.Logger
 import io.reactivex.*
@@ -76,18 +80,22 @@ class AuthenticationDataSource @Inject constructor() {
     
     fun getUserInfo(userId: String): Maybe<User> {
         return Maybe.create<User> { emitter ->
-            FirebaseFirestore.getInstance()
-                .collection(USERS)
-                .document(userId)
-                .addSnapshotListener { documentSnapshot, firebaseFirestoreException ->
-                    if(firebaseFirestoreException != null) {
+            val db = FirebaseDatabase.getInstance()
+                .getReference(USERS)
+                .child(userId)
+            db.keepSynced(true)
+            
+            db.addListenerForSingleValueEvent(object: ValueEventListener {
+                    override fun onCancelled(error: DatabaseError) {
                         if(!emitter.isDisposed) {
-                            emitter.onError(firebaseFirestoreException)
+                            emitter.onError(error.toException())
                         }
-                    } else {
-                        if(documentSnapshot?.exists() == true) {
+                    }
+    
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        if(dataSnapshot.exists()) {
                             try {
-                                emitter.onSuccess(documentSnapshot.toObject(User::class.java)!!)
+                                emitter.onSuccess(dataSnapshot.getValue(User::class.java)!!)
                             } catch (e: Exception) {
                                 emitter.onError(e)
                             }
@@ -95,7 +103,8 @@ class AuthenticationDataSource @Inject constructor() {
                             emitter.onError(Throwable("User not exists"))
                         }
                     }
-                }
+    
+                })
         }
     }
     
@@ -103,10 +112,12 @@ class AuthenticationDataSource @Inject constructor() {
         val uid = FirebaseAuth.getInstance().uid
         return Completable.create { emitter ->
             if(uid != null) {
-                FirebaseFirestore.getInstance()
-                    .collection(USERS)
-                    .document(uid)
-                    .set(user)
+                val db = FirebaseDatabase.getInstance()
+                    .getReference(USERS)
+                    .child(uid)
+                db.keepSynced(true)
+                
+                db.setValue(user)
                     .addOnSuccessListener {
                         emitter.onComplete()
                     }.addOnFailureListener {
