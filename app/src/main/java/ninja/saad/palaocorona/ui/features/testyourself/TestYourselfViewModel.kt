@@ -1,6 +1,7 @@
 package ninja.saad.palaocorona.ui.features.testyourself
 
 import androidx.lifecycle.MutableLiveData
+import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ninja.saad.palaocorona.base.ui.BaseViewModel
@@ -14,6 +15,7 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
     
     var questionnaire = SingleLiveEvent<MutableList<Question>>()
     var currentIndex = 0
+    var formNotCompleted = MutableLiveData<Boolean>()
     private var allQuestionnaire = mutableListOf<Question>()
     
     fun getQuestionnaire() {
@@ -61,6 +63,27 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
     fun setEditableAnswer(question: Question, text: String) {
         allQuestionnaire[allQuestionnaire.indexOf(question)] = question.apply {
             selectedAnswer = text
+        }
+    }
+    
+    fun setResult() {
+        var notCompleted = false
+        allQuestionnaire.forEach {
+            if(it.selectedAnswer.isNullOrEmpty()) notCompleted = true
+        }
+        
+        if(!notCompleted) {
+            val disposable = repository.setData(allQuestionnaire)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    Logger.d("Success")
+                }, {
+                    it.printStackTrace()
+                })
+            compositeDisposable.add(disposable)
+        } else {
+            formNotCompleted.value = true
         }
     }
 }

@@ -35,7 +35,9 @@ import ninja.saad.palaocorona.util.VIEW_TYPE
 import org.jetbrains.anko.backgroundColorResource
 import org.jetbrains.anko.dimen
 import org.jetbrains.anko.sdk27.coroutines.onCheckedChange
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.dimen
+import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.textColorResource
 import java.util.*
 import kotlin.math.max
@@ -57,8 +59,13 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        viewModel.getQuestionnaire()
+        btnNext.onClick {
+            viewModel.setResult()
+        }
         
+        viewModel.formNotCompleted.observe(viewLifecycleOwner, Observer {
+            toast(R.string.form_not_completed)
+        })
         viewModel.questionnaire.observe(this, Observer { questions ->
             
             questions.forEach { question ->
@@ -80,6 +87,7 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                 }
             }
         })
+        viewModel.getQuestionnaire()
         
     }
     

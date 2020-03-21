@@ -47,6 +47,7 @@
     <string name="invalid_otp">Invalid OTP. Please enter the 6 digits OTP.</string>
     <string name="previous">Previous</string>
     <string name="choose_an_option">Choose an option</string>
+    <string name="form_not_completed">Please give answer of all questions</string>
 
 
 </resources>
