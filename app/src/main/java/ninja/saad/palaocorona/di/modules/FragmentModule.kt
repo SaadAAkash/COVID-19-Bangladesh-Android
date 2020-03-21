@@ -10,6 +10,7 @@ import ninja.saad.palaocorona.ui.features.authentication.login.LoginFragment
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
+import ninja.saad.palaocorona.ui.features.quarantine.QuarantineFragment
 
 @Module
 abstract class FragmentModule {
@@ -41,6 +42,10 @@ abstract class FragmentModule {
     @PerFragment
     @ContributesAndroidInjector
     abstract fun bindAboutCovidFragment(): AboutCovidFragment
+    
+    @PerFragment
+    @ContributesAndroidInjector
+    abstract fun bindQuarantineFragment(): QuarantineFragment
     
     
 }
