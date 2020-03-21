@@ -9,6 +9,8 @@ import ninja.saad.palaocorona.ui.features.about.AboutCovidFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
+import ninja.saad.palaocorona.ui.features.quarantine.QuarantineFragment
+import ninja.saad.palaocorona.ui.features.quarantine.QuarantineViewModel
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class DashboardFragment: BaseFragment<DashboardViewModel>() {
@@ -45,7 +47,10 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
         
         }
         btnQuarantine.onClick {
-        
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.mainFragmentContainer, QuarantineFragment())
+                ?.addToBackStack(null)
+                ?.commit()
         }
         btnFAQ.onClick {
             activity?.supportFragmentManager?.beginTransaction()
