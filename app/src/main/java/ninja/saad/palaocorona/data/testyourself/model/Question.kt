@@ -37,4 +37,5 @@ data class Question(
 	
 	var selectedAnswerPosition = 0
 	var selectedAnswer: String = ""
+	var isChecked = false
 }
