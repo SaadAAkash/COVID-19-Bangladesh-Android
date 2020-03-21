@@ -27,6 +27,14 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
         super.onCreate(savedInstanceState)
         setContentView(layoutId)
         viewModel = ViewModelProvider(this, factory).get(getViewModelClass())
+    
+        if(supportFragmentManager.backStackEntryCount > 0) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            supportActionBar?.setHomeButtonEnabled(true)
+        } else {
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            supportActionBar?.setHomeButtonEnabled(false)
+        }
         
         supportFragmentManager.addOnBackStackChangedListener {
             if(supportFragmentManager.backStackEntryCount > 0) {

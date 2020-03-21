@@ -73,7 +73,9 @@ class AuthenticationDataSource @Inject constructor() {
                         emitter.onError(Throwable("Cannot verify OTP"))
                     }
                 }.addOnFailureListener {
-                    emitter.onError(it)
+                    if(!emitter.isDisposed) {
+                        emitter.onError(it)
+                    }
                 }
         }
     }
