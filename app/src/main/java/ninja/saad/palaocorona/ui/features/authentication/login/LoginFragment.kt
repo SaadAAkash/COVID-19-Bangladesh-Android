@@ -10,6 +10,7 @@ import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import ninja.saad.palaocorona.ui.features.authentication.otpverification.OtpVerificationFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.toast
 
 class LoginFragment: BaseFragment<AuthenticationViewModel>() {
     
@@ -20,10 +21,10 @@ class LoginFragment: BaseFragment<AuthenticationViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         
         btnLogin.onClick {
-            validateUser(etPhoneNumber.text.toString())
+            viewModel.sendOtp(etPhoneNumber.text.toString())
         }
         
-        viewModel.verificationId.observe(viewLifecycleOwner, Observer {
+        viewModel.verificationId.observeOn(viewLifecycleOwner, Observer {
             val fragment =
                 OtpVerificationFragment()
             val bundle = Bundle()
@@ -31,22 +32,12 @@ class LoginFragment: BaseFragment<AuthenticationViewModel>() {
             fragment.arguments = bundle
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.authenticationFragmentContainer, fragment)
+                ?.addToBackStack(null)
                 ?.commit()
         })
-    }
-    
-    private fun validateUser(number : String) {
-        when {
-            number.length <= 10 ->
-                Toast.makeText(context, "Invalid Phone Number. Please input a valid phone number", Toast.LENGTH_SHORT).show()
-            number.length == 11 -> {
-                number.let {
-                    if ( ! (it.startsWith("01", true)) )
-                        Toast.makeText(context,"Invalid Phone Number. Please input a valid phone number", Toast.LENGTH_SHORT).show()
-                    else
-                        viewModel.sendOtp(etPhoneNumber.text.toString())
-                }
-            }
-        }
+        
+        viewModel.phoneNumberInvalid.observeOn(viewLifecycleOwner, Observer {
+            toast(R.string.phone_number_invalid)
+        })
     }
 }

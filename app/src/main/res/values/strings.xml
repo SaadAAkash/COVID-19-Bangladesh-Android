@@ -35,15 +35,16 @@
     <string name="gender">Gender</string>
     <string name="age">Age</string>
     <string name="create_profile">Create Profile</string>
-    <string name="pref_name">corona_pref</string>
+    <string name="pref_name" translatable="false">corona_pref</string>
 
     <!-- temporary resources -->
-    <string name="medium_lorem_ipsum">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
-    <string name="long_lorem_ipsum">
+    <string name="medium_lorem_ipsum" translatable="false">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
+    <string name="long_lorem_ipsum" translatable="false">
         বিশ্ব স্বাস্থ্য সংস্থা বলছে, ভাইরাসটির ইনকিউবেশন পিরিয়ড ১৪দিন পর্যন্ত স্থায়ী থাকে। তবে কিছু কিছু গবেষকের মতে এর স্থায়িত্ব ২৪দিন পর্যন্ত থাকতে পারে।\n\n
 মানুষের মধ্যে যখন ভাইরাসের উপসর্গ দেখা দেবে তখন বেশি মানুষকে সংক্রমণের সম্ভাবনা থাকবে তাদের। তবে এমন ধারণাও করা হচ্ছে যে নিজেরা অসুস্থ না থাকার সময়ও সুস্থ মানুষের দেহে ভাইরাস সংক্রমিত করতে পারে মানুষ।
 শুরুর দিকের উপসর্গ সাধারণ সর্দিজ্বর এবং ফ্লু’য়ের সাথে সাদৃশ্যপূর্ণ হওয়ায় রোগ নির্ণয়ের ক্ষেত্রে দ্বিধাগ্রস্থ হওয়া স্বাভাবিক।</string>
-
+    <string name="phone_number_invalid">Invalid Phone Number. Please enter a valid phone number.</string>
+    <string name="invalid_otp">Invalid OTP. Please enter the 6 digits OTP.</string>
 
 
 </resources>

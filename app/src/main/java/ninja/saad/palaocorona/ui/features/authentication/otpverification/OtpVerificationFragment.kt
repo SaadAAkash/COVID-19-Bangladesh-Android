@@ -1,5 +1,6 @@
 package ninja.saad.palaocorona.ui.features.authentication.otpverification
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -9,6 +10,7 @@ import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import ninja.saad.palaocorona.ui.features.authentication.createprofile.CreateProfileFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.toast
 
 class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
     companion object {
@@ -33,8 +35,13 @@ class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
                     )
                     ?.commit()
             } else {
+                activity?.setResult(Activity.RESULT_OK)
                 activity?.finish()
             }
+        })
+        
+        viewModel.otpInvalid.observeOn(viewLifecycleOwner, Observer {
+            toast(R.string.invalid_otp)
         })
     }
 }

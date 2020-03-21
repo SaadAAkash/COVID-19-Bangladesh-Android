@@ -12,6 +12,7 @@ import ninja.saad.palaocorona.ui.features.faq.FaqViewModel
 import ninja.saad.palaocorona.ui.features.main.MainViewModel
 import ninja.saad.palaocorona.ui.features.news.NewsViewModel
 import ninja.saad.palaocorona.ui.features.quarantine.QuarantineViewModel
+import ninja.saad.palaocorona.ui.features.testyourself.TestYourselfViewModel
 
 @Module
 abstract class ViewModelModule {
@@ -50,4 +51,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(QuarantineViewModel::class)
     abstract fun bindQuarantineViewModel(viewModel: QuarantineViewModel): ViewModel
+    
+    @Binds
+    @IntoMap
+    @ViewModelKey(TestYourselfViewModel::class)
+    abstract fun bindTestYourselfViewModel(viewModel: TestYourselfViewModel): ViewModel
 }

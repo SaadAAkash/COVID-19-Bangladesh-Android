@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerFragment
+import org.jetbrains.anko.support.v4.toast
 import java.lang.reflect.ParameterizedType
 import java.util.*
 import javax.inject.Inject
@@ -38,6 +39,13 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(layoutId, container, false)
+    }
+    
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.toastMessage.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            toast(it)
+        })
     }
     
     fun toggleLanguage() {
