@@ -4,6 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.smarteist.autoimageslider.IndicatorAnimations
+import com.smarteist.autoimageslider.SliderAnimations
+import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
@@ -26,8 +29,16 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        gujobSlider.sliderAdapter = SliderAdapter()
+        gujobSlider.sliderAdapter = SliderAdapter("dashboard")
+        //drop or swap
+        gujobSlider.setIndicatorAnimation(IndicatorAnimations.DROP); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        gujobSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        gujobSlider.scrollTimeInSec = 8 //set scroll delay in seconds :
+        gujobSlider.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
+        gujobSlider.setSliderAnimationDuration(600)
+        gujobSlider.setIndicatorAnimationDuration(600)
         gujobSlider.startAutoCycle()
+        gujobSlider.isAutoCycle = true
         setClickListener()
     }
     
