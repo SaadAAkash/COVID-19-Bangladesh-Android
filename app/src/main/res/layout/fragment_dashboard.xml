@@ -12,13 +12,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:sliderAnimationDuration="600"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderAutoCycleEnabled="true"
-        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorMargin="@dimen/_10sdp"
+        app:sliderIndicatorPadding="@dimen/_2sdp"
+        app:sliderIndicatorRadius="@dimen/_1sdp"
+        app:sliderIndicatorSelectedColor="@color/colorAccent"
+        app:sliderIndicatorUnselectedColor="@color/colorPrimary"
         app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderScrollTimeInSec="1"/>
+        app:sliderIndicatorOrientation="horizontal"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnAboutCovid"
