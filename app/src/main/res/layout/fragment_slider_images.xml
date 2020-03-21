@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <LinearLayout
-        android:id="@+id/layoutDots"
-        android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="top|center_horizontal"
-        android:minHeight="@dimen/_15sdp"
-        android:orientation="horizontal" />
+        android:layout_centerInParent="true"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="3dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="2dp">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:background="@color/light_green_600"
-        android:gravity="center"
-        android:text="@string/next"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sliderAnimationDuration="600"
+            app:sliderIndicatorMargin="@dimen/_10sdp"
+            app:sliderIndicatorPadding="@dimen/_2sdp"
+            app:sliderIndicatorRadius="@dimen/_1sdp"
+            app:sliderIndicatorSelectedColor="@color/colorAccent"
+            app:sliderIndicatorUnselectedColor="@color/colorPrimary"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorOrientation="horizontal" />
 
-</LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>
