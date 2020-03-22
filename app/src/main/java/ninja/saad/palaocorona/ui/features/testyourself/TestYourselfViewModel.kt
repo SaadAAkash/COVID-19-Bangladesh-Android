@@ -1,9 +1,11 @@
 package ninja.saad.palaocorona.ui.features.testyourself
 
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.FirebaseNetworkException
 import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import ninja.saad.palaocorona.base.data.network.RetrofitException
 import ninja.saad.palaocorona.base.ui.BaseViewModel
 import ninja.saad.palaocorona.data.testyourself.TestYourselfRepository
 import ninja.saad.palaocorona.data.testyourself.model.Question
@@ -16,6 +18,7 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
     var questionnaire = SingleLiveEvent<MutableList<Question>>()
     var currentIndex = 0
     var formNotCompleted = MutableLiveData<Boolean>()
+    var noInternetConnection = MutableLiveData<Boolean>()
     private var allQuestionnaire = mutableListOf<Question>()
     
     fun getQuestionnaire() {
@@ -28,6 +31,9 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
                     this.questionnaire.value =
                         allQuestionnaire
                 }, {
+                    if(it is RetrofitException && it.getKind() == RetrofitException.Kind.NETWORK) {
+                        noInternetConnection.value = true
+                    }
                     it.printStackTrace()
                 })
             compositeDisposable.add(disposable)
@@ -79,6 +85,9 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
                 .subscribe({
                     Logger.d("Success")
                 }, {
+                    if(it is FirebaseNetworkException) {
+                        noInternetConnection.value = true
+                    }
                     it.printStackTrace()
                 })
             compositeDisposable.add(disposable)
