@@ -25,7 +25,6 @@ import com.google.android.material.textview.MaterialTextView
 import kotlinx.android.synthetic.main.fragment_test_yourself.*
 import kotlinx.android.synthetic.main.item_drop_down_option.view.*
 import ninja.saad.palaocorona.R
-import ninja.saad.palaocorona.base.ui.AppChip
 import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.data.testyourself.ButtonTypeRadioAdapter
 import ninja.saad.palaocorona.data.testyourself.model.Question
