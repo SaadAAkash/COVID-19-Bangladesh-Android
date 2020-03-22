@@ -28,6 +28,7 @@ import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.data.testyourself.ButtonTypeRadioAdapter
 import ninja.saad.palaocorona.data.testyourself.model.Question
+import ninja.saad.palaocorona.ui.dialogs.NoInternetConnectionDialog
 import ninja.saad.palaocorona.util.GridSpacingItemDecoration
 import ninja.saad.palaocorona.util.TYPE
 import ninja.saad.palaocorona.util.VIEW_TYPE
@@ -64,6 +65,13 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
         
         viewModel.formNotCompleted.observe(viewLifecycleOwner, Observer {
             toast(R.string.form_not_completed)
+        })
+        viewModel.noInternetConnection.observe(viewLifecycleOwner, Observer {
+            showNoInternetConnectionDialog(object: NoInternetConnectionDialog.NoInternetDialogCallback {
+                override fun retry() {
+                    viewModel.getQuestionnaire()
+                }
+            })
         })
         viewModel.questionnaire.observe(this, Observer { questions ->
             
