@@ -20,21 +20,32 @@
     <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
     <string name="mobile_number">মোবাইল নম্বর</string>
     <string name="login">লগইন</string>
-
-    <string name="faq_q_1"></string>
-    <string name="faq_q_2"></string>
-    <string name="faq_q_3"></string>
-    <string name="faq_q_4"></string>
-    <string name="faq_q_5"></string>
-    <string name="faq_q_6"></string>
-    <string name="faq_q_7"></string>
-    <string name="faq_a_1"></string>
-    <string name="faq_a_2"></string>
-    <string name="faq_a_3"></string>
-    <string name="faq_a_4"></string>
-    <string name="faq_a_5"></string>
-    <string name="faq_a_6"></string>
-    <string name="faq_a_7"></string>
+    <string name="faq_q_1">What are the initial symptoms of COVID-19?</string>
+    <string name="faq_q_2">When should you consult a doctor?</string>
+    <string name="faq_q_3">What are the emergency signs of COVID-19?</string>
+    <string name="faq_q_4">Is COVID-19 contagious?</string>
+    <string name="faq_q_5">What is Quarantine?</string>
+    <string name="faq_q_6">Should I wear a mask?</string>
+    <string name="faq_q_7">Should I use soaps, hand-sanitizers or hand wash?</string>
+    <string name="faq_a_1">Symptoms for COVID-19 may appear from 2-14 days after exposure which conclude:\n
+                            · Fever\n
+                            · Cough\n
+                            · Shortness of breath or difficulty in breathing\n
+                            · Tiredness\n
+                            · Aches\n
+                            · Runny nose\n
+                            · Sore throat
+    </string>
+    <string name="faq_a_2">If you have a travel history in the affected places or you are having those symptoms, you should immediately seek help from a professional.</string>
+    <string name="faq_a_3">If you are already a Coronavirus disease patient and you are not taking proper medical help, you may go into a critical condition with these signs:
+                            · Bluish face or eyes\n
+                            · Breathing difficulty\n
+                            · Chest pain
+    </string>
+    <string name="faq_a_4">Yes, it is. The Coronavirus spread from person to person. This is why it is strictly prohibited to make physical contact with the affected patient.</string>
+    <string name="faq_a_5">Quarantine is a period of isolation. If you have initial symptoms of this virus you should keep yourself away from any kind of social gathering to find out if you are actually affected or not.</string>
+    <string name="faq_a_6">If you have symptoms of the illness or you are treating the patients with COVID-19, you should wear a mask.</string>
+    <string name="faq_a_7">You can use either soaps or hand wash. Wash your hands for 20 seconds. If you do not have any of these, you should rub your hand with hand-sanitizer that has 60% alcohol in it.</string>
 
 
     <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
