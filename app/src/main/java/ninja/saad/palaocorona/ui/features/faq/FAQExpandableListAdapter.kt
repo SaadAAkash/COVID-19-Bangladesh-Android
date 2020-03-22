@@ -76,7 +76,7 @@ class FAQExpandableListAdapter(private val context: Context?, private val expand
     }
     
     override fun hasStableIds(): Boolean {
-        return false
+        return true
     }
     
     override fun isChildSelectable(listPosition: Int, expandedListPosition: Int): Boolean {

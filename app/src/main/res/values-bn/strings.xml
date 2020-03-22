@@ -20,33 +20,27 @@
     <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
     <string name="mobile_number">মোবাইল নম্বর</string>
     <string name="login">লগইন</string>
-    <string name="faq_q_1">What are the initial symptoms of COVID-19?</string>
-    <string name="faq_q_2">When should you consult a doctor?</string>
-    <string name="faq_q_3">What are the emergency signs of COVID-19?</string>
-    <string name="faq_q_4">Is COVID-19 contagious?</string>
-    <string name="faq_q_5">What is Quarantine?</string>
-    <string name="faq_q_6">Should I wear a mask?</string>
-    <string name="faq_q_7">Should I use soaps, hand-sanitizers or hand wash?</string>
-    <string name="faq_a_1">Symptoms for COVID-19 may appear from 2-14 days after exposure which conclude:\n
-                            · Fever\n
-                            · Cough\n
-                            · Shortness of breath or difficulty in breathing\n
-                            · Tiredness\n
-                            · Aches\n
-                            · Runny nose\n
-                            · Sore throat
+    <string name="faq_q_1">COVID-19 এর প্রাথমিক লক্ষণগুলো কি কি?</string>
+    <string name="faq_q_2">কখন ডাক্তার এর কাছে যেতে হবে?</string>
+    <string name="faq_q_3">কোন অবস্থায় বুঝবেন COVID-19 এর সঙ্কটাপন্ন অবস্থায় আছেন?</string>
+    <string name="faq_q_4">করোনাভাইরাস কি ছোঁয়াচে?</string>
+    <string name="faq_q_5">কোয়ারেন্টাইন কি?</string>
+    <string name="faq_q_6">আমার কি মাস্ক পরা উচিৎ?</string>
+    <string name="faq_q_7">সাবান, হ্যান্ড ওয়াশ নাকি হ্যান্ড স্যানিটাইজার কোনটা ব্যবহার করা উচিৎ?</string>
+    <string name="faq_a_1">WHO এর মতে, করোনাভাইরাস দ্বারা  আক্রান্ত হওয়ার ২-১৪ দিনের মধ্যে COVID-19 এর প্রাথমিক লক্ষণগুলো দেখা যেতে পারে।  যেগুলো হলঃ
+                            · জ্বর\n
+                            · কাশি\n
+                            · শ্বাসকষ্ট\n
+                            · ক্লান্তি\n
+                            · গায়ে ব্যথা\n
+                            · সর্দি\n
     </string>
-    <string name="faq_a_2">If you have a travel history in the affected places or you are having those symptoms, you should immediately seek help from a professional.</string>
-    <string name="faq_a_3">If you are already a Coronavirus disease patient and you are not taking proper medical help, you may go into a critical condition with these signs:
-                            · Bluish face or eyes\n
-                            · Breathing difficulty\n
-                            · Chest pain
-    </string>
-    <string name="faq_a_4">Yes, it is. The Coronavirus spread from person to person. This is why it is strictly prohibited to make physical contact with the affected patient.</string>
-    <string name="faq_a_5">Quarantine is a period of isolation. If you have initial symptoms of this virus you should keep yourself away from any kind of social gathering to find out if you are actually affected or not.</string>
-    <string name="faq_a_6">If you have symptoms of the illness or you are treating the patients with COVID-19, you should wear a mask.</string>
-    <string name="faq_a_7">You can use either soaps or hand wash. Wash your hands for 20 seconds. If you do not have any of these, you should rub your hand with hand-sanitizer that has 60% alcohol in it.</string>
-
+    <string name="faq_a_2">আপনার যদি COVID-19 এর প্রাথমিক লক্ষণগুলো দেখা দেয় অথবা COVID-19 এ আক্রান্ত রোগীর সংস্পর্শে এসে থাকেন তাহলে দেরি না করে অতি দ্রুত ডাক্তারের শরণাপন্ন হোন।</string>
+    <string name="faq_a_3">করোনাভাইরাসে আক্রান্ত হবার পর আপনি যদি সঠিক চিকিৎসা না নেন তাহলে আপনি এর সঙ্কটাপন্ন অবস্থায় পৌঁছে যেতে পারেন। এক্ষেত্রে আপনার মুখমণ্ডল এবং চোখ নীল হয়ে যেতে পারে, বুকে ব্যথা বাড়তে পারে এবং শ্বাসকষ্ট বাড়তে পারে।</string>
+    <string name="faq_a_4">হ্যাঁ, করোনাভাইরাস ছোঁয়াচে তাই করোনাভাইরাসে আক্রান্ত কোন ব্যক্তির সংস্পর্শ এড়িয়ে চলা আবশ্যক।</string>
+    <string name="faq_a_5">কোয়ারেন্টাইন একটি বিচ্ছিন্ন সামাজিক অবস্থা। এতে ভয় পাবার কিছু নেই। COVID-19 এর প্রাথমিক লক্ষণ দেখা দিলে জন-সমাগম থেকে দূরে থাকাই এর প্রধান লক্ষ্য।</string>
+    <string name="faq_a_6">আপনি যদি COVID-19 এ আক্রান্ত হয়ে থাকেন কিংবা আক্রান্ত কোন রোগীকে চিকিৎসা দেওয়ার সাথে সম্পৃক্ত থাকেন তাহলে অবশ্যই আপনার মাস্ক পরা উচিৎ।</string>
+    <string name="faq_a_7">এন্টি-সেপটিক সাবান কিংবা হ্যান্ড ওয়াশ যেকোনো একটির সাহায্যে ২০ সেকেন্ড সময় নিয়ে ভালোভাবে হাত ধুতে হবে। যদি এর কোনটিই না থাকে তাহলে হ্যান্ড স্যানিটাইজার যেটিতে ৬০% অ্যালকোহল আছে সেটির সাহায্যে হাত পরিস্কার করতে হবে।</string>
 
     <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
 
