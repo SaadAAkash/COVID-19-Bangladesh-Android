@@ -1,4 +1,5 @@
 package ninja.saad.palaocorona.ui.features.faq
+/*
 
 import android.view.LayoutInflater
 import android.view.View
@@ -47,9 +48,11 @@ class FaqAdapter: RecyclerView.Adapter<FaqAdapter.FaqViewHolder>() {
         holder.itemView.btn_expand.onClick {
             toggleSectionInfo(holder.itemView.btn_expand, holder);
         }
-        /*holder.itemView.btn_hide.onClick {
+        */
+/*holder.itemView.btn_hide.onClick {
             toggleSectionInfo(holder.itemView.btn_hide, holder);
-        }*/
+        }*//*
+
     }
     
     private fun toggleSectionInfo(view: View, holder: FaqViewHolder) {
@@ -74,4 +77,4 @@ class FaqAdapter: RecyclerView.Adapter<FaqAdapter.FaqViewHolder>() {
             false
         }
     }
-}
+}*/
