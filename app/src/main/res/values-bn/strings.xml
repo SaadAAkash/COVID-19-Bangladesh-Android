@@ -20,6 +20,23 @@
     <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
     <string name="mobile_number">মোবাইল নম্বর</string>
     <string name="login">লগইন</string>
+
+    <string name="faq_q_1"></string>
+    <string name="faq_q_2"></string>
+    <string name="faq_q_3"></string>
+    <string name="faq_q_4"></string>
+    <string name="faq_q_5"></string>
+    <string name="faq_q_6"></string>
+    <string name="faq_q_7"></string>
+    <string name="faq_a_1"></string>
+    <string name="faq_a_2"></string>
+    <string name="faq_a_3"></string>
+    <string name="faq_a_4"></string>
+    <string name="faq_a_5"></string>
+    <string name="faq_a_6"></string>
+    <string name="faq_a_7"></string>
+
+
     <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
 
     <string name="verify">নিশ্চিত করুন</string>
