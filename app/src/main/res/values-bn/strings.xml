@@ -5,11 +5,11 @@
 
     <string name="feature_01_about_corona">করোনা ভাইরাস</string>
     <string name="feature_02_test">পরীক্ষা</string>
-    <string name="feature_03_news">সাম্প্রতিক তথ্য</string>
+    <string name="feature_03_news">সাম্প্রতিক খবর</string>
     <string name="feature_04_dos">উচিত-অনুচিত</string>
     <string name="feature_05_quarantine">কোয়ারান্টাইন কি</string>
     <string name="feature_06_faq">প্রশ্ন-উত্তর</string>
-    <string name="feature_07_discussion">আলোচনা</string>
+    <string name="feature_07_discussion">সদ্যপ্রাপ্ত ও অন্যান্য</string>
     <string name="feature_08_emergency">জরুরি</string>
 
     <string name="okay">আচ্ছা</string>
