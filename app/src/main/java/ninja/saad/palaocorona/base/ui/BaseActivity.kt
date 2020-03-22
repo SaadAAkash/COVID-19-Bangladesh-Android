@@ -73,7 +73,7 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
         recreate()
     }
     
-    private fun getCurrentLocale(): Locale {
+    override fun getCurrentLocale(): Locale {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             resources.configuration.locales.get(0)
         } else {

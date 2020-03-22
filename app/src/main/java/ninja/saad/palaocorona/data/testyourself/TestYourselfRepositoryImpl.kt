@@ -2,6 +2,7 @@ package ninja.saad.palaocorona.data.testyourself
 
 import io.reactivex.Completable
 import io.reactivex.Single
+import ninja.saad.palaocorona.data.testyourself.model.LocaleData
 import ninja.saad.palaocorona.data.testyourself.model.Question
 import ninja.saad.palaocorona.util.VIEW_TYPE
 import javax.inject.Inject
@@ -13,12 +14,12 @@ class TestYourselfRepositoryImpl @Inject constructor(val networkDataSource: Test
     }
     
     override fun setData(questions: MutableList<Question>): Completable {
-        val answers = HashMap<String, Any>()
+        val answers = mutableListOf<MutableList<LocaleData>>()
         questions.forEach {
             if(it.viewType != VIEW_TYPE.CHECKBOX.value) {
-                answers.put(it.title, it.selectedAnswer)
+                answers.add(mutableListOf(it.title, it.selectedAnswer))
             } else {
-                answers.put(it.title, it.isChecked)
+                answers.add(mutableListOf(it.title, LocaleData(it.isChecked.toString(), it.isChecked.toString())))
             }
         }
         return networkDataSource.setResult(answers)
