@@ -8,9 +8,11 @@ import com.smarteist.autoimageslider.SliderViewAdapter
 import kotlinx.android.synthetic.main.item_slider.view.*
 import ninja.saad.palaocorona.R
 
-class SliderAdapter : SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
+class SliderAdapter(var source: String) : SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
     
-    val items = mutableListOf<Int>(R.drawable.image_news, R.drawable.image_news, R.drawable.logo,  R.drawable.image_news)
+    val itemsDashboard = mutableListOf<Any>(R.drawable.ic_myth_slider_5, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_1)
+    val itemsQuarantine = mutableListOf<Int>(R.drawable.ic_myth_slider_1, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_5)
+    val itemsDos = mutableListOf<Int>(R.drawable.ic_myth_slider_1, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_5)
     
     override fun onCreateViewHolder(parent: ViewGroup): SliderViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_slider, parent, false)
@@ -18,11 +20,39 @@ class SliderAdapter : SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
     }
     
     override fun onBindViewHolder(viewHolder: SliderViewHolder, position: Int) {
-        Glide.with(viewHolder.sliderImage).load(items[position]).into(viewHolder.sliderImage)
+        when (source) {
+            "dashboard" -> {
+                Glide.with(viewHolder.sliderImage).load(itemsDashboard[position]).into(viewHolder.sliderImage)
+            }
+            "quarantine" -> {
+                Glide.with(viewHolder.sliderImage).load(itemsQuarantine[position]).into(viewHolder.sliderImage)
+            }
+            "dos" -> {
+                Glide.with(viewHolder.sliderImage).load(itemsDos[position]).into(viewHolder.sliderImage)
+            }
+        }
+        
+        
     }
     
     override fun getCount(): Int {
-        return items.size
+        when (source) {
+            "dashboard" -> {
+                return itemsDashboard.size
+            }
+            "quarantine" -> {
+               return itemsQuarantine.size
+            }
+            "dos" -> {
+               return itemsDos.size
+            }
+        }
+        return itemsDashboard.size
+    }
+    
+    fun addSliderToDashboard(items: MutableList<String>) {
+        this.itemsDashboard.addAll(items)
+        notifyDataSetChanged()
     }
     
     class SliderViewHolder(view: View): SliderViewAdapter.ViewHolder(view) {

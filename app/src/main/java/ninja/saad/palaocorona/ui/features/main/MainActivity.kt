@@ -1,10 +1,18 @@
 package ninja.saad.palaocorona.ui.features.main
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
+import android.os.Handler
 import android.os.PersistableBundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
@@ -13,12 +21,13 @@ import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
+import ninja.saad.palaocorona.base.ui.CustomTypefaceSpan
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
 
 class MainActivity : BaseActivity<MainViewModel>() {
     
     override val layoutId: Int = R.layout.activity_main
-    private var fragments: MutableList<Fragment> = mutableListOf()
+    private var doubleBackToExitPressedOnce: Boolean = false
     
     override fun attachBaseContext(base: Context?) {
         val nBase = LocaleChanger.configureBaseContext(base)
@@ -27,17 +36,15 @@ class MainActivity : BaseActivity<MainViewModel>() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    
-        /*val toolbar = findViewById<MaterialToolbar>(R.id.toolbar_main)
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp)
-        toolbar.setNavigationOnClickListener {
-            view -> finish()
-        }
-        toolbar.title = HtmlCompat.fromHtml(getString(R.string.app_name_top_bar), HtmlCompat.FROM_HTML_MODE_LEGACY)*/
         
-        supportFragmentManager.addOnBackStackChangedListener {
-            fragments = supportFragmentManager.fragments
-        }
+        val spannable = SpannableString(getString(R.string.app_name_top_bar))
+        val engFont = Typeface.create(ResourcesCompat.getFont(applicationContext, R.font.mina), Typeface.NORMAL)
+        spannable.setSpan(CustomTypefaceSpan("", engFont), 0,
+            spannable.length ?: 0, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannable.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(applicationContext, R.color.colorAccent)),
+            spannable.length -1, spannable.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        title = spannable
         
         if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction().replace(
@@ -57,5 +64,26 @@ class MainActivity : BaseActivity<MainViewModel>() {
             toggleLanguage()
         }
         return super.onOptionsItemSelected(item)
+    }
+    
+    override fun onBackPressed() {
+        
+        if(supportFragmentManager.backStackEntryCount == 0) {
+            val toast = Toast.makeText(this, getString(R.string.double_press_to_exit), Toast.LENGTH_LONG)
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed()
+                toast.cancel()
+            } else {
+                toast.show()
+            }
+            val handler = Handler()
+            handler.postDelayed({ toast.cancel() }, 790)
+            this.doubleBackToExitPressedOnce = true
+            
+            Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
+        } else {
+            super.onBackPressed()
+        }
+        
     }
 }
