@@ -48,6 +48,7 @@
     <string name="double_press_to_exit">অ্যাপ বন্ধ করতে চাইলে আবার ক্লিক করুন</string>
     <string name="form_not_completed">অনুগ্রহ করে সব প্রশ্নের উত্তর দিন</string>
     <string name="choose_an_option">অপশন নির্বাচন করুন</string>
+    <string name="previous">পূর্ববর্তী</string>
     <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>
     <string name="phone_number_invalid">ফোণ নাম্বারটি সঠিক নয়। অনুগ্রহ করে সঠিক ফোন নাম্বার প্রবেশ করুন।</string>
 </resources>
