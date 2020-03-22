@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import com.smarteist.autoimageslider.IndicatorAnimations
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
@@ -40,6 +41,12 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
         gujobSlider.startAutoCycle()
         gujobSlider.isAutoCycle = true
         setClickListener()
+        
+        viewModel.sliderImages.observe(viewLifecycleOwner, Observer {
+            (gujobSlider.sliderAdapter as SliderAdapter).addSliderToDashboard(it)
+        })
+        
+        viewModel.getSliderImages()
     }
     
     private fun setClickListener() {

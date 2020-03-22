@@ -10,7 +10,7 @@ import ninja.saad.palaocorona.R
 
 class SliderAdapter(var source: String) : SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
     
-    val itemsDashboard = mutableListOf<Int>(R.drawable.ic_myth_slider_5, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_1)
+    val itemsDashboard = mutableListOf<Any>(R.drawable.ic_myth_slider_5, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_1)
     val itemsQuarantine = mutableListOf<Int>(R.drawable.ic_myth_slider_1, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_5)
     val itemsDos = mutableListOf<Int>(R.drawable.ic_myth_slider_1, R.drawable.ic_myth_slider_2, R.drawable.ic_myth_slider_3, R.drawable.ic_myth_slider_4, R.drawable.ic_myth_slider_5)
     
@@ -48,6 +48,11 @@ class SliderAdapter(var source: String) : SliderViewAdapter<SliderAdapter.Slider
             }
         }
         return itemsDashboard.size
+    }
+    
+    fun addSliderToDashboard(items: MutableList<String>) {
+        this.itemsDashboard.addAll(items)
+        notifyDataSetChanged()
     }
     
     class SliderViewHolder(view: View): SliderViewAdapter.ViewHolder(view) {
