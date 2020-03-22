@@ -46,6 +46,7 @@
     <string name="choose_an_option">Choose an option</string>
     <string name="form_not_completed">Please give answer of all questions</string>
     <string name="give_otp_code">Please check your phone and give your verification code below</string>
+    <string name="double_press_to_exit">Press again to exit</string>
 
 
 </resources>
