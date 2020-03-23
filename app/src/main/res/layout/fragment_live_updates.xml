@@ -176,13 +176,29 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <ninja.saad.palaocorona.base.ui.AppTextView
+        android:id="@+id/tv_live_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_18ssp"
+        android:layout_margin="@dimen/_2sdp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:text="@string/feature_07_live_updates"
+        app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout_live_updates"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_live_updates"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/_2sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
+        app:layout_constraintTop_toBottomOf="@+id/tv_live_update"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">

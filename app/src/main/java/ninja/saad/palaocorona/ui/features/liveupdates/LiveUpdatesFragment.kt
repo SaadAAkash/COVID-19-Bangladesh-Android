@@ -22,7 +22,6 @@ class LiveUpdatesFragment : BaseFragment<AboutCovidViewModel>()  {
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    
         initWebView()
         setWebClient()
         handlePullToRefresh()
