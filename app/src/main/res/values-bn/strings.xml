@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">পালাও করোনা</string>
-    <string name="test">পরীক্ষা</string>
-    <string name="news">খবর</string>
-    <string name="dos">করনীয়</string>
-    <string name="quarantine">কোয়ারেন্টাইন</string>
-    <string name="faq">প্রশ্ন</string>
-    <string name="message">মেসেজ</string>
-    <string name="lang">English</string>
+    <string name="app_name_top_bar">পালাও করোনা !</string>
+
+    <string name="feature_01_about_corona">করোনা ভাইরাস</string>
+    <string name="feature_02_test">পরীক্ষা</string>
+    <string name="feature_03_news">সাম্প্রতিক খবর</string>
+    <string name="feature_04_dos">উচিত-অনুচিত</string>
+    <string name="feature_05_quarantine">কোয়ারান্টাইন কি</string>
+    <string name="feature_06_faq">প্রশ্ন-উত্তর</string>
+    <string name="feature_07_discussion">সদ্যপ্রাপ্ত ও অন্যান্য</string>
+    <string name="feature_08_emergency">জরুরি</string>
+
+    <string name="okay">আচ্ছা</string>
+    <string name="lang">En</string>
+    <string name="next">পরবর্তী</string>
+
+    <string name="enter_your_phone_number">আপনার ফোন নম্বরটি প্রয়োজন</string>
+    <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
+    <string name="mobile_number">মোবাইল নম্বর</string>
+    <string name="login">লগইন</string>
+    <string name="faq_q_1">COVID-19 এর প্রাথমিক লক্ষণগুলো কি কি?</string>
+    <string name="faq_q_2">কখন ডাক্তার এর কাছে যেতে হবে?</string>
+    <string name="faq_q_3">কোন অবস্থায় বুঝবেন COVID-19 এর সঙ্কটাপন্ন অবস্থায় আছেন?</string>
+    <string name="faq_q_4">করোনাভাইরাস কি ছোঁয়াচে?</string>
+    <string name="faq_q_5">কোয়ারেন্টাইন কি?</string>
+    <string name="faq_q_6">আমার কি মাস্ক পরা উচিৎ?</string>
+    <string name="faq_q_7">সাবান, হ্যান্ড ওয়াশ নাকি হ্যান্ড স্যানিটাইজার কোনটা ব্যবহার করা উচিৎ?</string>
+    <string name="faq_a_1">WHO এর মতে, করোনাভাইরাস দ্বারা  আক্রান্ত হওয়ার ২-১৪ দিনের মধ্যে COVID-19 এর প্রাথমিক লক্ষণগুলো দেখা যেতে পারে।  যেগুলো হলঃ
+                            · জ্বর\n
+                            · কাশি\n
+                            · শ্বাসকষ্ট\n
+                            · ক্লান্তি\n
+                            · গায়ে ব্যথা\n
+                            · সর্দি\n
+    </string>
+    <string name="faq_a_2">আপনার যদি COVID-19 এর প্রাথমিক লক্ষণগুলো দেখা দেয় অথবা COVID-19 এ আক্রান্ত রোগীর সংস্পর্শে এসে থাকেন তাহলে দেরি না করে অতি দ্রুত ডাক্তারের শরণাপন্ন হোন।</string>
+    <string name="faq_a_3">করোনাভাইরাসে আক্রান্ত হবার পর আপনি যদি সঠিক চিকিৎসা না নেন তাহলে আপনি এর সঙ্কটাপন্ন অবস্থায় পৌঁছে যেতে পারেন। এক্ষেত্রে আপনার মুখমণ্ডল এবং চোখ নীল হয়ে যেতে পারে, বুকে ব্যথা বাড়তে পারে এবং শ্বাসকষ্ট বাড়তে পারে।</string>
+    <string name="faq_a_4">হ্যাঁ, করোনাভাইরাস ছোঁয়াচে তাই করোনাভাইরাসে আক্রান্ত কোন ব্যক্তির সংস্পর্শ এড়িয়ে চলা আবশ্যক।</string>
+    <string name="faq_a_5">কোয়ারেন্টাইন একটি বিচ্ছিন্ন সামাজিক অবস্থা। এতে ভয় পাবার কিছু নেই। COVID-19 এর প্রাথমিক লক্ষণ দেখা দিলে জন-সমাগম থেকে দূরে থাকাই এর প্রধান লক্ষ্য।</string>
+    <string name="faq_a_6">আপনি যদি COVID-19 এ আক্রান্ত হয়ে থাকেন কিংবা আক্রান্ত কোন রোগীকে চিকিৎসা দেওয়ার সাথে সম্পৃক্ত থাকেন তাহলে অবশ্যই আপনার মাস্ক পরা উচিৎ।</string>
+    <string name="faq_a_7">এন্টি-সেপটিক সাবান কিংবা হ্যান্ড ওয়াশ যেকোনো একটির সাহায্যে ২০ সেকেন্ড সময় নিয়ে ভালোভাবে হাত ধুতে হবে। যদি এর কোনটিই না থাকে তাহলে হ্যান্ড স্যানিটাইজার যেটিতে ৬০% অ্যালকোহল আছে সেটির সাহায্যে হাত পরিস্কার করতে হবে।</string>
+
+    <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
+
+    <string name="verify">নিশ্চিত করুন</string>
+    <string name="name">নাম</string>
+    <string name="personal_phone_optional">বাসার ফোন নম্বর (ঐচ্ছিক)</string>
+    <string name="gender">লিঙ্গ</string>
+    <string name="age">বয়স</string>
+    <string name="start_taking_test">পরীক্ষা শুরু করুন</string>
+    <string name="double_press_to_exit">অ্যাপ বন্ধ করতে চাইলে আবার ক্লিক করুন</string>
+    <string name="form_not_completed">অনুগ্রহ করে সব প্রশ্নের উত্তর দিন</string>
+    <string name="choose_an_option">অপশন নির্বাচন করুন</string>
+    <string name="previous">পূর্ববর্তী</string>
+    <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>
+    <string name="phone_number_invalid">ফোণ নাম্বারটি সঠিক নয়। অনুগ্রহ করে সঠিক ফোন নাম্বার প্রবেশ করুন।</string>
 </resources>

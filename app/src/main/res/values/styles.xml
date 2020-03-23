@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleTextStyle">
+        <item name="fontFamily">@font/mina</item>
+        <item name="android:fontFamily">@font/mina</item>
+    </style>
+
+    <style name="BanglaBodyTextStyle">
+        <item name="fontFamily">@font/noto_sans</item>
+        <item name="android:fontFamily">@font/noto_sans</item>
+    </style>
+
+    <style name="EnglishBodyTextStyle">
+        <item name="fontFamily">@font/popins</item>
+        <item name="android:fontFamily">@font/popins</item>
+    </style>
+
 </resources>
