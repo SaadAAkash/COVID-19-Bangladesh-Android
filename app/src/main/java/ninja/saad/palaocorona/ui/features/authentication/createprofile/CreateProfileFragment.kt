@@ -27,14 +27,14 @@ class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
         
         btnCreateProfile.onClick {
             viewModel.saveProfile(etName.text.toString(), etAge.text.toString(),
-                genders.indexOf(etGender.text.toString()), etPhoneNumber.text.toString())
+                etGender.text.toString(), etPhoneNumber.text.toString())
         }
     
         viewModel.noInternetConnection.observe(viewLifecycleOwner, Observer {
             showNoInternetConnectionDialog(object: NoInternetConnectionDialog.NoInternetDialogCallback {
                 override fun retry() {
                     viewModel.saveProfile(etName.text.toString(), etAge.text.toString(),
-                        genders.indexOf(etGender.text.toString()), etPhoneNumber.text.toString())
+                        etGender.text.toString(), etPhoneNumber.text.toString())
                 }
             })
         })
