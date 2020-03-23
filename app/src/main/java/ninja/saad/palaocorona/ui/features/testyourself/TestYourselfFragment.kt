@@ -99,10 +99,13 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             childIds.add(id)
             it.id = id
         }
-        mView.findViewById<MaterialTextView>(childIds[0]).text = question.title
+        mView.findViewById<MaterialTextView>(childIds[0]).text =
+            if(getCurrentLocale().language == "en") question.title.englishText
+            else question.title.banglaText
         question.texts.forEach {
             val radio = RadioButton(context).apply {
-                text = it
+                text = if(getCurrentLocale().language == "en") it.englishText
+                else it.banglaText
                 id = Random.nextInt()
             }
             val radioGroup = mView.findViewById<RadioGroup>(childIds[1])
@@ -127,10 +130,12 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             childIds.add(id)
             it.id = id
         }
-        mView.findViewById<MaterialTextView>(childIds[0]).text = question.title
+        mView.findViewById<MaterialTextView>(childIds[0]).text = if(getCurrentLocale().language == "en") question.title.englishText
+            else question.title.banglaText
         question.texts.forEach {
             val chip = Chip(requireContext()).apply {
-                text = it
+                text = if(getCurrentLocale().language == "en") it.englishText
+                else it.banglaText
                 id = Random.nextInt()
                 isCheckable = true
                 textColorResource = R.color.white
@@ -163,7 +168,8 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             childIds.add(id)
             it.id = id
         }
-        mView.findViewById<MaterialTextView>(childIds[0]).text = question.title
+        mView.findViewById<MaterialTextView>(childIds[0]).text = if(getCurrentLocale().language == "en") question.title.englishText
+            else question.title.banglaText
     
         mView.findViewById<RecyclerView>(childIds[1]).layoutManager =
             GridLayoutManager(requireContext(), max(question.spanCount, 1))
@@ -174,7 +180,7 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                         viewModel.setAnswer(question, position)
                     }
                 }).apply {
-                    setItems(texts = question.texts, images = question.images)
+                    setItems(texts = question.texts, images = question.images, currentLocale = this@TestYourselfFragment.getCurrentLocale())
                 }
         
         viewPool.addView(mView)
@@ -200,7 +206,8 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             childIds.add(id)
             it.id = id
         }
-        mView.findViewById<MaterialTextView>(childIds[0]).text = question.title
+        mView.findViewById<MaterialTextView>(childIds[0]).text = if(getCurrentLocale().language == "en") question.title.englishText
+            else question.title.banglaText
         val actv = mView.findViewById<TextInputLayout>(childIds[1]).findViewById<AutoCompleteTextView>(childIds[3])
         if(question.hint.isNotEmpty()) mView.findViewById<TextInputLayout>(childIds[1]).hint = question.hint
         val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, question.texts)
@@ -223,7 +230,8 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             childIds.add(id)
             it.id = id
         }
-        mView.findViewById<AppCompatCheckBox>(childIds[0]).text = question.title
+        mView.findViewById<AppCompatCheckBox>(childIds[0]).text = if(getCurrentLocale().language == "en") question.title.englishText
+            else question.title.banglaText
         mView.findViewById<AppCompatCheckBox>(childIds[0]).setOnCheckedChangeListener { _, isChecked ->
             viewModel.setChecked(question, isChecked)
         }
@@ -246,7 +254,8 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             childIds.add(id)
             it.id = id
         }
-        mView.findViewById<MaterialTextView>(childIds[0]).text = question.title
+        mView.findViewById<MaterialTextView>(childIds[0]).text = if(getCurrentLocale().language == "en") question.title.englishText
+            else question.title.banglaText
         val et = mView.findViewById<TextInputLayout>(childIds[1]).findViewById<TextInputEditText>(childIds[3])
         if(question.hint.isNotEmpty()) mView.findViewById<TextInputLayout>(childIds[1]).hint = question.hint
         et.addTextChangedListener(object: TextWatcher {

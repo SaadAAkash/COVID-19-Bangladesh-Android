@@ -15,15 +15,18 @@ import com.google.android.material.card.MaterialCardView
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_button_option.view.*
 import ninja.saad.palaocorona.R
+import ninja.saad.palaocorona.data.testyourself.model.LocaleData
 import org.jetbrains.anko.dimen
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import java.util.*
 import kotlin.math.max
 
 class ButtonTypeRadioAdapter(private val callback: ButtonTypeRadioAdapterCallback): RecyclerView.Adapter<ButtonTypeRadioAdapter.ButtonTypeRadioViewHolder>() {
     
-    private var texts = mutableListOf<String>()
+    private var texts = mutableListOf<LocaleData>()
     private var images = mutableListOf<String>()
     private var currentSelectedItem = -1
+    private var language = "en"
     private lateinit var parent: ViewGroup
     
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonTypeRadioViewHolder {
@@ -48,9 +51,9 @@ class ButtonTypeRadioAdapter(private val callback: ButtonTypeRadioAdapterCallbac
         }
         
         if(position < texts.size && images.size == 0) {
-            holder.itemView.tvOption.text = texts[position]
+            holder.itemView.tvOption.text = if(language == "en") texts[position].englishText else texts[position].banglaText
         } else if( position < texts.size && images.size == texts.size) {
-            holder.itemView.tvOption.text = texts[position]
+            holder.itemView.tvOption.text = if(language == "en") texts[position].englishText else texts[position].banglaText
             Glide.with(holder.itemView.context)
                 .load(images[position])
                 .addListener(object: RequestListener<Drawable> {
@@ -105,10 +108,12 @@ class ButtonTypeRadioAdapter(private val callback: ButtonTypeRadioAdapterCallbac
         }
     }
     
-    fun setItems(texts: MutableList<String> = mutableListOf(),
-                 images: MutableList<String> = mutableListOf()) {
+    fun setItems(texts: MutableList<LocaleData> = mutableListOf(),
+                 images: MutableList<String> = mutableListOf(),
+                 currentLocale: Locale) {
         this.texts = texts
         this.images = images
+        this.language = currentLocale.language
         notifyDataSetChanged()
     }
     

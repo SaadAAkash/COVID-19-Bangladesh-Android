@@ -63,6 +63,10 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         communicator.startActivity(clz, bundle)
     }
     
+    fun getCurrentLocale(): Locale {
+        return communicator.getCurrentLocale()
+    }
+    
     private fun getViewModelClass(): Class<ViewModel> {
         val type =
             (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0]   // index of 0 means first argument of Base class param
