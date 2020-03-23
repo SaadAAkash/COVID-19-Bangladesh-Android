@@ -7,10 +7,7 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import ninja.saad.palaocorona.base.BaseApplication
-import ninja.saad.palaocorona.di.modules.ActivityModule
-import ninja.saad.palaocorona.di.modules.ApplicationModule
-import ninja.saad.palaocorona.di.modules.FragmentModule
-import ninja.saad.palaocorona.di.modules.ViewModelModule
+import ninja.saad.palaocorona.di.modules.*
 import javax.inject.Singleton
 
 /**
@@ -23,7 +20,8 @@ import javax.inject.Singleton
         ApplicationModule::class,
         ActivityModule::class,
         ViewModelModule::class,
-        FragmentModule::class
+        FragmentModule::class,
+        RepositoryModule::class
     ]
 )
 

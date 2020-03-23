@@ -13,7 +13,7 @@ import kotlin.Exception
 
 object NetworkFactory {
 
-    private const val BASE_URL = "BuildConfig.BASE_URL"
+    private const val BASE_URL = BuildConfig.BASE_URL
     private const val TIME_OUT = 60L
 
     fun <Service> createService(appContext: Context, serviceClass: Class<Service>): Service {

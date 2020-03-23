@@ -12,15 +12,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name="ninja.saad.palaocorona.ui.features.main.MainActivity"
-            android:configChanges="locale">
+            android:configChanges="locale"
+            android:alwaysRetainTaskState="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.features.authentication.AuthenticationActivity"
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>
