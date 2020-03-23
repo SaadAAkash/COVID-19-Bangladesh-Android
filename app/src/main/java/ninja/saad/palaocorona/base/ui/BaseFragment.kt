@@ -58,6 +58,11 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         })
     }
     
+    override fun onResume() {
+        super.onResume()
+        communicator.onFragmentResume()
+    }
+    
     fun toggleLanguage() {
         communicator.toggleLanguage()
     }

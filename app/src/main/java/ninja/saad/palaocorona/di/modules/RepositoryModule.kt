@@ -8,6 +8,8 @@ import ninja.saad.palaocorona.data.dashboard.DashboardRepository
 import ninja.saad.palaocorona.data.dashboard.DashboardRepositoryImpl
 import ninja.saad.palaocorona.data.faq.FaqRepository
 import ninja.saad.palaocorona.data.faq.FaqRepositoryImpl
+import ninja.saad.palaocorona.data.main.MainRepository
+import ninja.saad.palaocorona.data.main.MainRepositoryImpl
 import ninja.saad.palaocorona.data.news.NewsRepository
 import ninja.saad.palaocorona.data.news.NewsRepositoryImpl
 import ninja.saad.palaocorona.data.testyourself.TestYourselfRepository
@@ -15,6 +17,9 @@ import ninja.saad.palaocorona.data.testyourself.TestYourselfRepositoryImpl
 
 @Module
 abstract class RepositoryModule {
+    
+    @Binds
+    abstract fun provideMainRepository(repo: MainRepositoryImpl): MainRepository
     
     @Binds
     abstract fun provideFaqRepository(repo: FaqRepositoryImpl): FaqRepository

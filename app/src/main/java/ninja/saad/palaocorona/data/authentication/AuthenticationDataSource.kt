@@ -28,6 +28,10 @@ class AuthenticationDataSource @Inject constructor() {
         const val USERS = "users"
     }
     
+    fun isUserLoggedIn(): Boolean {
+        return !FirebaseAuth.getInstance().uid.isNullOrEmpty()
+    }
+    
     fun sendOtp(phoneNumber: String): Single<String> {
         FirebaseAuth.getInstance().signOut()
         return Single.create<String>(object: SingleOnSubscribe<String> {
