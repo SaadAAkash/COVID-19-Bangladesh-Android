@@ -17,15 +17,17 @@ class DashboardViewModel @Inject constructor(val repository: DashboardRepository
     }
     
     fun getSliderImages() {
-        val disposable = repository.getSliderImages()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                Logger.d(it)
-                sliderImages.value = it
-            }, {
-                it.printStackTrace()
-            })
-        compositeDisposable.add(disposable)
+        if(sliderImages.value == null) {
+            val disposable = repository.getSliderImages()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    Logger.d(it)
+                    sliderImages.value = it
+                }, {
+                    it.printStackTrace()
+                })
+            compositeDisposable.add(disposable)
+        }
     }
 }

@@ -16,7 +16,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.franmontiel.localechanger.LocaleChanger
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
@@ -28,11 +27,6 @@ class MainActivity : BaseActivity<MainViewModel>() {
     
     override val layoutId: Int = R.layout.activity_main
     private var doubleBackToExitPressedOnce: Boolean = false
-    
-    override fun attachBaseContext(base: Context?) {
-        val nBase = LocaleChanger.configureBaseContext(base)
-        super.attachBaseContext(nBase)
-    }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

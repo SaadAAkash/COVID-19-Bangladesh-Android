@@ -5,4 +5,5 @@ import ninja.saad.palaocorona.data.authentication.model.User
 interface AppPreference {
     
     var user: User
+    var language: String
 }
