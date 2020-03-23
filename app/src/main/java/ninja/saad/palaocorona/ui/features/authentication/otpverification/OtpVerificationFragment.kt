@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_otp_verification.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.ui.dialogs.NoInternetConnectionDialog
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import ninja.saad.palaocorona.ui.features.authentication.createprofile.CreateProfileFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -26,6 +27,14 @@ class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
         btnVerify.onClick {
             viewModel.verifyOtp(arguments?.getString(VERIFICATION_ID), etOtp.text.toString())
         }
+    
+        viewModel.noInternetConnection.observe(viewLifecycleOwner, Observer {
+            showNoInternetConnectionDialog(object: NoInternetConnectionDialog.NoInternetDialogCallback {
+                override fun retry() {
+                    viewModel.verifyOtp(arguments?.getString(VERIFICATION_ID), etOtp.text.toString())
+                }
+            })
+        })
         
         viewModel.userExists.observe(viewLifecycleOwner, Observer {
             if(!it) {

@@ -3,6 +3,7 @@ package ninja.saad.palaocorona.data.authentication
 import androidx.arch.core.executor.TaskExecutor
 import com.google.android.gms.tasks.TaskExecutors
 import com.google.firebase.FirebaseException
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
@@ -43,6 +44,9 @@ class AuthenticationDataSource @Inject constructor() {
             
                         override fun onVerificationFailed(e: FirebaseException) {
                             e.printStackTrace()
+                            if(!emitter.isDisposed) {
+                                emitter.onError(e)
+                            }
                             executor.shutdown()
                         }
             
@@ -70,7 +74,11 @@ class AuthenticationDataSource @Inject constructor() {
                     if(it.isSuccessful) {
                         emitter.onSuccess(it.result!!.user!!.uid)
                     } else {
-                        emitter.onError(Throwable("Cannot verify OTP"))
+                        if(it.exception != null && it.exception is FirebaseNetworkException) {
+                            emitter.onError(it.exception!!)
+                        } else {
+                            emitter.onError(Throwable("Cannot verify OTP"))
+                        }
                     }
                 }.addOnFailureListener {
                     if(!emitter.isDisposed) {
