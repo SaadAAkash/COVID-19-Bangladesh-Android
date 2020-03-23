@@ -10,5 +10,7 @@ interface AuthenticationRepository {
     
     fun sendOtp(phoneNumber: String): Single<String>
     fun verifyOtp(verificationId: String, otp: String): Maybe<User>
-    fun saveProfile(name: String, age: String, gender: Int, phoneNumber: String): Completable
+    fun saveProfile(name: String, age: String, gender: String, phoneNumber: String): Completable
+    fun getUser(): User
+    fun logout()
 }
