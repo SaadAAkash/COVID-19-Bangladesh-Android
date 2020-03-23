@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_create_profle.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.ui.dialogs.NoInternetConnectionDialog
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
@@ -28,6 +29,15 @@ class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
             viewModel.saveProfile(etName.text.toString(), etAge.text.toString(),
                 genders.indexOf(etGender.text.toString()), etPhoneNumber.text.toString())
         }
+    
+        viewModel.noInternetConnection.observe(viewLifecycleOwner, Observer {
+            showNoInternetConnectionDialog(object: NoInternetConnectionDialog.NoInternetDialogCallback {
+                override fun retry() {
+                    viewModel.saveProfile(etName.text.toString(), etAge.text.toString(),
+                        genders.indexOf(etGender.text.toString()), etPhoneNumber.text.toString())
+                }
+            })
+        })
         
         viewModel.profileSaved.observe(viewLifecycleOwner, Observer {
             if(it) {

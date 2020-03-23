@@ -1,9 +1,11 @@
 package ninja.saad.palaocorona.ui.features.authentication
 
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.FirebaseNetworkException
 import com.orhanobut.logger.Logger
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import ninja.saad.palaocorona.base.data.network.RetrofitException
 import ninja.saad.palaocorona.base.ui.BaseViewModel
 import ninja.saad.palaocorona.data.authentication.AuthenticationRepository
 import ninja.saad.palaocorona.util.SingleLiveEvent
@@ -16,6 +18,7 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
     var profileSaved = MutableLiveData<Boolean>()
     var phoneNumberInvalid = SingleLiveEvent<Boolean>()
     var otpInvalid = SingleLiveEvent<Boolean>()
+    var noInternetConnection = MutableLiveData<Boolean>()
     
     fun sendOtp(text: String) {
         if(text.isNotEmpty() && text.length == 11 && text.startsWith("01")) {
@@ -27,6 +30,9 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                     Logger.d(it)
                     verificationId.value = it
                 }, {
+                    if(it is FirebaseNetworkException) {
+                        noInternetConnection.value = true
+                    }
                     it.printStackTrace()
                 })
             compositeDisposable.add(disposable)
@@ -44,7 +50,9 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                     Logger.d(it)
                     userExists.value = it.name.isNotEmpty()
                 }, {
-                    if(!it.localizedMessage.contains("otp", true)) {
+                    if(it is FirebaseNetworkException) {
+                        noInternetConnection.value = true
+                    } else if(!it.localizedMessage.contains("otp", true)) {
                         userExists.value = false
                     }
                     it.printStackTrace()
@@ -62,6 +70,9 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
             .subscribe({
                 profileSaved.value = true
             }, {
+                if(it is FirebaseNetworkException) {
+                    noInternetConnection.value = true
+                }
                 profileSaved.value = false
                 it.printStackTrace()
             })
