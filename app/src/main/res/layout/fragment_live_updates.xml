@@ -176,6 +176,19 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/view_loader"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
+        app:layout_constraintBottom_toTopOf="@+id/layout_live_updates"
+        app:layout_constraintEnd_toStartOf="@+id/tv_live_update"
+        app:lottie_fileName="loader.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_speed="2.0"/>
+
     <ninja.saad.palaocorona.base.ui.AppTextView
         android:id="@+id/tv_live_update"
         android:layout_width="wrap_content"
