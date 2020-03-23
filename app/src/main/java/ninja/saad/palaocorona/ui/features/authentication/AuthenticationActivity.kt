@@ -11,7 +11,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.franmontiel.localechanger.LocaleChanger
 import kotlinx.android.synthetic.main.activity_authentication.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
@@ -22,11 +21,6 @@ class AuthenticationActivity : BaseActivity<AuthenticationViewModel>() {
     
     override val layoutId: Int
         get() = R.layout.activity_authentication
-    
-    override fun attachBaseContext(base: Context?) {
-        val nBase = LocaleChanger.configureBaseContext(base)
-        super.attachBaseContext(nBase)
-    }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -5,19 +5,19 @@ import ninja.saad.palaocorona.util.TYPE
 import ninja.saad.palaocorona.util.VIEW_TYPE
 
 data class Question(
-
+	
 	@SerializedName("images")
 	val images: MutableList<String> = mutableListOf(),
-
+	
 	@SerializedName("texts")
-	val texts: MutableList<String> = mutableListOf(),
-
+	val texts: MutableList<LocaleData> = mutableListOf(),
+	
 	@SerializedName("view_type")
 	val viewType: String = "",
-
+	
 	@SerializedName("title")
-	val title: String = "",
-
+	val title: LocaleData = LocaleData(),
+	
 	@SerializedName("type")
 	val type: String = "",
 	
@@ -36,6 +36,11 @@ data class Question(
 ) {
 	
 	var selectedAnswerPosition = 0
-	var selectedAnswer: String = ""
+	var selectedAnswer: LocaleData = LocaleData()
 	var isChecked = false
 }
+
+data class LocaleData(
+	@SerializedName("en") var englishText: String = "",
+	@SerializedName("bn") var banglaText: String = ""
+)

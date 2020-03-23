@@ -5,6 +5,7 @@ import com.google.firebase.database.FirebaseDatabase
 import io.reactivex.Completable
 import io.reactivex.Single
 import ninja.saad.palaocorona.base.data.network.onResponse
+import ninja.saad.palaocorona.data.testyourself.model.LocaleData
 import ninja.saad.palaocorona.data.testyourself.model.Question
 import java.util.*
 import javax.inject.Inject
@@ -24,7 +25,7 @@ class TestYourselfDataSource @Inject constructor(private val apiService: TestYou
             }
     }
     
-    fun setResult(answer: HashMap<String, Any>): Completable {
+    fun setResult(answer: MutableList<MutableList<LocaleData>>): Completable {
         return Completable.create { emitter ->
             FirebaseDatabase.getInstance()
                 .getReference(TESTS)
