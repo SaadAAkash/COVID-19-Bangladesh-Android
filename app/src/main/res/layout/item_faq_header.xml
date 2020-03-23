@@ -16,5 +16,6 @@
         android:paddingBottom="@dimen/_12sdp"
         android:textColor="@color/grey_900"
         android:textSize="@dimen/_13ssp"
-        tools:text="Faq Header" />
+        tools:text="Faq Header"
+        android:fontFamily="@font/noto_sans"/>
 </LinearLayout>

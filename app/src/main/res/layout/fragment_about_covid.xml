@@ -28,7 +28,7 @@
                 android:orientation="vertical"
                 android:padding="@dimen/_15sdp">
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="করোনা ভাইরাস সংক্রান্ত গুরুত্বপূর্ণ কিছু টিপস!"
@@ -36,7 +36,7 @@
                     android:textColor="@color/grey_900"
                     android:textStyle="bold" />
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
@@ -52,7 +52,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:background="@color/grey_900" />
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lineSpacingExtra="@dimen/_10sdp"
@@ -67,7 +67,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/image_news" />-->
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -77,7 +77,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/grey_900" />
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
@@ -86,7 +86,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_700" />
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
@@ -96,7 +96,7 @@
                     android:textColor="@color/grey_700"
                     android:textStyle="bold" />
 
-                <TextView
+                <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
