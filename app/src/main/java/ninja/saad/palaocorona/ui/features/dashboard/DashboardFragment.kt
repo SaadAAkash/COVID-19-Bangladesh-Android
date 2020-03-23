@@ -90,7 +90,7 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
         
         }
         btnEmergency.onClick {
-            
+        
         }
         
     }
