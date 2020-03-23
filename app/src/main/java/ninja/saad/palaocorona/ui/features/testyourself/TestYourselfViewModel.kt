@@ -6,6 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ninja.saad.palaocorona.base.ui.BaseViewModel
 import ninja.saad.palaocorona.data.testyourself.TestYourselfRepository
+import ninja.saad.palaocorona.data.testyourself.model.LocaleData
 import ninja.saad.palaocorona.data.testyourself.model.Question
 import ninja.saad.palaocorona.util.SingleLiveEvent
 import java.text.FieldPosition
@@ -38,7 +39,7 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
         
     }
     
-    fun setAnswer(question: Question, answer: String) {
+    fun setAnswer(question: Question, answer: LocaleData) {
         allQuestionnaire[allQuestionnaire.indexOf(question)] = question.apply {
             val position = texts.indexOf(answer)
             selectedAnswer = texts[position]
@@ -62,14 +63,14 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
     
     fun setEditableAnswer(question: Question, text: String) {
         allQuestionnaire[allQuestionnaire.indexOf(question)] = question.apply {
-            selectedAnswer = text
+            selectedAnswer = LocaleData(text)
         }
     }
     
     fun setResult() {
         var notCompleted = false
         allQuestionnaire.forEach {
-            if(it.selectedAnswer.isNullOrEmpty()) notCompleted = true
+            if(it.selectedAnswer.englishText.isEmpty()) notCompleted = true
         }
         
         if(!notCompleted) {
