@@ -23,6 +23,6 @@ class NewsFragment: BaseFragment<NewsViewModel>()  {
             (rvNews.adapter as NewsAdapter).setItems(it)
         })
         
-        //viewModel.getNews()
+        viewModel.getNews(getCurrentLocale().language, 0)
     }
 }

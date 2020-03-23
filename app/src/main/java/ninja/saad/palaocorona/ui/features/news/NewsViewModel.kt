@@ -4,15 +4,19 @@ import androidx.lifecycle.MutableLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ninja.saad.palaocorona.base.ui.BaseViewModel
-import ninja.saad.palaocorona.data.news.News
+import ninja.saad.palaocorona.data.news.NewsRepository
+import ninja.saad.palaocorona.data.news.model.News
 import javax.inject.Inject
 
-class NewsViewModel @Inject constructor(): BaseViewModel() {
+class NewsViewModel @Inject constructor(private val newsRepository: NewsRepository): BaseViewModel() {
+    fun getNews(currentLanguage: String) {
+    
+    }
     
     var news = MutableLiveData<MutableList<News>>()
     
-    /*fun getNews() {
-        val disposable = newsRepo.getNews()
+    fun getNews(language: String, visibleItemCount: Int) {
+        val disposable = newsRepository.getNews(language, (visibleItemCount / 10) + 1)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -21,5 +25,5 @@ class NewsViewModel @Inject constructor(): BaseViewModel() {
                 it.printStackTrace()
             })
         compositeDisposable.add(disposable)
-    }*/
+    }
 }

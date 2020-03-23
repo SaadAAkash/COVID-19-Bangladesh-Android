@@ -16,7 +16,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.franmontiel.localechanger.LocaleChanger
+import androidx.lifecycle.Observer
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
@@ -28,11 +28,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
     
     override val layoutId: Int = R.layout.activity_main
     private var doubleBackToExitPressedOnce: Boolean = false
-    
-    override fun attachBaseContext(base: Context?) {
-        val nBase = LocaleChanger.configureBaseContext(base)
-        super.attachBaseContext(nBase)
-    }
+    private var isLoggedIn = false
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +48,24 @@ class MainActivity : BaseActivity<MainViewModel>() {
                 DashboardFragment()
             ).commit()
         }
+        
+        viewModel.isLoggedIn.observe(this, Observer {
+            this.isLoggedIn = it
+            invalidateOptionsMenu()
+        })
+    }
+    
+    override fun onFragmentResume() {
+        super.onFragmentResume()
+        viewModel.getIsLoggedIn()
     }
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
+        if(isLoggedIn) {
+            menuInflater.inflate(R.menu.main_menu_logged_in, menu)
+        } else {
+            menuInflater.inflate(R.menu.main_menu, menu)
+        }
         return true
     }
     

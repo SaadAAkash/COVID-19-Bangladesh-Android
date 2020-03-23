@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ivNoInternetConnection"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        app:cardCornerRadius="@dimen/_50sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"/>
+
+    <ninja.saad.palaocorona.base.ui.AppTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNoInternetConnection"
+        android:text="@string/no_internet_connection"
+        app:layout_constraintTop_toBottomOf="@id/ivNoInternetConnection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@color/white" />
+
+    <ninja.saad.palaocorona.base.ui.AppTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/tvNoInternetConnection"
+        android:layout_margin="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="@string/no_internet_connection_message"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRetry"
+        app:backgroundTint="@color/colorAccent"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/retry"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

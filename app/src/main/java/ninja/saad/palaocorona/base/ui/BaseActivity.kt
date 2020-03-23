@@ -1,5 +1,6 @@
 package ninja.saad.palaocorona.base.ui
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
@@ -7,9 +8,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
-import com.franmontiel.localechanger.LocaleChanger
 import com.orhanobut.logger.Logger
 import dagger.android.support.DaggerAppCompatActivity
+import ninja.saad.palaocorona.base.BaseApplication
 import org.jetbrains.anko.toast
 import java.lang.reflect.ParameterizedType
 import java.util.*
@@ -22,6 +23,10 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
     lateinit var factory: ViewModelProvider.Factory
     protected lateinit var viewModel: ViewModel
     abstract val layoutId: Int
+    
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(BaseApplication.localeManager.setLocale(base))
+    }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,19 +79,23 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
         val locale = getCurrentLocale()
         Logger.d(locale.language)
         if(locale.language == "bn") {
-            LocaleChanger.setLocale(Locale("en"))
+            BaseApplication.localeManager.setNewLocale(this, "en")
         } else {
-            LocaleChanger.setLocale(Locale("bn"))
+            BaseApplication.localeManager.setNewLocale(this, "bn")
         }
         recreate()
     }
     
-    private fun getCurrentLocale(): Locale {
+    override fun getCurrentLocale(): Locale {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             resources.configuration.locales.get(0)
         } else {
             resources.configuration.locale
         }
+    }
+    
+    override fun onFragmentResume() {
+    
     }
     
     private fun getViewModelClass(): Class<ViewModel> {
