@@ -29,10 +29,21 @@ class AuthenticationRepositoryImpl @Inject constructor(
     override fun saveProfile(
         name: String,
         age: String,
-        gender: Int,
+        gender: String,
         phoneNumber: String
     ): Completable {
-        val user = User(name, age, gender.toLong(), phoneNumber)
+        val user = User(name, age, gender, phoneNumber)
         return authenticationDataSource.saveProfile(user)
+            .doOnComplete {
+                preference.user = user
+            }
+    }
+    
+    override fun getUser(): User {
+        return preference.user
+    }
+    
+    override fun logout() {
+        authenticationDataSource.logout()
     }
 }

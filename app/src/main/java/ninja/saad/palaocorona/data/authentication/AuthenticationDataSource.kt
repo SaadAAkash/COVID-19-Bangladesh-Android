@@ -142,4 +142,8 @@ class AuthenticationDataSource @Inject constructor() {
             }
         }
     }
+    
+    fun logout() {
+        FirebaseAuth.getInstance().signOut()
+    }
 }
