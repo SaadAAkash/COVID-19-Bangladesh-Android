@@ -86,6 +86,13 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
                 ?.addToBackStack(null)
                 ?.commit()
         }
+        btnLiveUpdates.onClick {
+        
+        }
+        btnEmergency.onClick {
+            
+        }
+        
     }
     
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
