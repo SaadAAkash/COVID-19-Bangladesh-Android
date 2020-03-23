@@ -181,7 +181,7 @@
         app:strokeColor="@color/white"
         app:cardPreventCornerOverlap="false"
         app:cardBackgroundColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnDiscussion"
+        app:layout_constraintBottom_toTopOf="@+id/btnLiveUpdates"
         app:layout_constraintEnd_toStartOf="@id/btnFAQ"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnRecentNews">
@@ -249,7 +249,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnDiscussion"
+        android:id="@+id/btnLiveUpdates"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/_2sdp"
@@ -297,7 +297,7 @@
         app:cardBackgroundColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnDiscussion"
+        app:layout_constraintStart_toEndOf="@id/btnLiveUpdates"
         app:layout_constraintTop_toBottomOf="@id/btnFAQ">
 
         <LinearLayout
