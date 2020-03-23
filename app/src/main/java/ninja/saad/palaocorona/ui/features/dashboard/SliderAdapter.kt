@@ -11,8 +11,8 @@ import ninja.saad.palaocorona.R
 
 class SliderAdapter(var source: String, val language: String = "en") : SliderViewAdapter<SliderAdapter.SliderViewHolder>() {
     
-    val itemsDashboardEn = mutableListOf<Any>(R.drawable.ic_myth_slider_5_bn, R.drawable.ic_myth_slider_2_bn, R.drawable.ic_myth_slider_3_bn, R.drawable.ic_myth_slider_4_bn, R.drawable.ic_myth_slider_1_bn)
-    val itemsDashboardBn = mutableListOf<Any>(R.drawable.ic_myth_slider_5_en, R.drawable.ic_myth_slider_2_en, R.drawable.ic_myth_slider_3_en, R.drawable.ic_myth_slider_4_en, R.drawable.ic_myth_slider_1_en)
+    val itemsDashboardBn = mutableListOf<Any>(R.drawable.ic_myth_slider_5_bn, R.drawable.ic_myth_slider_2_bn, R.drawable.ic_myth_slider_3_bn, R.drawable.ic_myth_slider_4_bn, R.drawable.ic_myth_slider_1_bn)
+    val itemsDashboardEn = mutableListOf<Any>(R.drawable.ic_myth_slider_5_en, R.drawable.ic_myth_slider_2_en, R.drawable.ic_myth_slider_3_en, R.drawable.ic_myth_slider_4_en, R.drawable.ic_myth_slider_1_en)
     val itemsQuarantineEn = mutableListOf<Int>(R.drawable.ic_quarantine_1_en, R.drawable.ic_quarantine_2_en, R.drawable.ic_quarantine_3_en, R.drawable.ic_quarantine_4_en, R.drawable.ic_quarantine_5_en, R.drawable.ic_quarantine_6_en)
     val itemsQuarantineBn = mutableListOf<Int>(R.drawable.ic_quarantine_1_bn, R.drawable.ic_quarantine_2_bn, R.drawable.ic_quarantine_3_bn, R.drawable.ic_quarantine_4_bn, R.drawable.ic_quarantine_5_bn, R.drawable.ic_quarantine_6_bn)
     val itemsDos = mutableListOf<Int>(R.drawable.ic_myth_slider_1_bn, R.drawable.ic_myth_slider_2_bn, R.drawable.ic_myth_slider_3_bn, R.drawable.ic_myth_slider_4_bn, R.drawable.ic_myth_slider_5_bn)

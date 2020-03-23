@@ -94,6 +94,10 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
         }
     }
     
+    override fun onFragmentResume() {
+    
+    }
+    
     private fun getViewModelClass(): Class<ViewModel> {
         val type =
             (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0]
