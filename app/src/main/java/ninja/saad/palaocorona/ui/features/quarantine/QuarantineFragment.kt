@@ -19,7 +19,7 @@ class QuarantineFragment: BaseFragment<QuarantineViewModel>()  {
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        image_slider.sliderAdapter = SliderAdapter("quarantine")
+        image_slider.sliderAdapter = SliderAdapter("quarantine", getCurrentLocale().language)
         //drop or swap
         image_slider.setIndicatorAnimation(IndicatorAnimations.DROP) //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         image_slider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)

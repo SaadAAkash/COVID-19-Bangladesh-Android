@@ -30,7 +30,7 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        gujobSlider.sliderAdapter = SliderAdapter("dashboard")
+        gujobSlider.sliderAdapter = SliderAdapter("dashboard", getCurrentLocale().language)
         //drop or swap
         gujobSlider.setIndicatorAnimation(IndicatorAnimations.DROP); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         gujobSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
