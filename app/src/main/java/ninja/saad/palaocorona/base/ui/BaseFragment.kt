@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import dagger.android.support.DaggerFragment
+import ninja.saad.palaocorona.ui.dialogs.NoInternetConnectionDialog
 import org.jetbrains.anko.support.v4.toast
 import java.lang.reflect.ParameterizedType
 import java.util.*
@@ -19,6 +21,7 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     private lateinit var communicator: FragmentCommunicator
     protected lateinit var viewModel: ViewModel
     protected abstract val layoutId: Int
+    private var alertDialog: AlertDialog? = null
     var isActivityAsViewModelLifeCycleOwner = false
     
     override fun onAttach(context: Context) {
@@ -65,6 +68,17 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     
     fun getCurrentLocale(): Locale {
         return communicator.getCurrentLocale()
+    }
+    
+    fun showNoInternetConnectionDialog(callback: NoInternetConnectionDialog.NoInternetDialogCallback) {
+        try {
+            alertDialog?.dismiss()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        alertDialog = NoInternetConnectionDialog(requireContext(), callback)
+        alertDialog?.setCancelable(false)
+        alertDialog?.show()
     }
     
     private fun getViewModelClass(): Class<ViewModel> {
