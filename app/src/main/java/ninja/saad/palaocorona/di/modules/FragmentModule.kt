@@ -9,6 +9,7 @@ import ninja.saad.palaocorona.ui.features.authentication.otpverification.OtpVeri
 import ninja.saad.palaocorona.ui.features.authentication.login.LoginFragment
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
+import ninja.saad.palaocorona.ui.features.liveupdates.LiveUpdatesFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
 import ninja.saad.palaocorona.ui.features.quarantine.QuarantineFragment
 import ninja.saad.palaocorona.ui.features.testyourself.TestYourselfFragment
@@ -51,6 +52,10 @@ abstract class FragmentModule {
     @PerFragment
     @ContributesAndroidInjector
     abstract fun bindTestYourselfFragment(): TestYourselfFragment
+    
+    @PerFragment
+    @ContributesAndroidInjector
+    abstract fun bindLiveUpdatesFragment(): LiveUpdatesFragment
     
     
 }

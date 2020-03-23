@@ -9,7 +9,7 @@
     <string name="feature_04_dos">উচিত-অনুচিত</string>
     <string name="feature_05_quarantine">কোয়ারান্টাইন কি</string>
     <string name="feature_06_faq">প্রশ্ন-উত্তর</string>
-    <string name="feature_07_discussion">সদ্যপ্রাপ্ত তথ্য</string>
+    <string name="feature_07_live_updates">সদ্যপ্রাপ্ত তথ্য</string>
     <string name="feature_08_emergency">জরুরি ও অন্যান্য</string>
 
     <string name="okay">আচ্ছা</string>
@@ -20,6 +20,14 @@
     <string name="please_enter_your_mobile_number">অনুগ্রহ করে ভেরিফিকেশন কোডটি পাওয়ার জন্য আপনার ফোন নম্বরটি দিন</string>
     <string name="mobile_number">মোবাইল নম্বর</string>
     <string name="login">লগইন</string>
+
+    <string name="verify">নিশ্চিত করুন</string>
+    <string name="name">নাম</string>
+    <string name="personal_phone_optional">বাসার ফোন নম্বর (ঐচ্ছিক)</string>
+    <string name="gender">লিঙ্গ</string>
+    <string name="age">বয়স</string>
+    <string name="start_taking_test">পরীক্ষা শুরু করুন</string>
+
     <string name="faq_q_1">COVID-19 এর প্রাথমিক লক্ষণগুলো কি কি?</string>
     <string name="faq_q_2">কখন ডাক্তার এর কাছে যেতে হবে?</string>
     <string name="faq_q_3">কোন অবস্থায় বুঝবেন COVID-19 এর সঙ্কটাপন্ন অবস্থায় আছেন?</string>
@@ -42,18 +50,17 @@
     <string name="faq_a_6">আপনি যদি COVID-19 এ আক্রান্ত হয়ে থাকেন কিংবা আক্রান্ত কোন রোগীকে চিকিৎসা দেওয়ার সাথে সম্পৃক্ত থাকেন তাহলে অবশ্যই আপনার মাস্ক পরা উচিৎ।</string>
     <string name="faq_a_7">এন্টি-সেপটিক সাবান কিংবা হ্যান্ড ওয়াশ যেকোনো একটির সাহায্যে ২০ সেকেন্ড সময় নিয়ে ভালোভাবে হাত ধুতে হবে। যদি এর কোনটিই না থাকে তাহলে হ্যান্ড স্যানিটাইজার যেটিতে ৬০% অ্যালকোহল আছে সেটির সাহায্যে হাত পরিস্কার করতে হবে।</string>
 
-    <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
+    <string name="text_confirmed">জন আক্রান্ত হয়েছেন</string>
+    <string name="text_recovered">জন সুস্থ হয়েছেন</string>
+    <string name="text_deaths">জন মৃত্যুবরণ করেছেন</string>
+    <string name="text_active_cases">জন চিকিৎসাধীন</string>
 
-    <string name="verify">নিশ্চিত করুন</string>
-    <string name="name">নাম</string>
-    <string name="personal_phone_optional">বাসার ফোন নম্বর (ঐচ্ছিক)</string>
-    <string name="gender">লিঙ্গ</string>
-    <string name="age">বয়স</string>
-    <string name="start_taking_test">পরীক্ষা শুরু করুন</string>
-    <string name="double_press_to_exit">অ্যাপ বন্ধ করতে চাইলে আবার ক্লিক করুন</string>
-    <string name="form_not_completed">অনুগ্রহ করে সব প্রশ্নের উত্তর দিন</string>
-    <string name="choose_an_option">অপশন নির্বাচন করুন</string>
-    <string name="previous">পূর্ববর্তী</string>
-    <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>
     <string name="phone_number_invalid">ফোণ নাম্বারটি সঠিক নয়। অনুগ্রহ করে সঠিক ফোন নাম্বার প্রবেশ করুন।</string>
+    <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>
+    <string name="previous">পূর্ববর্তী</string>
+    <string name="choose_an_option">অপশন নির্বাচন করুন</string>
+    <string name="form_not_completed">অনুগ্রহ করে সব প্রশ্নের উত্তর দিন</string>
+    <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
+    <string name="double_press_to_exit">অ্যাপ বন্ধ করতে চাইলে আবার ক্লিক করুন</string>
+
 </resources>

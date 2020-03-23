@@ -14,6 +14,7 @@ import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.ui.features.about.AboutCovidFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
+import ninja.saad.palaocorona.ui.features.liveupdates.LiveUpdatesFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
 import ninja.saad.palaocorona.ui.features.quarantine.QuarantineFragment
 import ninja.saad.palaocorona.ui.features.quarantine.QuarantineViewModel
@@ -87,10 +88,13 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
                 ?.commit()
         }
         btnLiveUpdates.onClick {
-        
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.mainFragmentContainer, LiveUpdatesFragment())
+                ?.addToBackStack(null)
+                ?.commit()
         }
         btnEmergency.onClick {
-            
+        
         }
         
     }

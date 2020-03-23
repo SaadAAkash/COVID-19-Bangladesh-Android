@@ -280,7 +280,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="@string/feature_07_discussion" />
+                android:text="@string/feature_07_live_updates" />
 
         </LinearLayout>
 
