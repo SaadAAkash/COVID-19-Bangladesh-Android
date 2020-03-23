@@ -10,6 +10,7 @@ class AppPreferenceImpl @Inject constructor(context: Context): AppPreference {
     
     companion object {
         const val USER = "user"
+        private const val LANGUAGE_KEY = "language_key"
     }
     
     private var preference =
@@ -20,6 +21,12 @@ class AppPreferenceImpl @Inject constructor(context: Context): AppPreference {
         get() = getObject(USER, User::class.java)
         set(value) {
             saveObject(USER, value)
+        }
+    
+    override var language: String
+        get() = getString(LANGUAGE_KEY, "en")
+        set(value) {
+            saveString(LANGUAGE_KEY, value)
         }
     
     private fun saveString(key: String, value: String) {
