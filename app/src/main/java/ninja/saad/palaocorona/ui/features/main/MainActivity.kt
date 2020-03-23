@@ -1,6 +1,7 @@
 package ninja.saad.palaocorona.ui.features.main
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
@@ -22,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
 import ninja.saad.palaocorona.base.ui.CustomTypefaceSpan
+import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
 
 class MainActivity : BaseActivity<MainViewModel>() {
@@ -50,6 +52,12 @@ class MainActivity : BaseActivity<MainViewModel>() {
         }
         
         viewModel.isLoggedIn.observe(this, Observer {
+            if(this.isLoggedIn != it) {
+                supportFragmentManager.beginTransaction().replace(
+                    mainFragmentContainer.id,
+                    DashboardFragment()
+                ).commit()
+            }
             this.isLoggedIn = it
             invalidateOptionsMenu()
         })
@@ -72,6 +80,10 @@ class MainActivity : BaseActivity<MainViewModel>() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.language) {
             toggleLanguage()
+        } else if(item.itemId == R.id.profile) {
+            val bundle = Bundle()
+            bundle.putString(AuthenticationActivity.NAVIGATE, AuthenticationActivity.NAV_PROFILE)
+            startActivity(AuthenticationActivity::class.java, bundle)
         }
         return super.onOptionsItemSelected(item)
     }

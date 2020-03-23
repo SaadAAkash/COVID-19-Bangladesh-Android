@@ -16,8 +16,14 @@ import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
 import ninja.saad.palaocorona.base.ui.CustomTypefaceSpan
 import ninja.saad.palaocorona.ui.features.authentication.login.LoginFragment
+import ninja.saad.palaocorona.ui.features.authentication.profile.ProfileFragment
 
 class AuthenticationActivity : BaseActivity<AuthenticationViewModel>() {
+    
+    companion object {
+        const val NAVIGATE = "navigate"
+        const val NAV_PROFILE = "profile"
+    }
     
     override val layoutId: Int
         get() = R.layout.activity_authentication
@@ -38,9 +44,15 @@ class AuthenticationActivity : BaseActivity<AuthenticationViewModel>() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         
-        supportFragmentManager.beginTransaction()
-            .replace(authenticationFragmentContainer.id, LoginFragment())
-            .commit()
+        if(intent.extras?.getString(NAVIGATE) == NAV_PROFILE) {
+            supportFragmentManager.beginTransaction()
+                .replace(authenticationFragmentContainer.id, ProfileFragment())
+                .commit()
+        } else {
+            supportFragmentManager.beginTransaction()
+                .replace(authenticationFragmentContainer.id, LoginFragment())
+                .commit()
+        }
         
     }
     

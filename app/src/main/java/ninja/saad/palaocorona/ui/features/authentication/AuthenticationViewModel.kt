@@ -8,6 +8,7 @@ import io.reactivex.schedulers.Schedulers
 import ninja.saad.palaocorona.base.data.network.RetrofitException
 import ninja.saad.palaocorona.base.ui.BaseViewModel
 import ninja.saad.palaocorona.data.authentication.AuthenticationRepository
+import ninja.saad.palaocorona.data.authentication.model.User
 import ninja.saad.palaocorona.util.SingleLiveEvent
 import javax.inject.Inject
 
@@ -19,6 +20,7 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
     var phoneNumberInvalid = SingleLiveEvent<Boolean>()
     var otpInvalid = SingleLiveEvent<Boolean>()
     var noInternetConnection = MutableLiveData<Boolean>()
+    var user = MutableLiveData<User>()
     
     fun sendOtp(text: String) {
         if(text.isNotEmpty() && text.length == 11 && text.startsWith("01")) {
@@ -63,7 +65,7 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
         }
     }
     
-    fun saveProfile(name: String, age: String, gender: Int, phoneNumber: String) {
+    fun saveProfile(name: String, age: String, gender: String, phoneNumber: String) {
         val disposable = repository.saveProfile(name, age, gender, phoneNumber)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -77,5 +79,13 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                 it.printStackTrace()
             })
         compositeDisposable.add(disposable)
+    }
+    
+    fun getProfile() {
+        this.user.value = repository.getUser()
+    }
+    
+    fun logout() {
+        repository.logout()
     }
 }
