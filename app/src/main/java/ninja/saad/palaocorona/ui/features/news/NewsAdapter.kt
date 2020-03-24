@@ -9,11 +9,14 @@ import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_news.view.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.data.news.model.News
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import java.net.URL
 
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(private val callback: NewsAdapterCallback) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     
     private var items = mutableListOf<News>()
+    private var isMoreItemsRequested = false
+    private var isEndOfNews = false
     
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -33,17 +36,35 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         holder.itemView.tvSubtitle.text = item.subtitle
         holder.itemView.tvSource.text = baseUrl
         Glide.with(holder.itemView.context).load(item.imageSrc).into(holder.itemView.ivNews)
+        holder.itemView.onClick {
+            callback.onNewsClick(item.source)
+        }
+        if((position == items.size - 1) && !isMoreItemsRequested && !isEndOfNews) {
+            callback.loadMore(items.size)
+            isMoreItemsRequested = true
+        }
     }
     
     fun setItems(items: MutableList<News>) {
-        this.items = items
-        notifyDataSetChanged()
+        if(items.size == 0) isEndOfNews = true
+        if(!isMoreItemsRequested) {
+            this.items = items
+            notifyDataSetChanged()
+        } else {
+            this.items.addAll(items)
+            notifyItemInserted(this.items.size - items.size)
+            isMoreItemsRequested = false
+        }
     }
-    
     
     class NewsViewHolder(val view: View): RecyclerView.ViewHolder(view), LayoutContainer {
         override val containerView: View?
             get() = view
+    }
+    
+    interface NewsAdapterCallback {
+        fun onNewsClick(url: String)
+        fun loadMore(size: Int)
     }
 
 }
