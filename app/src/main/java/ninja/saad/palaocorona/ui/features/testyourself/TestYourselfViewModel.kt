@@ -68,11 +68,26 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
         allQuestionnaire[allQuestionnaire.indexOf(question)] = allQuestionnaire[allQuestionnaire.indexOf(question)].apply {
             
             if(selectedAnswer.englishText.contains(answer.englishText)) {
-                var oldValue = if(selectedAnswer.englishText.indexOf(answer.englishText) != 0) ", " + answer.englishText else answer.englishText + ", "
-                selectedAnswer.englishText = selectedAnswer.englishText.removeRange(selectedAnswer.englishText.indexOf(oldValue), selectedAnswer.englishText.indexOf(oldValue) + oldValue.length)
+                try {
+                    var oldValue =
+                        if (selectedAnswer.englishText.indexOf(answer.englishText) != 0) ", " + answer.englishText else answer.englishText + ", "
+                    selectedAnswer.englishText = selectedAnswer.englishText.removeRange(
+                        selectedAnswer.englishText.indexOf(oldValue),
+                        selectedAnswer.englishText.indexOf(oldValue) + oldValue.length
+                    )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
             if(selectedAnswer.banglaText.contains(answer.banglaText)) {
-                selectedAnswer.banglaText = selectedAnswer.banglaText.replace("${if(selectedAnswer.banglaText.indexOf(answer.banglaText) != 0) ", " else ""}${answer.banglaText}", "")
+                try {
+                    selectedAnswer.banglaText = selectedAnswer.banglaText.replace(
+                        "${if (selectedAnswer.banglaText.indexOf(answer.banglaText) != 0) ", " else ""}${answer.banglaText}",
+                        ""
+                    )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
             
         }
