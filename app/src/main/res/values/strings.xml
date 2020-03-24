@@ -97,6 +97,10 @@
 শুরুর দিকের উপসর্গ সাধারণ সর্দিজ্বর এবং ফ্লু’য়ের সাথে সাদৃশ্যপূর্ণ হওয়ায় রোগ নির্ণয়ের ক্ষেত্রে দ্বিধাগ্রস্থ হওয়া স্বাভাবিক।</string>
     <string name="update_profile">Update Profile</string>
     <string name="logout">Logout</string>
+    <string name="test_positive">It looks great! You have no visible symtoms of corona virus infection.\nBut stay safe and wash your hands if it\'s dirty.</string>
+    <string name="test_medium">Seems like you are ill. Make an appoitment with a doctor.\nStay safe.</string>
+    <string name="test_negative">You are like \"Dead man walkin\". Call emergency and follow their instructions to recover.</string>
+    <string name="go_to_dashboard">Go to dashboard</string>
 
 
 </resources>

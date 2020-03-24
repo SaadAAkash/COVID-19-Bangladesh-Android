@@ -52,7 +52,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         }
         
         viewModel.isLoggedIn.observe(this, Observer {
-            if(this.isLoggedIn != it) {
+            if(this.isLoggedIn && this.isLoggedIn != it) {
                 supportFragmentManager.beginTransaction().replace(
                     mainFragmentContainer.id,
                     DashboardFragment()
