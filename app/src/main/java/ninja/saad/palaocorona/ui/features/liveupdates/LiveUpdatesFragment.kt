@@ -3,6 +3,7 @@ package ninja.saad.palaocorona.ui.features.liveupdates
 import android.annotation.SuppressLint
 import android.net.http.SslError
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
@@ -28,6 +29,9 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
         handlePullToRefresh()
         handleOnKeyDown()
         loadUrl("https://service.prothomalo.com/commentary/index.php")
+        
+        tv_cases_source.movementMethod = LinkMovementMethod.getInstance()
+        tv_live_update_source.movementMethod = LinkMovementMethod.getInstance()
     
         viewModel.liveUpdates.observe(viewLifecycleOwner, Observer {
             tv_confirmed.text = it.confirmed.value.toString()
