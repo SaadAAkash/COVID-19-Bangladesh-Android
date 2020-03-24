@@ -11,6 +11,7 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ProgressBar
+import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_live_updates.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
@@ -27,8 +28,17 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
         handlePullToRefresh()
         handleOnKeyDown()
         loadUrl("https://service.prothomalo.com/commentary/index.php")
-        /*val iframe = "<iframe style=\"width:100%\"; width=\"560\" height=\"380\" src=\"https://coronavirus.app/map?query=Bangladesh&embed=true\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
-        loadData(iframe)*/
+    
+        viewModel.liveUpdates.observe(viewLifecycleOwner, Observer {
+            tv_confirmed.text = it.confirmed.value.toString()
+            tv_recovered.text = it.recovered.value.toString()
+            tv_deaths.text = it.deaths.value.toString()
+            var temp = it.recovered.value + it.deaths.value
+            temp = it.confirmed.value - temp
+            tv_active.text =  temp.toString()
+        })
+    
+        viewModel.getLiveUpdates()
     }
     
     @SuppressLint("SetJavaScriptEnabled")
@@ -81,6 +91,4 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
     private fun loadData(iframe : String) {
         live_view.loadData(iframe, "text/html", null);
     }
-    
-    
 }
