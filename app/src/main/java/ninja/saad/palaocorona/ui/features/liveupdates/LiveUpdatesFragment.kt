@@ -14,10 +14,8 @@ import android.widget.ProgressBar
 import kotlinx.android.synthetic.main.fragment_live_updates.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
-import ninja.saad.palaocorona.ui.features.about.AboutCovidViewModel
 
-
-class LiveUpdatesFragment : BaseFragment<AboutCovidViewModel>()  {
+class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
     
     override val layoutId: Int
     get() = R.layout.fragment_live_updates
