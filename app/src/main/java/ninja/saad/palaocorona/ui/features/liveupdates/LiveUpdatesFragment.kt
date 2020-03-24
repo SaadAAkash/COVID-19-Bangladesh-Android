@@ -2,6 +2,7 @@ package ninja.saad.palaocorona.ui.features.liveupdates
 
 import android.annotation.SuppressLint
 import android.net.http.SslError
+import android.os.Build
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.view.KeyEvent
@@ -11,11 +12,17 @@ import android.webkit.SslErrorHandler
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.ProgressBar
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_live_updates.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
     
@@ -34,6 +41,16 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
         tv_live_update_source.movementMethod = LinkMovementMethod.getInstance()
     
         viewModel.liveUpdates.observe(viewLifecycleOwner, Observer {
+            var formattedDate = ""
+            formattedDate = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val parsedDate = LocalDateTime.parse(it.lastUpdate, DateTimeFormatter.ISO_DATE_TIME)
+                parsedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
+            } else {
+                val parser =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                val formatter = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+                formatter.format(parser.parse(it.lastUpdate))
+            }
+            if (formattedDate.isNotEmpty()) tv_last_updated.text = "${resources.getString(R.string.last_updated)}\n$formattedDate"
             tv_confirmed.text = it.confirmed.value.toString()
             tv_recovered.text = it.recovered.value.toString()
             tv_deaths.text = it.deaths.value.toString()
