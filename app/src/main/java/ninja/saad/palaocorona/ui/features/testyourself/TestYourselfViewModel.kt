@@ -18,8 +18,10 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
     
     var questionnaire = SingleLiveEvent<MutableList<Question>>()
     var currentIndex = 0
-    var formNotCompleted = MutableLiveData<Boolean>()
+    var formNotCompleted = SingleLiveEvent<Boolean>()
     var noInternetConnection = MutableLiveData<Boolean>()
+    var formSubmitted = SingleLiveEvent<Boolean>()
+    var result = MutableLiveData<Int>()
     private var allQuestionnaire = mutableListOf<Question>()
     
     fun getQuestionnaire() {
@@ -48,8 +50,31 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
     fun setAnswer(question: Question, answer: LocaleData) {
         allQuestionnaire[allQuestionnaire.indexOf(question)] = question.apply {
             val position = texts.indexOf(answer)
-            selectedAnswer = texts[position]
-            selectedAnswerPosition = position
+            if(question.singleSelection == true) {
+                selectedAnswer = texts[position]
+                selectedAnswerPosition = position
+            } else {
+                if(!selectedAnswer.englishText.contains(answer.englishText)) {
+                    selectedAnswer.englishText += "${if(selectedAnswer.englishText.length > 0) ", " else ""}${answer.englishText}"
+                }
+                if(!selectedAnswer.banglaText.contains(answer.banglaText)) {
+                    selectedAnswer.banglaText += "${if(selectedAnswer.banglaText.length > 0) ", " else ""}${answer.banglaText}"
+                }
+            }
+        }
+    }
+    
+    fun removeAnswer(question: Question, answer: LocaleData) {
+        allQuestionnaire[allQuestionnaire.indexOf(question)] = allQuestionnaire[allQuestionnaire.indexOf(question)].apply {
+            
+            if(selectedAnswer.englishText.contains(answer.englishText)) {
+                var oldValue = if(selectedAnswer.englishText.indexOf(answer.englishText) != 0) ", " + answer.englishText else answer.englishText + ", "
+                selectedAnswer.englishText = selectedAnswer.englishText.removeRange(selectedAnswer.englishText.indexOf(oldValue), selectedAnswer.englishText.indexOf(oldValue) + oldValue.length)
+            }
+            if(selectedAnswer.banglaText.contains(answer.banglaText)) {
+                selectedAnswer.banglaText = selectedAnswer.banglaText.replace("${if(selectedAnswer.banglaText.indexOf(answer.banglaText) != 0) ", " else ""}${answer.banglaText}", "")
+            }
+            
         }
     }
     
@@ -84,6 +109,7 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
+                    formSubmitted.value = true
                     Logger.d("Success")
                 }, {
                     if(it is FirebaseNetworkException) {
@@ -95,5 +121,16 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
         } else {
             formNotCompleted.value = true
         }
+    }
+    
+    fun getResult() {
+        var level = allQuestionnaire.size.toDouble()
+        allQuestionnaire.forEach {
+            if(it.selectedAnswer.englishText.contains("yes", true) ||
+                (!it.singleSelection && !it.selectedAnswer.englishText.contains("none", true))) {
+                level += it.level.toDouble()
+            }
+        }
+        this.result.value = (level / allQuestionnaire.size).toInt()
     }
 }

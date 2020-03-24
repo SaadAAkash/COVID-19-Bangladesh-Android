@@ -94,6 +94,12 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                 }
             }
         })
+        
+        viewModel.formSubmitted.observeOn(viewLifecycleOwner, Observer {
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.mainFragmentContainer, TestYourSelfResultFragment())
+                ?.commit()
+        })
         viewModel.getQuestionnaire()
         
     }
@@ -151,14 +157,28 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                 setChipBackgroundColorResource(R.color.colorPrimary)
             }
             val chipGroup = mView.findViewById<ChipGroup>(childIds[1])
-            chipGroup.isSingleSelection = true
+            chipGroup.isSingleSelection = question.singleSelection
             chipGroup.addView(chip)
             chip.onCheckedChange { buttonView, isChecked ->
                 
                 if(isChecked) chip.setChipBackgroundColorResource(R.color.colorAccent)
                 else chip.setChipBackgroundColorResource(R.color.colorPrimary)
                 
-                if(isChecked) viewModel.setAnswer(question, it)
+                if(isChecked) {
+                    viewModel.setAnswer(question, it)
+                    if(chip.text.contains("none", true)) {
+                        for(i in 0 until chipGroup.childCount) {
+                            if(!(chipGroup.getChildAt(i) as Chip).text.contains("none", true))
+                                (chipGroup.getChildAt(i) as Chip).isChecked = false
+                        }
+                    } else {
+                        for(i in 0 until chipGroup.childCount) {
+                            if((chipGroup.getChildAt(i) as Chip).text.contains("none", true))
+                                (chipGroup.getChildAt(i) as Chip).isChecked = false
+                        }
+                    }
+                }
+                else viewModel.removeAnswer(question, it)
                 chip.isChecked = isChecked
             }
         }

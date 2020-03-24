@@ -31,7 +31,13 @@ data class Question(
 	var visibleOn: Int = 0,
 	
 	@SerializedName("check_on")
-	var checkOn: Int = 0
+	var checkOn: Int = 0,
+	
+	@SerializedName("level")
+	var level: Int = 1,
+	
+	@SerializedName("single_selection")
+	var singleSelection: Boolean = true
 
 ) {
 	
