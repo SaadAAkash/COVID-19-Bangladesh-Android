@@ -75,6 +75,7 @@
             Source: Prothom Alo
         </a>
     </string>
+    <string name="last_updated">Last Updated:</string>
 
     <string name="phone_number_invalid">Invalid Phone Number. Please enter a valid phone number.</string>
     <string name="invalid_otp">Invalid OTP. Please enter the 6 digits OTP.</string>
