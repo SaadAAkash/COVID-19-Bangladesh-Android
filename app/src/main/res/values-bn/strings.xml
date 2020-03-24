@@ -64,6 +64,7 @@
             তথ্যসূত্র: প্রথম আলো
         </a>
     </string>
+    <string name="last_updated">সর্বশেষ হালনাগাদ:</string>
 
     <string name="phone_number_invalid">ফোণ নাম্বারটি সঠিক নয়। অনুগ্রহ করে সঠিক ফোন নাম্বার প্রবেশ করুন।</string>
     <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>
