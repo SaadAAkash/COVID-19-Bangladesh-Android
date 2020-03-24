@@ -29,6 +29,7 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_confirmed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -71,6 +72,7 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_recovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -113,6 +115,7 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_active"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -155,6 +158,7 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_deaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

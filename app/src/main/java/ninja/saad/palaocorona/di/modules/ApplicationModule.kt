@@ -9,6 +9,7 @@ import dagger.Provides
 import ninja.saad.palaocorona.base.data.local.AppPreference
 import ninja.saad.palaocorona.base.data.local.AppPreferenceImpl
 import ninja.saad.palaocorona.base.data.network.NetworkFactory
+import ninja.saad.palaocorona.data.liveupdates.LiveUpdateRestService
 import ninja.saad.palaocorona.data.news.NewsRestService
 import ninja.saad.palaocorona.data.testyourself.TestYourselfRestService
 import ninja.saad.palaocorona.util.AppViewModelFactory
@@ -41,6 +42,13 @@ abstract class ApplicationModule {
         @JvmStatic
         fun provideNewsRestService(context: Context): NewsRestService {
             return NetworkFactory.createService(context, NewsRestService::class.java)
+        }
+    
+        @Provides
+        @Singleton
+        @JvmStatic
+        fun provideLiveUpdateRestService(context: Context): LiveUpdateRestService {
+            return NetworkFactory.createService(context, LiveUpdateRestService::class.java)
         }
     }
     
