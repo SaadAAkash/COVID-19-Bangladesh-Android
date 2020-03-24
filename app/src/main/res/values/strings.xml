@@ -65,6 +65,16 @@
     <string name="text_recovered">Recovered</string>
     <string name="text_deaths">Deaths</string>
     <string name="text_active_cases">Active Cases</string>
+    <string name="text_cases_source">
+        <a href="https://coronavirus.jhu.edu/map.html">
+            Source: CSSE JHU
+        </a>
+    </string>
+    <string name="text_live_update_source">
+        <a href="https://www.prothomalo.com/live">
+            Source: Prothom Alo
+        </a>
+    </string>
 
     <string name="phone_number_invalid">Invalid Phone Number. Please enter a valid phone number.</string>
     <string name="invalid_otp">Invalid OTP. Please enter the 6 digits OTP.</string>

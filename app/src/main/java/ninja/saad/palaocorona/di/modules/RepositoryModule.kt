@@ -8,6 +8,8 @@ import ninja.saad.palaocorona.data.dashboard.DashboardRepository
 import ninja.saad.palaocorona.data.dashboard.DashboardRepositoryImpl
 import ninja.saad.palaocorona.data.faq.FaqRepository
 import ninja.saad.palaocorona.data.faq.FaqRepositoryImpl
+import ninja.saad.palaocorona.data.liveupdates.LiveUpdateRepository
+import ninja.saad.palaocorona.data.liveupdates.LiveUpdateRepositoryImpl
 import ninja.saad.palaocorona.data.main.MainRepository
 import ninja.saad.palaocorona.data.main.MainRepositoryImpl
 import ninja.saad.palaocorona.data.news.NewsRepository
@@ -35,4 +37,7 @@ abstract class RepositoryModule {
     
     @Binds
     abstract fun provideNewsRepository(repo: NewsRepositoryImpl): NewsRepository
+    
+    @Binds
+    abstract fun provideLiveUpdateRepository(repo: LiveUpdateRepositoryImpl): LiveUpdateRepository
 }

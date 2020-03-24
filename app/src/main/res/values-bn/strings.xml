@@ -54,6 +54,16 @@
     <string name="text_recovered">জন সুস্থ হয়েছেন</string>
     <string name="text_deaths">জন মৃত্যুবরণ করেছেন</string>
     <string name="text_active_cases">জন চিকিৎসাধীন</string>
+    <string name="text_cases_source">
+        <a href="https://coronavirus.jhu.edu/map.html">
+            তথ্যসূত্র: CSSE JHU
+        </a>
+    </string>
+    <string name="text_live_update_source">
+        <a href="https://www.prothomalo.com/live">
+            তথ্যসূত্র: প্রথম আলো
+        </a>
+    </string>
 
     <string name="phone_number_invalid">ফোণ নাম্বারটি সঠিক নয়। অনুগ্রহ করে সঠিক ফোন নাম্বার প্রবেশ করুন।</string>
     <string name="invalid_otp">ওটিপি সঠিক নয়। অনুগ্রহ করে ৬ সংখ্যার ওটিপি প্রবেশ করুন।</string>

@@ -9,6 +9,7 @@ import ninja.saad.palaocorona.ui.features.about.AboutCovidViewModel
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardViewModel
 import ninja.saad.palaocorona.ui.features.faq.FaqViewModel
+import ninja.saad.palaocorona.ui.features.liveupdates.LiveUpdatesViewModel
 import ninja.saad.palaocorona.ui.features.main.MainViewModel
 import ninja.saad.palaocorona.ui.features.news.NewsViewModel
 import ninja.saad.palaocorona.ui.features.quarantine.QuarantineViewModel
@@ -56,4 +57,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(TestYourselfViewModel::class)
     abstract fun bindTestYourselfViewModel(viewModel: TestYourselfViewModel): ViewModel
+    
+    @Binds
+    @IntoMap
+    @ViewModelKey(LiveUpdatesViewModel::class)
+    abstract fun bindLiveUpdatesViewModel(viewModel: LiveUpdatesViewModel): ViewModel
 }

@@ -7,6 +7,21 @@
     android:background="@color/white"
     android:layout_margin="@dimen/_4sdp">
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_cases_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_8ssp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:textColor="@color/grey_700"
+        android:text="@string/text_cases_source"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/counter_confirmed"/>
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/counter_confirmed"
         android:layout_width="0dp"
@@ -19,7 +34,7 @@
         app:layout_constraintBottom_toTopOf="@id/counter_active_cases"
         app:layout_constraintEnd_toStartOf="@id/counter_recovered"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tv_cases_source">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -29,11 +44,12 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_confirmed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 tools:text="2"/>
@@ -42,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
                 android:text="@string/text_confirmed" />
@@ -61,7 +78,7 @@
         app:layout_constraintBottom_toTopOf="@id/counter_death"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/counter_confirmed"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tv_cases_source">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -71,11 +88,12 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_recovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 tools:text="2" />
@@ -84,6 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textSize="@dimen/_10sdp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
                 android:text="@string/text_recovered" />
@@ -113,11 +132,12 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_active"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 tools:text="2" />
@@ -126,6 +146,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
                 android:text="@string/text_active_cases" />
@@ -155,11 +176,12 @@
             android:padding="@dimen/_8sdp">
 
             <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_deaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 tools:text="2" />
@@ -167,6 +189,7 @@
             <ninja.saad.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:text="@string/text_deaths"
@@ -182,7 +205,7 @@
         android:layout_height="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
-        app:layout_constraintBottom_toTopOf="@+id/layout_live_updates"
+        app:layout_constraintBottom_toTopOf="@+id/tv_live_update_source"
         app:layout_constraintEnd_toStartOf="@+id/tv_live_update"
         app:lottie_fileName="loader.json"
         app:lottie_loop="true"
@@ -195,13 +218,28 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
-        android:textSize="@dimen/_18ssp"
+        android:textSize="@dimen/_14ssp"
         android:layout_margin="@dimen/_2sdp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="@string/feature_07_live_updates"
         app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_live_update_source"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_live_update_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_8ssp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:textColor="@color/grey_700"
+        android:text="@string/text_live_update_source"
+        app:layout_constraintTop_toBottomOf="@+id/tv_live_update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/layout_live_updates"/>
 
@@ -211,22 +249,10 @@
         android:layout_height="0dp"
         android:layout_margin="@dimen/_2sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_live_update"
+        app:layout_constraintTop_toBottomOf="@+id/tv_live_update_source"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:minHeight="4dp"
-            android:padding="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <WebView
             android:id="@+id/live_view"
@@ -235,7 +261,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
