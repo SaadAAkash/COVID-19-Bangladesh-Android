@@ -166,14 +166,14 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                 
                 if(isChecked) {
                     viewModel.setAnswer(question, it)
-                    if(chip.text.contains("none", true)) {
+                    if(question.texts[chipGroup.indexOfChild(chip)].englishText.contains("none", true)) {
                         for(i in 0 until chipGroup.childCount) {
-                            if(!(chipGroup.getChildAt(i) as Chip).text.contains("none", true))
+                            if(!question.texts[i].englishText.contains("none", true))
                                 (chipGroup.getChildAt(i) as Chip).isChecked = false
                         }
                     } else {
                         for(i in 0 until chipGroup.childCount) {
-                            if((chipGroup.getChildAt(i) as Chip).text.contains("none", true))
+                            if(question.texts[i].englishText.contains("none", true))
                                 (chipGroup.getChildAt(i) as Chip).isChecked = false
                         }
                     }
