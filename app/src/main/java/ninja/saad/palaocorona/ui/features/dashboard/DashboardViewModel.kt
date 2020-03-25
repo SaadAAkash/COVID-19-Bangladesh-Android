@@ -6,11 +6,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ninja.saad.palaocorona.base.ui.BaseViewModel
 import ninja.saad.palaocorona.data.dashboard.DashboardRepository
+import ninja.saad.palaocorona.util.SingleLiveEvent
 import javax.inject.Inject
 
 class DashboardViewModel @Inject constructor(val repository: DashboardRepository): BaseViewModel() {
     
     var sliderImages = MutableLiveData<MutableList<String>>()
+    var isInternetAvailable = SingleLiveEvent<Boolean>()
     
     fun isUserLoggedIn(): Boolean {
         return repository.isUserLoggedIn()
@@ -28,6 +30,13 @@ class DashboardViewModel @Inject constructor(val repository: DashboardRepository
                     it.printStackTrace()
                 })
             compositeDisposable.add(disposable)
+        }
+    }
+    
+    fun checkInternet(func: () -> Unit) {
+        this.isInternetAvailable.value = repository.isInternetAvailable()
+        if(isInternetAvailable.value == true) {
+            func()
         }
     }
 }

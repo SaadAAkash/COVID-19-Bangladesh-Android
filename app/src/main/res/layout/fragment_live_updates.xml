@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:textSize="@dimen/_10ssp"
         android:layout_marginEnd="@dimen/_2sdp"
-        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_4sdp"
         android:textColor="@color/grey_700"
         android:lines="2"
         android:minLines="2"
