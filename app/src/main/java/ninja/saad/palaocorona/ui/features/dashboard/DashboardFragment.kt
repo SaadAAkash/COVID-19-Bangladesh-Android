@@ -47,6 +47,10 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
             (gujobSlider.sliderAdapter as SliderAdapter).addSliderToDashboard(it)
         })
         
+        viewModel.isInternetAvailable.observeOn(viewLifecycleOwner, Observer {
+            if(!it) showNoInternetConnectionDialog(null)
+        })
+        
         viewModel.getSliderImages()
     }
     
@@ -88,10 +92,13 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
                 ?.commit()
         }
         btnLiveUpdates.onClick {
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.mainFragmentContainer, LiveUpdatesFragment())
-                ?.addToBackStack(null)
-                ?.commit()
+            viewModel.checkInternet {
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.replace(R.id.mainFragmentContainer, LiveUpdatesFragment())
+                    ?.addToBackStack(null)
+                    ?.commit()
+            }
+    
         }
         btnEmergency.onClick {
         

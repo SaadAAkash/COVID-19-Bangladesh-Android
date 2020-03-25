@@ -7,4 +7,6 @@ interface DashboardRepository {
     fun isUserLoggedIn(): Boolean
     
     fun getSliderImages(): Single<MutableList<String>>
+    
+    fun isInternetAvailable(): Boolean
 }

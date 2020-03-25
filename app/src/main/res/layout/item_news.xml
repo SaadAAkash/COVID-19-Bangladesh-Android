@@ -43,10 +43,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ninja.saad.palaocorona.base.ui.AppTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_35sdp"
+                android:layout_height="wrap_content"
                 android:textSize="@dimen/_12ssp"
                 android:maxLines="2"
                 android:lines="2"

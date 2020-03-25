@@ -75,14 +75,14 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         return communicator.getCurrentLocale()
     }
     
-    fun showNoInternetConnectionDialog(callback: NoInternetConnectionDialog.NoInternetDialogCallback) {
+    fun showNoInternetConnectionDialog(callback: NoInternetConnectionDialog.NoInternetDialogCallback?) {
         try {
             alertDialog?.dismiss()
         } catch (e: Exception) {
             e.printStackTrace()
         }
         alertDialog = NoInternetConnectionDialog(requireContext(), callback)
-        alertDialog?.setCancelable(false)
+        alertDialog?.setCancelable(callback == null)
         alertDialog?.show()
     }
     
