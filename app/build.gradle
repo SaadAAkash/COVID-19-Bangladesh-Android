@@ -107,4 +107,8 @@ dependencies {
     // otpview
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
 
+    // cicular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
 }
