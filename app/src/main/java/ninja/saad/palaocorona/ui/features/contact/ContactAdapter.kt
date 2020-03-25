@@ -36,7 +36,7 @@ class ContactAdapter(val callback: ContactAdapterCallback): RecyclerView.Adapter
             holder.itemView.tvName.text = items[position].title
             holder.itemView.tvContactInfo.text = items[position].subtitle
             holder.itemView.onClick {
-                callback.onItemClick(items[position].title.toEnglishNumber())
+                callback.onItemClick(items[position].subtitle.toEnglishNumber())
             }
             holder.itemView.btnCall.onClick {
                 holder.itemView.performClick()
