@@ -13,6 +13,7 @@ import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.ui.features.about.AboutCovidFragment
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
+import ninja.saad.palaocorona.ui.features.contact.ContactFragment
 import ninja.saad.palaocorona.ui.features.faq.FaqFragment
 import ninja.saad.palaocorona.ui.features.liveupdates.LiveUpdatesFragment
 import ninja.saad.palaocorona.ui.features.news.NewsFragment
@@ -101,7 +102,10 @@ class DashboardFragment: BaseFragment<DashboardViewModel>() {
     
         }
         btnEmergency.onClick {
-        
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.mainFragmentContainer, ContactFragment())
+                ?.addToBackStack(null)
+                ?.commit()
         }
         
     }
