@@ -9,7 +9,9 @@
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
-    android:padding="@dimen/_8sdp">
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingStart="@dimen/_8sdp"
+    android:paddingEnd="@dimen/_8sdp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,9 +46,12 @@
             <ninja.saad.palaocorona.base.ui.AppTextView
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_35sdp"
                 android:textSize="@dimen/_12ssp"
-                tools:text="করোনাভাইরাস: সচেতন হোক মানুষ, সাবধান হোক ভুল তথ্য থেকে"
+                android:maxLines="2"
+                android:lines="2"
+                android:ellipsize="end"
+                tools:text="করোনাভাইরাস: \nসচেতন হোক মানুষ, সাবধান হোক ভুল তথ্য থেকে"
                 android:textColor="@color/colorPrimary"
                 app:fontFamily="sans-serif-medium" />
 
@@ -75,7 +80,7 @@
                     android:id="@+id/tvSource"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_10ssp"
+                    android:textSize="@dimen/_9ssp"
                     tools:text="Prothom Alo"
                     android:textColor="@color/grey_600" />
 
@@ -88,6 +93,7 @@
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/_9ssp"
                     tools:text="Fri, March 20, 01:17 PM"
                     android:textColor="@color/grey_500" />
 
