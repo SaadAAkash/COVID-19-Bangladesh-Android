@@ -97,9 +97,9 @@
 শুরুর দিকের উপসর্গ সাধারণ সর্দিজ্বর এবং ফ্লু’য়ের সাথে সাদৃশ্যপূর্ণ হওয়ায় রোগ নির্ণয়ের ক্ষেত্রে দ্বিধাগ্রস্থ হওয়া স্বাভাবিক।</string>
     <string name="update_profile">Update Profile</string>
     <string name="logout">Logout</string>
-    <string name="test_positive">It looks great! You have no visible symtoms of corona virus infection.\nBut stay safe and wash your hands if it\'s dirty.</string>
-    <string name="test_medium">Seems like you are ill. Make an appoitment with a doctor.\nStay safe.</string>
-    <string name="test_negative">You are like \"Dead man walkin\". Call emergency and follow their instructions to recover.</string>
+    <string name="test_positive">You are at minimum risk. You should follow instructions mentioned bellow:\n\n• Avoid public gathering\n• Avoid all unnecessary travel\n•Avoid touching your face\n•Practice respiratory hygiene\n• Keep yourself at least 6ft away from other people\n• Follow the preventive measures to stop the spread</string>
+    <string name="test_medium">You are ate average risk. You should follow instructions mentioned bellow:\n\n• Stay home\n• Avoid public gathering\n• Stock up on food, supplies, and medication\n• Keep yourself away from people &amp; pets\n• Frequently clean and disinfect your hands and living area\n• Regularly monitor yourself for any symptoms\n• Contact someone who will check in on you and help you if you get sick</string>
+    <string name="test_negative">You are ate high risk. You should follow instructions mentioned bellow:\n\n• Contact IEDCR Bangladesh by phone if you are showing symptoms\n• Stay home\n• Prepare to be in quarantine for 2 to 4 weeks\n• Prepare a separate room for stay\n• Keep yourself away from people &amp; pets\n• Avoid sharing personal household items\n• Cover your coughs and sneezes or wear a facemask\n• Keep an eye on your health\n• Call a doctor if symptoms worsen\n• If you need to get medical care, avoid all public transportation\n• Ask someone to bring you food and supplies</string>
     <string name="go_to_dashboard">Go to dashboard</string>
 
 

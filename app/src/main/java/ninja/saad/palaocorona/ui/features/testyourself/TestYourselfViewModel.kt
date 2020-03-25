@@ -42,7 +42,11 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
             compositeDisposable.add(disposable)
         } else {
             this.questionnaire.value =
-                allQuestionnaire
+                allQuestionnaire.apply {
+                    forEach {
+                        it.selectedAnswer = LocaleData()
+                    }
+                }
         }
         
     }

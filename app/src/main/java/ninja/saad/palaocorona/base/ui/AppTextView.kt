@@ -27,12 +27,12 @@ class AppTextView @JvmOverloads constructor(context: Context, attrs: AttributeSe
         spannable.setSpan(CustomTypefaceSpan("", engFont), 0, text?.length ?: 0, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         
         for(i in textString.indices) {
-            if(banglaTextStarted && (textString.codePointAt(i) < "অ".codePointAt(0) ||
-                        textString.codePointAt(i) > "৯".codePointAt(0))) {
+            if(banglaTextStarted && (textString.codePointAt(i) < 2433 ||
+                        textString.codePointAt(i) > 2552)) {
                 banglaTextStarted = false
                 val font = ResourcesCompat.getFont(context, R.font.noto_sans)
                 spannable.setSpan(CustomTypefaceSpan("", font), startIndex, i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-            } else if(!banglaTextStarted && textString.codePointAt(i) in "অ".codePointAt(0).."৯".codePointAt(0)) {
+            } else if(!banglaTextStarted && textString.codePointAt(i) in 2433..2552) {
                 banglaTextStarted = true
                 startIndex = i
             }
