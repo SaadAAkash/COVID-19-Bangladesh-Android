@@ -17,6 +17,7 @@ import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_live_updates.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.util.toBanglaNumber
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -51,12 +52,12 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
                 formatter.format(parser.parse(it.lastUpdate))
             }
             if (formattedDate.isNotEmpty()) tv_last_updated.text = "${resources.getString(R.string.last_updated)}\n$formattedDate"
-            tv_confirmed.text = it.confirmed.value.toString()
-            tv_recovered.text = it.recovered.value.toString()
-            tv_deaths.text = it.deaths.value.toString()
+            tv_confirmed.text = if(getCurrentLocale().language == "bn") it.confirmed.value.toString().toBanglaNumber() else it.confirmed.value.toString()
+            tv_recovered.text = if(getCurrentLocale().language == "bn") it.recovered.value.toString().toBanglaNumber() else it.recovered.value.toString()
+            tv_deaths.text = if(getCurrentLocale().language == "bn") it.deaths.value.toString().toBanglaNumber() else it.deaths.value.toString()
             var temp = it.recovered.value + it.deaths.value
             temp = it.confirmed.value - temp
-            tv_active.text =  temp.toString()
+            tv_active.text =  if(getCurrentLocale().language == "bn") temp.toString().toBanglaNumber() else temp.toString()
         })
     
         viewModel.getLiveUpdates()
