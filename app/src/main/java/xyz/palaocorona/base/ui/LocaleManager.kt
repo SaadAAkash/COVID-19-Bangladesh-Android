@@ -45,8 +45,12 @@ class LocaleManager(var context: Context) {
         val config =
             Configuration(res.configuration)
         if (isAtLeastVersion(VERSION_CODES.N)) {
+            val resources = context.resources
+            val configuration = resources.configuration
+            configuration.locale = locale
             setLocaleForApi24(config, locale)
             context = context.createConfigurationContext(config)
+            resources.updateConfiguration(configuration, resources.displayMetrics)
         } else if (isAtLeastVersion(VERSION_CODES.JELLY_BEAN_MR1)) {
             
             val resources = context.resources
