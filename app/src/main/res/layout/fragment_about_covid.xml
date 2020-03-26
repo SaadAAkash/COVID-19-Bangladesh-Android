@@ -52,23 +52,12 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_700" />
 
-                <com.google.android.material.card.MaterialCardView
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivAboutCovid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clipToPadding="true"
                     android:layout_marginTop="@dimen/_4sdp"
-                    android:layout_marginBottom="@dimen/_4sdp"
-                    app:cardCornerRadius="@dimen/_8sdp"
-                    app:cardPreventCornerOverlap="false"
-                    app:cardUseCompatPadding="false">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/ivAboutCovid"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
-
-                </com.google.android.material.card.MaterialCardView>
+                    android:layout_marginBottom="@dimen/_4sdp" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_about_covid_source"
