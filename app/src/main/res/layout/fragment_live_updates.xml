@@ -91,7 +91,7 @@
         app:strokeWidth="0dp"
         app:strokeColor="@color/white"
         app:cardPreventCornerOverlap="false"
-        app:cardBackgroundColor="@color/green_900"
+        app:cardBackgroundColor="@color/green_800"
         app:layout_constraintBottom_toTopOf="@id/counter_death"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/counter_confirmed"
@@ -216,12 +216,226 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+
+
+    <!-- DGHS section -->
+
+    <ninja.saad.palaocorona.base.ui.AppTextView
+        android:id="@+id/tv_last_updated_DGHS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:textColor="@color/grey_700"
+        android:lines="2"
+        android:minLines="2"
+        tools:text="Last Updated:\n24/03/2020 00:32:40"
+        app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/counter_quarantined"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_cases_source_DGHS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:textColor="@color/grey_700"
+        android:text="@string/text_cases_source_DGHS"
+        app:layout_constraintTop_toBottomOf="@id/counter_death"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/counter_released"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/counter_quarantined"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="#69AFE7"
+        app:layout_constraintBottom_toTopOf="@id/counter_isolated"
+        app:layout_constraintEnd_toStartOf="@id/counter_released"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_last_updated_DGHS">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_quarantined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="2"/>
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_10ssp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:text="@string/text_quarantined" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/counter_released"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="#03AB99"
+        app:layout_constraintBottom_toTopOf="@id/counter_total_isolation_completed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/counter_quarantined"
+        app:layout_constraintTop_toBottomOf="@+id/tv_last_updated_DGHS">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_released"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="2" />
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_10sdp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:text="@string/text_released" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/counter_isolated"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="#5496C9"
+        app:layout_constraintEnd_toStartOf="@id/counter_total_isolation_completed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counter_quarantined">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_isolated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="2" />
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_10ssp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:text="@string/text_isolated" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/counter_total_isolation_completed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        app:strokeWidth="0dp"
+        app:strokeColor="@color/white"
+        app:cardPreventCornerOverlap="false"
+        app:cardBackgroundColor="#0D877A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/counter_isolated"
+        app:layout_constraintTop_toBottomOf="@+id/counter_released">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_8sdp">
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:id="@+id/tv_total_isolation_completeds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="2" />
+
+            <ninja.saad.palaocorona.base.ui.AppTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="@string/text_total_isolation_completeds"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/view_loader"
         android:layout_width="@dimen/_24sdp"
         android:layout_height="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_8sdp"
-        app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
+        app:layout_constraintTop_toBottomOf="@+id/counter_isolated"
         app:layout_constraintBottom_toTopOf="@+id/tv_live_update_source"
         app:layout_constraintEnd_toStartOf="@+id/tv_live_update"
         app:lottie_fileName="loader.json"
@@ -240,7 +454,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="@string/feature_07_live_updates"
-        app:layout_constraintTop_toBottomOf="@+id/counter_active_cases"
+        app:layout_constraintTop_toBottomOf="@+id/counter_isolated"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tv_live_update_source"/>
