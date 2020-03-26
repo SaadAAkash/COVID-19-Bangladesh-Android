@@ -16,6 +16,7 @@
         android:theme="@style/AppTheme">
         <activity android:name="ninja.saad.palaocorona.ui.features.main.MainActivity"
             android:configChanges="locale"
+            android:theme="@style/AppTheme.Launcher"
             android:alwaysRetainTaskState="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

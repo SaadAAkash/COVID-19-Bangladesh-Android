@@ -23,4 +23,12 @@
         <item name="android:fontFamily">@font/popins</item>
     </style>
 
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launcher_screen</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
 </resources>

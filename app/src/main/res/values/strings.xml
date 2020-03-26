@@ -104,6 +104,10 @@
             Source: Washington Post
         </a>
     </string>
+    <string name="update">Update</string>
+    <string name="updae_available_message">An update of tis app is available. Please update the app.</string>
+    <string name="update_available">Updatet Available</string>
+    <string name="exit">Update later</string>
 
     <string-array name="emergency_contact_name">
         <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
