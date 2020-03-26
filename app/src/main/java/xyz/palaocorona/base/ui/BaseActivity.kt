@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import com.orhanobut.logger.Logger
 import dagger.android.support.DaggerAppCompatActivity
@@ -29,6 +30,7 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         setContentView(layoutId)
         viewModel = ViewModelProvider(this, factory).get(getViewModelClass())
     
