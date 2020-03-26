@@ -29,6 +29,8 @@ class TestYourselfViewModel @Inject constructor(private val repository: TestYour
             val disposable = repository.getQuestionnaire()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { loader.value = true }
+                .doAfterTerminate { loader.value = false }
                 .subscribe({
                     this.allQuestionnaire = it
                     this.questionnaire.value =

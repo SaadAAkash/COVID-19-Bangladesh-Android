@@ -9,4 +9,6 @@ interface FragmentCommunicator {
     fun toggleLanguage()
     fun getCurrentLocale(): Locale
     fun onFragmentResume()
+    fun showLoader()
+    fun hideLoader()
 }
