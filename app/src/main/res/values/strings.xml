@@ -108,6 +108,9 @@
     <string name="updae_available_message">An update of tis app is available. Please update the app.</string>
     <string name="update_available">Updatet Available</string>
     <string name="exit">Update later</string>
+    <string name="please_enter_your_name">Plase enter your name</string>
+    <string name="please_enter_your_age">Plase enter your age</string>
+    <string name="please_select_your_gender">Please select your gender</string>
 
     <string-array name="emergency_contact_name">
         <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
@@ -129,12 +132,32 @@
         <item>Dr. Rehan Akhter</item>
         <item>Dr.Nazir Shah</item>
         <item>Dr.Niloy Prosad</item>
+        <item>Md. Asaduzzaman Shuvo</item>
+        <item>Dr. Mahbubur Rahman Rajib</item>
+        <item>Dr.Mohona Khondoker</item>
+        <item>Dr. Saifa Islam</item>
+        <item>Dr. Atiya Rahman</item>
+        <item>Dr. Priyanka Mondal</item>
+        <item>Dr. Sharmin haque prima</item>
+        <item>Dr. Shadman Sakib</item>
+        <item>Olia Mahjabin</item>
+        <item>Dr.Tanvir Rahman</item>
+        <item>Dr. Sadia Afrin</item>
     </string-array>
     <string-array name="other_contact_name">
         <item>8:00AM to 12:00AM Service</item>
         <item>Dr. Zaara Rahman</item>
         <item>Nawrin Jahan</item>
         <item>Dr.Farjana yeasmin</item>
+        <item>Dr. Refat parvez amy</item>
+        <item>Dr. Nusrat Nueri Raisa</item>
+        <item>Dr. Subhashree monigram</item>
+        <item>Dr. Nigar sultana</item>
+        <item>Dr. Nafisa Rahman</item>
+        <item>Rasma Muzaffar</item>
+        <item>Dr hima</item>
+        <item>Dr. Mahbub Alam</item>
+        <item>Dr. Farjana</item>
     </string-array>
     <string-array name="contacts">
         <item>01401184551</item>
@@ -155,5 +178,25 @@
         <item>01757540162</item>
         <item>01873147497</item>
         <item>01929422331</item>
+        <item>01301880283</item>
+        <item>01533987914</item>
+        <item>01953513108</item>
+        <item>01883581829</item>
+        <item>01772606470</item>
+        <item>01717020118</item>
+        <item>01795233354</item>
+        <item>01675843987</item>
+        <item>01796597198</item>
+        <item>01518615052</item>
+        <item>01534301925</item>
+        <item>01841716131</item>
+        <item>01856877748</item>
+        <item>01401288202</item>
+        <item>01972397197</item>
+        <item>‭01627585100</item>
+        <item>01797287465</item>
+        <item>01611108566</item>
+        <item>01759800507</item>
+        <item>01534991865</item>
     </string-array>
 </resources>
