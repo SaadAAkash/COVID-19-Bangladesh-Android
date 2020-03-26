@@ -21,6 +21,9 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
     var otpInvalid = SingleLiveEvent<Boolean>()
     var noInternetConnection = MutableLiveData<Boolean>()
     var user = MutableLiveData<User>()
+    var nameInvalide = SingleLiveEvent<Boolean>()
+    var ageInvalide = SingleLiveEvent<Boolean>()
+    var genderInvalid = SingleLiveEvent<Boolean>()
     
     fun sendOtp(text: String) {
         if(text.isNotEmpty() && text.length == 11 && text.startsWith("01")) {
@@ -28,6 +31,8 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
             val disposable = repository.sendOtp(phoneNumber)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { loader.value = true }
+                .doAfterTerminate { loader.value = false }
                 .subscribe({
                     Logger.d(it)
                     verificationId.value = it
@@ -48,6 +53,8 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
             val disposable = repository.verifyOtp(verificationId, otp)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { loader.value = true }
+                .doAfterTerminate { loader.value = false }
                 .subscribe({
                     Logger.d(it)
                     userExists.value = it.name.isNotEmpty()
@@ -66,19 +73,34 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
     }
     
     fun saveProfile(name: String, age: String, gender: String, phoneNumber: String) {
-        val disposable = repository.saveProfile(name, age, gender, phoneNumber)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                profileSaved.value = true
-            }, {
-                if(it is FirebaseNetworkException) {
-                    noInternetConnection.value = true
-                }
-                profileSaved.value = false
-                it.printStackTrace()
-            })
-        compositeDisposable.add(disposable)
+        if(name.isNotEmpty() && age.isNotEmpty() && gender.isNotEmpty()) {
+            
+            if(phoneNumber.isEmpty() ||
+                (phoneNumber.isNotEmpty() && phoneNumber.length == 11 && phoneNumber.startsWith("01"))) {
+    
+                val disposable = repository.saveProfile(name, age, gender, phoneNumber)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .doOnSubscribe { loader.value = true }
+                    .doAfterTerminate { loader.value = false }
+                    .subscribe({
+                        profileSaved.value = true
+                    }, {
+                        if (it is FirebaseNetworkException) {
+                            noInternetConnection.value = true
+                        }
+                        profileSaved.value = false
+                        it.printStackTrace()
+                    })
+                compositeDisposable.add(disposable)
+            } else {
+                phoneNumberInvalid.value = true
+            }
+        } else {
+            if(name.isEmpty()) nameInvalide.value= true
+            if(age.isEmpty()) ageInvalide.value= true
+            if(gender.isEmpty()) genderInvalid.value= true
+        }
     }
     
     fun getProfile() {

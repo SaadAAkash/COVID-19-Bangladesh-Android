@@ -53,6 +53,13 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.loader.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if(it) {
+                communicator.showLoader()
+            } else {
+                communicator.hideLoader()
+            }
+        })
         viewModel.toastMessage.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             toast(it)
         })

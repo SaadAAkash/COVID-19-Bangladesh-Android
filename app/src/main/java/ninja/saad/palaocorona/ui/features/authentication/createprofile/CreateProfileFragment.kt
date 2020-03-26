@@ -9,11 +9,18 @@ import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_create_profle.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.data.authentication.model.User
 import ninja.saad.palaocorona.ui.dialogs.NoInternetConnectionDialog
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.toast
 
 class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
+    
+    companion object {
+        const val UPDATE_PROFILE = "update"
+        const val USER = "user"
+    }
     
     override val layoutId: Int
         get() = R.layout.fragment_create_profle
@@ -24,6 +31,14 @@ class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
         val genders = resources.getStringArray(R.array.genders)
         val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, genders)
         etGender.setAdapter(arrayAdapter)
+        
+        if(arguments?.getBoolean(UPDATE_PROFILE) == true) {
+            val user = arguments?.getParcelable<User>(USER)
+            etName.setText(user?.name)
+            etAge.setText(user?.age)
+//            etGender.setText(user?.gender)
+            etPhoneNumber.setText(user?.phoneNumber)
+        }
         
         btnCreateProfile.onClick {
             viewModel.saveProfile(etName.text.toString(), etAge.text.toString(),
@@ -45,6 +60,29 @@ class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
                 activity?.finish()
             } else {
             
+            }
+        })
+        
+        viewModel.nameInvalide.observeOn(viewLifecycleOwner, Observer {
+            if(it) {
+                toast(R.string.please_enter_your_name)
+            }
+        })
+    
+        viewModel.ageInvalide.observeOn(viewLifecycleOwner, Observer {
+            if(it) {
+                toast(R.string.please_enter_your_age)
+            }
+        })
+        viewModel.genderInvalid.observeOn(viewLifecycleOwner, Observer {
+            if(it) {
+                toast(R.string.please_select_your_gender)
+            }
+        })
+    
+        viewModel.phoneNumberInvalid.observeOn(viewLifecycleOwner, Observer {
+            if(it) {
+                toast(R.string.phone_number_invalid)
             }
         })
     }

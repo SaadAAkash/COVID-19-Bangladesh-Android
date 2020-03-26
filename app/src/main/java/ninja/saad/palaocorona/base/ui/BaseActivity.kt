@@ -23,6 +23,7 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
     lateinit var factory: ViewModelProvider.Factory
     protected lateinit var viewModel: ViewModel
     abstract val layoutId: Int
+    private var loader: Loader? = null
     
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(BaseApplication.localeManager.setLocale(base))
@@ -96,6 +97,26 @@ abstract class BaseActivity<ViewModel: BaseViewModel> : DaggerAppCompatActivity(
     
     override fun onFragmentResume() {
     
+    }
+    
+    override fun showLoader() {
+        try {
+            loader?.dismiss()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        
+        loader = Loader()
+        loader?.setCancelable(false)
+        loader?.show(supportFragmentManager, "loader")
+    }
+    
+    override fun hideLoader() {
+        try {
+            loader?.dismiss()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
     
     private fun getViewModelClass(): Class<ViewModel> {
