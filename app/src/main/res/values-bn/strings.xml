@@ -54,6 +54,12 @@
     <string name="text_recovered">জন সুস্থ হয়েছেন</string>
     <string name="text_deaths">জন মৃত্যুবরণ করেছেন</string>
     <string name="text_active_cases">জন চিকিৎসাধীন</string>
+
+    <string name="text_quarantined">মোট কোয়ারেন্টাইন</string>
+    <string name="text_released">মোট কোয়ারেন্টাইন সম্পন্ন</string>
+    <string name="text_total_isolation_completeds">মোট আইসোলেসন সম্পন্ন</string>
+    <string name="text_isolated">মোট আইসোলেসন</string>
+
     <string name="text_cases_source">
         <a href="https://coronavirus.jhu.edu/map.html">
             তথ্যসূত্র: CSSE JHU
@@ -62,6 +68,11 @@
     <string name="text_live_update_source">
         <a href="https://www.prothomalo.com/live">
             তথ্যসূত্র: প্রথম আলো
+        </a>
+    </string>
+    <string name="text_cases_source_DGHS">
+        <a href="https://www.dghs.gov.bd/index.php/bd/">
+            তথ্যসূত্র: DGHS
         </a>
     </string>
     <string name="last_updated">সর্বশেষ হালনাগাদ:</string>
