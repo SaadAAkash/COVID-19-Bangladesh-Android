@@ -8,10 +8,6 @@
         </shape>
     </item>
 
-    <item android:drawable="@drawable/logo"
-        android:top="@dimen/_200sdp"
-        android:bottom="@dimen/_200sdp"
-        android:left="@dimen/_50sdp"
-        android:right="@dimen/_50sdp"/>
+    <item android:drawable="@drawable/logo_splash"/>
 
 </layer-list>
