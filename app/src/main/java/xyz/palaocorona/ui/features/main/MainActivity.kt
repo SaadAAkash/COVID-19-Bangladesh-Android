@@ -34,7 +34,6 @@ class MainActivity : BaseActivity<MainViewModel>() {
     private var alertDialog: AlertDialog? = null
     
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         
         val spannable = SpannableString(getString(R.string.app_name_top_bar))
