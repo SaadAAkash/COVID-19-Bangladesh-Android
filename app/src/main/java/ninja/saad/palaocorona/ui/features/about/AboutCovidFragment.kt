@@ -7,8 +7,9 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_about_covid.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
+import ninja.saad.palaocorona.base.ui.BaseViewModel
 
-class AboutCovidFragment: BaseFragment<AboutCovidViewModel>()  {
+class AboutCovidFragment: BaseFragment<BaseViewModel>()  {
     
     override val layoutId: Int
         get() = R.layout.fragment_about_covid
