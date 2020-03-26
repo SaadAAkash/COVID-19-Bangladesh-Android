@@ -16,7 +16,7 @@
         android:tint="@color/grey_600"
         android:src="@drawable/ic_signal_wifi_off"/>
 
-    <ninja.saad.palaocorona.base.ui.AppTextView
+    <xyz.palaocorona.base.ui.AppTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvNoInternetConnection"
@@ -28,7 +28,7 @@
         android:textSize="@dimen/_16ssp"
         android:textColor="@color/white" />
 
-    <ninja.saad.palaocorona.base.ui.AppTextView
+    <xyz.palaocorona.base.ui.AppTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvMessage"
