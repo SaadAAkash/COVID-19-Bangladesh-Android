@@ -5,26 +5,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivNoInternetConnection"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
-        app:cardCornerRadius="@dimen/_50sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_30sdp"/>
+        android:layout_marginTop="@dimen/_20sdp"
+        android:tint="@color/grey_600"
+        android:src="@drawable/ic_signal_wifi_off"/>
 
     <ninja.saad.palaocorona.base.ui.AppTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvNoInternetConnection"
         android:text="@string/no_internet_connection"
-        app:layout_constraintTop_toBottomOf="@id/ivNoInternetConnection"
+        app:layout_constraintTop_toBottomOf="@+id/ivNoInternetConnection"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_20sdp"
-        android:textSize="@dimen/_18ssp"
+        android:textSize="@dimen/_16ssp"
         android:textColor="@color/white" />
 
     <ninja.saad.palaocorona.base.ui.AppTextView
@@ -42,8 +43,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnRetry"
         app:backgroundTint="@color/colorAccent"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintTop_toBottomOf="@id/tvMessage"
         app:layout_constraintStart_toStartOf="parent"
