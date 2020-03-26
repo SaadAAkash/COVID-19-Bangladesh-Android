@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ninja.saad.palaocorona">
+    package="xyz.palaocorona">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".base.BaseApplication"
+        android:name="xyz.palaocorona.base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,7 +27,7 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
-        <activity android:name="ninja.saad.palaocorona.ui.features.main.MainActivity"
+        <activity android:name=".ui.features.main.MainActivity"
             android:configChanges="locale"
             android:screenOrientation="portrait"
             android:resizeableActivity="false"
@@ -46,7 +46,7 @@
             android:resizeableActivity="false"/>
 
         <service
-            android:name=".services.FcmService"
+            android:name="xyz.palaocorona.services.FcmService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

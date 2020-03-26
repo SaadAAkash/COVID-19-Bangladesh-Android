@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.1"
 
     defaultConfig {
-        applicationId "ninja.saad.palaocorona"
+        applicationId "xyz.palaocorona"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1

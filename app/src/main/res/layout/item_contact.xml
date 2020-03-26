@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp">
 
-        <ninja.saad.palaocorona.base.ui.AppTextView
+        <xyz.palaocorona.base.ui.AppTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tvName"
@@ -27,7 +27,7 @@
             android:textSize="@dimen/_12ssp"
             android:textColor="@color/black" />
 
-        <ninja.saad.palaocorona.base.ui.AppTextView
+        <xyz.palaocorona.base.ui.AppTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tvContactInfo"

@@ -55,7 +55,7 @@
                 android:textColor="@color/colorPrimary"
                 app:fontFamily="sans-serif-medium" />
 
-            <ninja.saad.palaocorona.base.ui.AppTextView
+            <xyz.palaocorona.base.ui.AppTextView
                 android:id="@+id/tvSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ninja.saad.palaocorona.base.ui.AppTextView
+                <xyz.palaocorona.base.ui.AppTextView
                     android:id="@+id/tvSource"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <ninja.saad.palaocorona.base.ui.AppTextView
+                <xyz.palaocorona.base.ui.AppTextView
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

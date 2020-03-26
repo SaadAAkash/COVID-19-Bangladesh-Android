@@ -15,6 +15,43 @@
       },
       "oauth_client": [
         {
+          "client_id": "340678956538-lafstd1qtjtl215cl3sbmvi2ecagc6rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ninja.saad.palaocorona",
+            "certificate_hash": "515948cd5de012998e968c054f4342e5048f9f31"
+          }
+        },
+        {
+          "client_id": "340678956538-s562mvjeqie2r20o1am0s23e2p0l05c6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuu1ejqA4MKhFMOnNop0Gy7EPWXmTHUo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340678956538-s562mvjeqie2r20o1am0s23e2p0l05c6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340678956538:android:0ce9f6f1547b73c1de8043",
+        "android_client_info": {
+          "package_name": "xyz.palaocorona"
+        }
+      },
+      "oauth_client": [
+        {
           "client_id": "340678956538-s562mvjeqie2r20o1am0s23e2p0l05c6.apps.googleusercontent.com",
           "client_type": 3
         }

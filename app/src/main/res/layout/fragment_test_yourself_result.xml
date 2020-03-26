@@ -19,7 +19,7 @@
         app:lottie_autoPlay="true"
         app:lottie_speed="1"/>
 
-    <ninja.saad.palaocorona.base.ui.AppTextView
+    <xyz.palaocorona.base.ui.AppTextView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:id="@+id/tvResult"

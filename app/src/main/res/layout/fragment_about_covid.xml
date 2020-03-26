@@ -28,7 +28,7 @@
                 android:orientation="vertical"
                 android:padding="@dimen/_15sdp">
 
-                <ninja.saad.palaocorona.base.ui.AppTextView
+                <xyz.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/feature_01_about_corona"
@@ -43,7 +43,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:background="@color/grey_900" />
 
-                <ninja.saad.palaocorona.base.ui.AppTextView
+                <xyz.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
@@ -73,7 +73,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/counter_confirmed"/>
 
-                <ninja.saad.palaocorona.base.ui.AppTextView
+                <xyz.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
