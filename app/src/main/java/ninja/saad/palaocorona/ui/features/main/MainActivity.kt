@@ -12,6 +12,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
@@ -19,20 +20,24 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import androidx.lifecycle.Observer
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
 import ninja.saad.palaocorona.base.ui.CustomTypefaceSpan
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
+import java.lang.System.exit
 
 class MainActivity : BaseActivity<MainViewModel>() {
     
     override val layoutId: Int = R.layout.activity_main
     private var doubleBackToExitPressedOnce: Boolean = false
     private var isLoggedIn = false
+    private var alertDialog: AlertDialog? = null
     
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         
         val spannable = SpannableString(getString(R.string.app_name_top_bar))
@@ -61,6 +66,14 @@ class MainActivity : BaseActivity<MainViewModel>() {
             this.isLoggedIn = it
             invalidateOptionsMenu()
         })
+        
+        viewModel.isUpdateAvailable.observe(this, Observer {
+            if(it) {
+                showUpdateDialog()
+            }
+        })
+        
+        viewModel.checkForUpdate()
     }
     
     override fun onFragmentResume() {
@@ -107,5 +120,23 @@ class MainActivity : BaseActivity<MainViewModel>() {
             super.onBackPressed()
         }
         
+    }
+    
+    private fun showUpdateDialog() {
+        try {
+            alertDialog?.dismiss()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        
+        alertDialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.update_available)
+            .setMessage(R.string.updae_available_message)
+            .setPositiveButton(R.string.update) { _, _ ->
+            
+            }.setNegativeButton(R.string.exit) { _, _ ->
+            
+            }
+            .show()
     }
 }

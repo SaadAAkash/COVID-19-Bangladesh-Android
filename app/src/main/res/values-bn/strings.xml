@@ -138,4 +138,8 @@
         <item>০১৮৭৩১৪৭৪৯৭</item>
         <item>০১৯২৯৪২২৩৩১</item>
     </string-array>
+    <string name="update">আপডেট</string>
+    <string name="updae_available_message">এই অ্যাপ এর আপডেট পাওয়া যাচ্ছে। অনুগ্রহ করে আপডেট করুন।</string>
+    <string name="update_available">আপডেট পাওয়া যাচ্ছে</string>
+    <string name="exit">পরে করুন</string>
 </resources>
