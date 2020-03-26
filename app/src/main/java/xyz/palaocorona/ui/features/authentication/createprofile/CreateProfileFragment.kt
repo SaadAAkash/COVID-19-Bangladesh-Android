@@ -86,4 +86,6 @@ class CreateProfileFragment: BaseFragment<AuthenticationViewModel>() {
         })
     }
     
+    
+    
 }
