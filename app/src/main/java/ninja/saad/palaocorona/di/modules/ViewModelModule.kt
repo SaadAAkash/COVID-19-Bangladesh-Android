@@ -5,7 +5,6 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import ninja.saad.palaocorona.di.annotations.ViewModelKey
-import ninja.saad.palaocorona.ui.features.about.AboutCovidViewModel
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
 import ninja.saad.palaocorona.ui.features.contact.ContactViewModel
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardViewModel
@@ -13,7 +12,6 @@ import ninja.saad.palaocorona.ui.features.faq.FaqViewModel
 import ninja.saad.palaocorona.ui.features.liveupdates.LiveUpdatesViewModel
 import ninja.saad.palaocorona.ui.features.main.MainViewModel
 import ninja.saad.palaocorona.ui.features.news.NewsViewModel
-import ninja.saad.palaocorona.ui.features.quarantine.QuarantineViewModel
 import ninja.saad.palaocorona.ui.features.testyourself.TestYourselfViewModel
 
 @Module
@@ -43,16 +41,6 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AuthenticationViewModel::class)
     abstract fun bindAuthenticationViewModel(viewModel: AuthenticationViewModel): ViewModel
-    
-    @Binds
-    @IntoMap
-    @ViewModelKey(AboutCovidViewModel::class)
-    abstract fun bindAboutCovidViewModel(viewModel: AboutCovidViewModel): ViewModel
-    
-    @Binds
-    @IntoMap
-    @ViewModelKey(QuarantineViewModel::class)
-    abstract fun bindQuarantineViewModel(viewModel: QuarantineViewModel): ViewModel
     
     @Binds
     @IntoMap
