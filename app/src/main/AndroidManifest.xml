@@ -31,7 +31,6 @@
             android:configChanges="locale"
             android:screenOrientation="portrait"
             android:resizeableActivity="false"
-            android:theme="@style/AppTheme.Launcher"
             android:alwaysRetainTaskState="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
