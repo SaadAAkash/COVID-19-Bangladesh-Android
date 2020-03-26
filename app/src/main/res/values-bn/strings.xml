@@ -84,6 +84,9 @@
     <string name="form_not_completed">অনুগ্রহ করে সব প্রশ্নের উত্তর দিন</string>
     <string name="give_otp_code">অনুগ্রহ করে আপনার ফোনে প্রেরিত ভেরিফিকেশন কোডটি দিন</string>
     <string name="double_press_to_exit">অ্যাপ বন্ধ করতে চাইলে আবার ক্লিক করুন</string>
+    <string name="no_internet_connection">ইন্টারনেট সংযোগ নেই</string>
+    <string name="no_internet_connection_message">অনুগ্রহ করে ইন্টারনেট সংযোগ প্রদান করে পুনরায় চেষ্টা করুন</string>
+    <string name="retry">পুনরায় চেষ্টা করুন</string>
 
     <string name="update_profile">প্রোফাইল আপডেট করুন</string>
     <string name="logout">লগআউট করুন</string>
