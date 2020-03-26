@@ -40,6 +40,7 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
         
         tv_cases_source.movementMethod = LinkMovementMethod.getInstance()
         tv_live_update_source.movementMethod = LinkMovementMethod.getInstance()
+        tv_cases_source_DGHS.movementMethod = LinkMovementMethod.getInstance()
     
         viewModel.liveUpdates.observe(viewLifecycleOwner, Observer {
             var formattedDate = ""
@@ -59,8 +60,17 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
             temp = it.confirmed.value - temp
             tv_active.text =  if(getCurrentLocale().language == "bn") temp.toString().toBanglaNumber() else temp.toString()
         })
+        
+        viewModel.liveUpdatesDGHS.observe(viewLifecycleOwner, Observer {
+            tv_last_updated_DGHS.text = "${resources.getString(R.string.last_updated)}\n${it.lastUpdated}"
+            tv_quarantined.text = if(getCurrentLocale().language == "bn") it.quarantined.value.toString().toBanglaNumber() else it.quarantined.value.toString()
+            tv_released.text = if(getCurrentLocale().language == "bn") it.released.value.toString().toBanglaNumber() else it.released.value.toString()
+            tv_isolated.text = if(getCurrentLocale().language == "bn") it.isolated.value.toString().toBanglaNumber() else it.isolated.value.toString()
+            tv_total_isolation_completeds.text =  if(getCurrentLocale().language == "bn") it.total_isolation_completed.value.toString().toBanglaNumber() else it.total_isolation_completed.value.toString()
+        })
     
         viewModel.getLiveUpdates()
+        viewModel.getLiveUpdatesDGHS()
     }
     
     @SuppressLint("SetJavaScriptEnabled")

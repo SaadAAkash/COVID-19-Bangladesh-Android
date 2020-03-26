@@ -65,6 +65,12 @@
     <string name="text_recovered">Recovered</string>
     <string name="text_deaths">Deaths</string>
     <string name="text_active_cases">Active Cases</string>
+
+    <string name="text_quarantined">Quarantined</string>
+    <string name="text_released">Released</string>
+    <string name="text_total_isolation_completeds">Total Isolation Completed</string>
+    <string name="text_isolated">Isolated</string>
+
     <string name="text_cases_source">
         <a href="https://coronavirus.jhu.edu/map.html">
             Source: CSSE JHU
@@ -73,6 +79,11 @@
     <string name="text_live_update_source">
         <a href="https://www.prothomalo.com/live">
             Source: Prothom Alo
+        </a>
+    </string>
+    <string name="text_cases_source_DGHS">
+        <a href="https://www.dghs.gov.bd/index.php/bd/">
+            Source: DGHS
         </a>
     </string>
     <string name="last_updated">Last Updated:</string>
@@ -108,6 +119,7 @@
     <string name="updae_available_message">An update of tis app is available. Please update the app.</string>
     <string name="update_available">Updatet Available</string>
     <string name="exit">Update later</string>
+
 
     <string-array name="emergency_contact_name">
         <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
