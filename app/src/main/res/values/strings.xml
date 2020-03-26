@@ -89,12 +89,6 @@
     <string name="retry" translatable="false">Retry</string>
     <string name="profile">Profile</string>
 
-    <!-- temporary resources -->
-    <string name="medium_lorem_ipsum" translatable="false">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
-    <string name="long_lorem_ipsum" translatable="false">
-        বিশ্ব স্বাস্থ্য সংস্থা বলছে, ভাইরাসটির ইনকিউবেশন পিরিয়ড ১৪দিন পর্যন্ত স্থায়ী থাকে। তবে কিছু কিছু গবেষকের মতে এর স্থায়িত্ব ২৪দিন পর্যন্ত থাকতে পারে।\n\n
-মানুষের মধ্যে যখন ভাইরাসের উপসর্গ দেখা দেবে তখন বেশি মানুষকে সংক্রমণের সম্ভাবনা থাকবে তাদের। তবে এমন ধারণাও করা হচ্ছে যে নিজেরা অসুস্থ না থাকার সময়ও সুস্থ মানুষের দেহে ভাইরাস সংক্রমিত করতে পারে মানুষ।
-শুরুর দিকের উপসর্গ সাধারণ সর্দিজ্বর এবং ফ্লু’য়ের সাথে সাদৃশ্যপূর্ণ হওয়ায় রোগ নির্ণয়ের ক্ষেত্রে দ্বিধাগ্রস্থ হওয়া স্বাভাবিক।</string>
     <string name="update_profile">Update Profile</string>
     <string name="logout">Logout</string>
     <string name="test_positive">You are at minimum risk. You should follow instructions mentioned bellow:\n\n• Avoid public gathering\n• Avoid all unnecessary travel\n•Avoid touching your face\n•Practice respiratory hygiene\n• Keep yourself at least 6ft away from other people\n• Follow the preventive measures to stop the spread</string>
@@ -102,6 +96,9 @@
     <string name="test_negative">You are ate high risk. You should follow instructions mentioned bellow:\n\n• Contact IEDCR Bangladesh by phone if you are showing symptoms\n• Stay home\n• Prepare to be in quarantine for 2 to 4 weeks\n• Prepare a separate room for stay\n• Keep yourself away from people &amp; pets\n• Avoid sharing personal household items\n• Cover your coughs and sneezes or wear a facemask\n• Keep an eye on your health\n• Call a doctor if symptoms worsen\n• If you need to get medical care, avoid all public transportation\n• Ask someone to bring you food and supplies</string>
     <string name="go_to_dashboard">Go to dashboard</string>
     <string name="call">Call</string>
+
+    <string name="about_covid_part_01">COVID 19, a viral infection disease that has recently been declared as pandemic by World Health Organization ( WHO ). This disease is the newly discovered Specie of CoronaVirus and as of now the scientists couldn’t invent the vaccine to cure. The spread occurs of this Flu virus through the respiratory droplet (cough and sneeze of people) and gradually the Respiratory system of infected people get damaged when it’s severe level and the patient suffer from breathing difficulty. And when the infected persons have a mild situation they experience cough, Fever, sore throat and runny nose as its symptoms. </string>
+    <string name="about_covid_part_02">Let’s try to understand how this idea of social distancing can flatten the infected curve with a simple simulation. Let\'s think there are 200 people in a city and one of them gets infected by COVID-19. All of them are moving around the city freely and thus affecting those who are around them in the process. These infected people are spreading the virus too. But if we can isolate 50 infected people, they lose the ability to get others infected. Thus the rate decreases and everyone gets disinfected as time goes by.</string>
 
     <string-array name="emergency_contact_name">
         <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
