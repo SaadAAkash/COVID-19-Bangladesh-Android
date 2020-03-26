@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.google.firebase.messaging.FirebaseMessaging
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import dagger.android.AndroidInjector
@@ -28,6 +29,7 @@ class BaseApplication : DaggerApplication(), LifecycleObserver {
             .lifecycle
             .addObserver(this)
         Logger.addLogAdapter(AndroidLogAdapter())
+        FirebaseMessaging.getInstance().isAutoInitEnabled = true
     }
     
     override fun onConfigurationChanged(newConfig: Configuration) {
