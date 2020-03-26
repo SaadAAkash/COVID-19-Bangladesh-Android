@@ -93,6 +93,14 @@ abstract class BaseFragment<ViewModel: BaseViewModel>: DaggerFragment() {
         alertDialog?.show()
     }
     
+    fun showLoader() {
+        communicator.showLoader()
+    }
+    
+    fun hideLoader() {
+        communicator.hideLoader()
+    }
+    
     private fun getViewModelClass(): Class<ViewModel> {
         val type =
             (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0]   // index of 0 means first argument of Base class param

@@ -1,6 +1,7 @@
 package ninja.saad.palaocorona.ui.features.liveupdates
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
@@ -118,6 +119,16 @@ class LiveUpdatesFragment : BaseFragment<LiveUpdatesViewModel>()  {
     
     private fun loadUrl(pageUrl: String) {
         live_view.loadUrl(pageUrl)
+        live_view.webViewClient = object: WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                this@LiveUpdatesFragment.hideLoader()
+            }
+    
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+                this@LiveUpdatesFragment.showLoader()
+            }
+        }
     }
     
     private fun loadData(iframe : String) {
