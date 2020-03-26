@@ -21,6 +21,11 @@ class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
     override val layoutId: Int
         get() = R.layout.fragment_otp_verification
     
+    override fun onCreate(savedInstanceState: Bundle?) {
+        isActivityAsViewModelLifeCycleOwner = true
+        super.onCreate(savedInstanceState)
+    }
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
@@ -34,19 +39,6 @@ class OtpVerificationFragment: BaseFragment<AuthenticationViewModel>() {
                     viewModel.verifyOtp(arguments?.getString(VERIFICATION_ID), etOtp.text.toString())
                 }
             })
-        })
-        
-        viewModel.userExists.observe(viewLifecycleOwner, Observer {
-            if(!it) {
-                activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.authenticationFragmentContainer,
-                        CreateProfileFragment()
-                    )
-                    ?.commit()
-            } else {
-                activity?.setResult(Activity.RESULT_OK)
-                activity?.finish()
-            }
         })
         
         viewModel.otpInvalid.observeOn(viewLifecycleOwner, Observer {

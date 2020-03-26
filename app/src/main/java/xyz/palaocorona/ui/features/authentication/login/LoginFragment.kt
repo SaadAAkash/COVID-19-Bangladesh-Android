@@ -17,6 +17,12 @@ class LoginFragment: BaseFragment<AuthenticationViewModel>() {
     override val layoutId: Int
         get() = R.layout.fragment_login
     
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        isActivityAsViewModelLifeCycleOwner = true
+        super.onCreate(savedInstanceState)
+    }
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         

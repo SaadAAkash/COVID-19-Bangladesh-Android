@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
     android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCreateProfile"
             android:layout_width="@dimen/_180sdp"
             android:layout_height="@dimen/_180sdp"
             android:layout_margin="@dimen/_8sdp"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/bg_welcome_profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tilName"
+            android:layout_below="@id/ivCreateProfile"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
@@ -47,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tilAge"
+            android:layout_below="@id/tilName"
             app:layout_constraintTop_toBottomOf="@id/tilName"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
@@ -67,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tilGender"
+            android:layout_below="@id/tilAge"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             app:layout_constraintTop_toBottomOf="@id/tilAge"
             android:layout_marginStart="@dimen/_10sdp"
@@ -89,6 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tilPersonalPhone"
+            android:layout_below="@id/tilGender"
             app:layout_constraintTop_toBottomOf="@id/tilGender"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
@@ -109,11 +112,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btnCreateProfile"
+            android:layout_below="@id/tilPersonalPhone"
             android:text="@string/start_taking_test"
             android:layout_margin="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/tilPersonalPhone"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -26,10 +26,10 @@ class AuthenticationDataSource @Inject constructor() {
         return !FirebaseAuth.getInstance().uid.isNullOrEmpty()
     }
     
-    fun sendOtp(phoneNumber: String): Single<String> {
+    fun sendOtp(phoneNumber: String): Observable<String> {
         FirebaseAuth.getInstance().signOut()
-        return Single.create<String>(object: SingleOnSubscribe<String> {
-            override fun subscribe(emitter: SingleEmitter<String>) {
+        return Observable.create<String>{ emitter ->
+            
                 val executor = Executors.newSingleThreadExecutor()
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                     phoneNumber,
@@ -37,6 +37,7 @@ class AuthenticationDataSource @Inject constructor() {
                     TimeUnit.SECONDS, executor,
                     object: PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                         override fun onVerificationCompleted(p0: PhoneAuthCredential) {
+                            emitter.onNext("verified")
                             executor.shutdown()
                         }
             
@@ -51,7 +52,7 @@ class AuthenticationDataSource @Inject constructor() {
                         override fun onCodeSent(verificationId: String, p1: PhoneAuthProvider.ForceResendingToken) {
                             
                             executor.shutdown()
-                            emitter.onSuccess(verificationId)
+                            emitter.onNext(verificationId)
                         }
             
                         override fun onCodeAutoRetrievalTimeOut(p0: String) {
@@ -59,9 +60,9 @@ class AuthenticationDataSource @Inject constructor() {
                             emitter.onError(TimeoutException())
                         }
                     })
-            }
+            
     
-        })
+        }
     }
     
     fun verifyOtp(verificationId: String, otp: String): Single<String> {
