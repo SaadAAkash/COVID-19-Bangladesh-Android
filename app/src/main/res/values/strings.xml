@@ -125,90 +125,36 @@
 
 
     <string-array name="emergency_contact_name">
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
-        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
+        <item>Hotline</item>
+        <item>Hotline 01</item>
+        <item>Hotline 02</item>
+        <item>Hotline 03</item>
     </string-array>
     <string-array name="whole_day_contact_name">
-        <item>24 Hours Service</item>
-        <item>Dr. Rehan Akhter</item>
-        <item>Dr.Nazir Shah</item>
-        <item>Dr.Niloy Prosad</item>
-        <item>Md. Asaduzzaman Shuvo</item>
-        <item>Dr. Mahbubur Rahman Rajib</item>
-        <item>Dr.Mohona Khondoker</item>
-        <item>Dr. Saifa Islam</item>
-        <item>Dr. Atiya Rahman</item>
-        <item>Dr. Priyanka Mondal</item>
-        <item>Dr. Sharmin haque prima</item>
-        <item>Dr. Shadman Sakib</item>
-        <item>Olia Mahjabin</item>
-        <item>Dr.Tanvir Rahman</item>
-        <item>Dr. Sadia Afrin</item>
+        <item>Central Control Room</item>
+        <item>Hotline 01</item>
+        <item>Hotline 02</item>
+        <item>Hotline 03</item>
     </string-array>
     <string-array name="other_contact_name">
-        <item>8:00AM to 12:00AM Service</item>
-        <item>Dr. Zaara Rahman</item>
-        <item>Nawrin Jahan</item>
-        <item>Dr.Farjana yeasmin</item>
-        <item>Dr. Refat parvez amy</item>
-        <item>Dr. Nusrat Nueri Raisa</item>
-        <item>Dr. Subhashree monigram</item>
-        <item>Dr. Nigar sultana</item>
-        <item>Dr. Nafisa Rahman</item>
-        <item>Rasma Muzaffar</item>
-        <item>Dr hima</item>
-        <item>Dr. Mahbub Alam</item>
-        <item>Dr. Farjana</item>
+        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
+        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
+        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
+        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
+        <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
     </string-array>
     <string-array name="contacts">
-        <item>01401184551</item>
+        <item>333</item>
+        <item>10655</item>
+        <item>16263</item>
+
+        <item>01313791130</item>
+        <item>01313791138</item>
+        <item>01313791139</item>
+
+        <item>01937110011</item>
+        <item>01937000011</item>
         <item>01927711784</item>
         <item>01927711785</item>
-        <item>01937000011</item>
-        <item>01937110011</item>
-        <item>01401184554</item>
-        <item>01401184555</item>
-        <item>01401184556</item>
-        <item>01401184559</item>
-        <item>01401184560</item>
-        <item>01401184563</item>
-        <item>01401184568</item>
-        <item>01687670413</item>
-        <item>01303316018</item>
-        <item>01718452558</item>
-        <item>01757540162</item>
-        <item>01873147497</item>
-        <item>01929422331</item>
-        <item>01301880283</item>
-        <item>01533987914</item>
-        <item>01953513108</item>
-        <item>01883581829</item>
-        <item>01772606470</item>
-        <item>01717020118</item>
-        <item>01795233354</item>
-        <item>01675843987</item>
-        <item>01796597198</item>
-        <item>01518615052</item>
-        <item>01534301925</item>
-        <item>01841716131</item>
-        <item>01856877748</item>
-        <item>01401288202</item>
-        <item>01972397197</item>
-        <item>‭01627585100</item>
-        <item>01797287465</item>
-        <item>01611108566</item>
-        <item>01759800507</item>
-        <item>01534991865</item>
     </string-array>
 </resources>
