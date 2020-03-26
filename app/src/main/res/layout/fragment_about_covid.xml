@@ -31,19 +31,10 @@
                 <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="করোনা ভাইরাস সংক্রান্ত গুরুত্বপূর্ণ কিছু টিপস!"
+                    android:text="@string/feature_01_about_corona"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textColor="@color/grey_900"
                     android:textStyle="bold" />
-
-                <ninja.saad.palaocorona.base.ui.AppTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:text="জনসচেতনতায় সহজ পরিবার"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_900"
-                    app:fontFamily="sans-serif-medium" />
 
                 <View
                     android:layout_width="match_parent"
@@ -55,17 +46,27 @@
                 <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:lineSpacingExtra="@dimen/_10sdp"
-                    android:text="সহজ"
+                    android:text="@string/about_covid_part_01"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_700" />
 
-                <!--<ImageView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_news" />-->
+                    android:layout_height="match_parent"
+                    android:clipToPadding="true"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="false">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAboutCovid"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </com.google.android.material.card.MaterialCardView>
 
                 <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="wrap_content"
@@ -73,7 +74,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:maxLines="1"
-                    android:text="Image source : সহজ"
+                    android:text=""
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/grey_900" />
 
@@ -82,28 +83,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:lineSpacingExtra="@dimen/_10sdp"
-                    android:text="@string/long_lorem_ipsum"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_700" />
-
-                <ninja.saad.palaocorona.base.ui.AppTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:lineSpacingExtra="@dimen/_10sdp"
-                    android:text="@string/medium_lorem_ipsum"
+                    android:text="@string/about_covid_part_02"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/grey_700"
                     android:textStyle="bold" />
-
-                <ninja.saad.palaocorona.base.ui.AppTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:lineSpacingExtra="@dimen/_10sdp"
-                    android:text="@string/long_lorem_ipsum"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_700" />
 
             </LinearLayout>
 
