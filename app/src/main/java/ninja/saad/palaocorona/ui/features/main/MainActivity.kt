@@ -1,11 +1,8 @@
 package ninja.saad.palaocorona.ui.features.main
 
-import android.content.Context
-import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
-import android.os.PersistableBundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -15,19 +12,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.text.HtmlCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentFactory
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
-import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.iid.InstanceIdResult
+import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.activity_main.*
 import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseActivity
 import ninja.saad.palaocorona.base.ui.CustomTypefaceSpan
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationActivity
 import ninja.saad.palaocorona.ui.features.dashboard.DashboardFragment
-import java.lang.System.exit
 
 class MainActivity : BaseActivity<MainViewModel>() {
     
@@ -43,7 +41,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
         val spannable = SpannableString(getString(R.string.app_name_top_bar))
         val engFont = Typeface.create(ResourcesCompat.getFont(applicationContext, R.font.mina), Typeface.NORMAL)
         spannable.setSpan(CustomTypefaceSpan("", engFont), 0,
-            spannable.length ?: 0, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            spannable.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannable.setSpan(
             ForegroundColorSpan(ContextCompat.getColor(applicationContext, R.color.colorAccent)),
             spannable.length -1, spannable.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -74,6 +72,20 @@ class MainActivity : BaseActivity<MainViewModel>() {
         })
         
         viewModel.checkForUpdate()
+    
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(object : OnCompleteListener<InstanceIdResult?> {
+                override fun onComplete(task: Task<InstanceIdResult?>) {
+                    if (!task.isSuccessful) {
+                        Logger.e("getInstanceId failed - " + task.exception)
+                        return
+                    }
+                    val token: String? = task.result?.token
+                    Logger.d(token)
+                
+                   
+                }
+            })
     }
     
     override fun onFragmentResume() {

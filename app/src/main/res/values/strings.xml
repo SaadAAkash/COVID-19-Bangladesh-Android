@@ -122,6 +122,7 @@
     <string name="please_enter_your_name">Plase enter your name</string>
     <string name="please_enter_your_age">Plase enter your age</string>
     <string name="please_select_your_gender">Please select your gender</string>
+    <string name="default_notification_channel_id">Palao Corona</string>
 
 
     <string-array name="emergency_contact_name">

@@ -24,8 +24,8 @@ class QuarantineFragment: BaseFragment<BaseViewModel>()  {
         //drop or swap
         image_slider.setIndicatorAnimation(IndicatorAnimations.DROP) //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         image_slider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
-        image_slider.scrollTimeInSec = 0 //set scroll delay in seconds :
-        //image_slider.startAutoCycle()
+        image_slider.scrollTimeInSec = 7 //set scroll delay in seconds :
+        image_slider.startAutoCycle()
         image_slider.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
     
     }
