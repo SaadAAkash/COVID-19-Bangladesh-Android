@@ -122,12 +122,32 @@
         <item>ডঃ রেহানা আক্তার</item>
         <item>ডা. নাজির শাহ</item>
         <item>ডা. নিলয় প্রসাদ</item>
+        <item>মোঃ আসাদুজ্জামান শুভ</item>
+        <item>ডা. মাহবুবুর রহমান রাজীব</item>
+        <item>ডা. মোহনা খন্দকার</item>
+        <item>ডা. সাইফা ইসলাম</item>
+        <item>ডা. আতিয়া রহমান</item>
+        <item>ডা. প্রিয়াঙ্কা মন্ডল</item>
+        <item>ডা. শারমিন হক প্রিমা</item>
+        <item>ডা. সাদমান শাকিব</item>
+        <item>অলিয়া মাহজাবীন</item>
+        <item>ডা. তানভির রহমান</item>
+        <item>ডা. সাদিয়া আফরিন</item>
     </string-array>
     <string-array name="other_contact_name">
         <item>সকাল ৮:০০ টা থেকে রাত ১২:০০ পর্যন্ত সার্ভিস</item>
         <item>ডা: জারা রহমান</item>
         <item>নওরীন জাহান</item>
         <item>ডা. ফারজানা ইয়াসমিন</item>
+        <item>ডা. রিফাত পারভেজ এ্যামি</item>
+        <item>ডা. নুসরাত নূয়েরি রাইসা</item>
+        <item>ডা. শুভশ্রী মনিগ্রাম</item>
+        <item>ডা: নিগার সুলতানা</item>
+        <item>ডা. নাফিসা রহমান</item>
+        <item>রামসা মুজাফ্ফার</item>
+        <item>ডা: হিমা</item>
+        <item>ডা: মাহবুব আলম</item>
+        <item>ডা: ফারজানা</item>
     </string-array>
     <string-array name="contacts">
         <item>০১৪০১১৮৪৫৫১</item>
@@ -148,6 +168,26 @@
         <item>০১৭৫৭৫৪০১৬২</item>
         <item>০১৮৭৩১৪৭৪৯৭</item>
         <item>০১৯২৯৪২২৩৩১</item>
+        <item>০১৩০১৮৮০২৮৩</item>
+        <item>০১৫৩৩৯৮৭৯১৪</item>
+        <item>০১৯৫৩৫১৩১০৮</item>
+        <item>০১৮৮৩৫৮১৮২৯</item>
+        <item>০১৭৭২৬০৬৪৭০</item>
+        <item>০১৭১৭০২০১১৮</item>
+        <item>০১৭৯৫২৩৩৩৫৪</item>
+        <item>০১৬৭৫৮৪৩৯৮৭</item>
+        <item>০১৭৯৬৫৯৭১৯৮</item>
+        <item>০১৫১৮৬১৫০৫২</item>
+        <item>০১৫৩৪৩০১৯২৫</item>
+        <item>০১৮৪১৭১৬১৩১</item>
+        <item>০১৮৫৬৮৭৭৭৪৮</item>
+        <item>০১৪০১২৮৮২০২</item>
+        <item>০১৯৭২৩৯৭১৯৭</item>
+        <item>০১৬২৭৫৮৫১০০</item>
+        <item>০১৭৯৭২৮৭৪৬৫</item>
+        <item>০১৬১১১০৮৫৬৬</item>
+        <item>০১৭৫৯৮০০৫০৭</item>
+        <item>০১৫৩৪৯৯১৮৬৫</item>
     </string-array>
     <string name="update">আপডেট</string>
     <string name="updae_available_message">এই অ্যাপ এর আপডেট পাওয়া যাচ্ছে। অনুগ্রহ করে আপডেট করুন।</string>

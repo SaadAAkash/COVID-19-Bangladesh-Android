@@ -19,6 +19,8 @@ class NewsViewModel @Inject constructor(private val newsRepository: NewsReposito
         val disposable = newsRepository.getNews(language, (visibleItemCount / 10) + 1)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { loader.value = true }
+            .doAfterTerminate { loader.value = false }
             .subscribe({
                 this.news.value = it
             }, {

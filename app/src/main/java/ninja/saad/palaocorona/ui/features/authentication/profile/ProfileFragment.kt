@@ -8,15 +8,31 @@ import ninja.saad.palaocorona.R
 import ninja.saad.palaocorona.base.ui.BaseFragment
 import ninja.saad.palaocorona.data.authentication.model.User
 import ninja.saad.palaocorona.ui.features.authentication.AuthenticationViewModel
+import ninja.saad.palaocorona.ui.features.authentication.createprofile.CreateProfileFragment
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class ProfileFragment : BaseFragment<AuthenticationViewModel>() {
+    
+    private lateinit var user: User
     
     override val layoutId: Int
         get() = R.layout.fragment_profile
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        
+        btnUpdateProfile.onClick {
+            val fragment = CreateProfileFragment()
+            val bundle = Bundle()
+            bundle.putParcelable(CreateProfileFragment.USER, user)
+            bundle.putBoolean(CreateProfileFragment.UPDATE_PROFILE, true)
+            fragment.arguments = bundle
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.authenticationFragmentContainer,
+                    fragment
+                )
+                ?.commit()
+        }
         
         btnLogout.onClick {
             viewModel.logout()
@@ -31,6 +47,7 @@ class ProfileFragment : BaseFragment<AuthenticationViewModel>() {
     }
     
     private fun showUserInfo(user: User) {
+        this.user = user
         etName.setText(user.name)
         etAge.setText(user.age)
         etGender.setText(user.gender)
