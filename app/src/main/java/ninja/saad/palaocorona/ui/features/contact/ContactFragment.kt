@@ -34,8 +34,10 @@ class ContactFragment : BaseFragment<ContactViewModel>() {
             (rvContact.adapter as ContactAdapter).setItems(it)
         })
         
-        viewModel.getContactList(mutableListOf(resources.getStringArray(R.array.emergency_contact_name),
+        viewModel.getContactList(mutableListOf(
+            resources.getStringArray(R.array.emergency_contact_name),
             resources.getStringArray(R.array.whole_day_contact_name),
-            resources.getStringArray(R.array.other_contact_name)), resources.getStringArray(R.array.contacts))
+            resources.getStringArray(R.array.other_contact_name)
+        ), resources.getStringArray(R.array.contacts))
     }
 }
