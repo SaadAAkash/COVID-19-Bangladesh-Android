@@ -34,7 +34,9 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
                 .doAfterTerminate { loader.value = false }
                 .subscribe({
                     Logger.d(it)
-                    verificationId.value = it
+                    loader.value = false
+                    if(!it.equals("verified", true)) verificationId.value = it
+                    else isUserExists()
                 }, {
                     if(it is FirebaseNetworkException) {
                         noInternetConnection.value = true
@@ -108,5 +110,25 @@ class AuthenticationViewModel @Inject constructor(private val repository: Authen
     
     fun logout() {
         repository.logout()
+    }
+    
+    fun isUserExists() {
+        val disposable = repository.isUserExists()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { loader.value = true }
+            .doAfterTerminate { loader.value = false }
+            .subscribe({
+                Logger.d(it)
+                userExists.value = it.name.isNotEmpty()
+            }, {
+                if(it is FirebaseNetworkException) {
+                    noInternetConnection.value = true
+                } else if(!it.localizedMessage.contains("otp", true)) {
+                    userExists.value = false
+                }
+                it.printStackTrace()
+            })
+        compositeDisposable.add(disposable)
     }
 }

@@ -10,10 +10,12 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.activity_authentication.*
 import xyz.palaocorona.R
 import xyz.palaocorona.base.ui.BaseActivity
 import xyz.palaocorona.base.ui.CustomTypefaceSpan
+import xyz.palaocorona.ui.features.authentication.createprofile.CreateProfileFragment
 import xyz.palaocorona.ui.features.authentication.login.LoginFragment
 import xyz.palaocorona.ui.features.authentication.profile.ProfileFragment
 
@@ -52,6 +54,19 @@ class AuthenticationActivity : BaseActivity<AuthenticationViewModel>() {
                 .replace(authenticationFragmentContainer.id, LoginFragment())
                 .commit()
         }
+    
+        viewModel.userExists.observe(this, Observer {
+            if(!it) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.authenticationFragmentContainer,
+                        CreateProfileFragment()
+                    )
+                    .commit()
+            } else {
+                setResult(Activity.RESULT_OK)
+                finish()
+            }
+        })
         
     }
     

@@ -1,7 +1,9 @@
 package xyz.palaocorona.data.authentication
 
+import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Completable
 import io.reactivex.Maybe
+import io.reactivex.Observable
 import io.reactivex.Single
 import xyz.palaocorona.base.data.local.AppPreference
 import xyz.palaocorona.data.authentication.model.User
@@ -11,7 +13,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
     private val authenticationDataSource: AuthenticationDataSource,
     private val preference: AppPreference): AuthenticationRepository {
     
-    override fun sendOtp(phoneNumber: String): Single<String> {
+    override fun sendOtp(phoneNumber: String): Observable<String> {
         return authenticationDataSource.sendOtp(phoneNumber)
     }
     
@@ -44,5 +46,9 @@ class AuthenticationRepositoryImpl @Inject constructor(
     
     override fun logout() {
         authenticationDataSource.logout()
+    }
+    
+    override fun isUserExists(): Maybe<User> {
+        return authenticationDataSource.getUserInfo(FirebaseAuth.getInstance().uid ?: "")
     }
 }

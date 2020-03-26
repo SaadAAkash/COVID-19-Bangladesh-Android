@@ -41,17 +41,18 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_covid_19" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/feature_01_about_corona" />
 
         </LinearLayout>
@@ -79,17 +80,18 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_virus_test" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/feature_02_test" />
 
         </LinearLayout>
@@ -117,17 +119,18 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_recent_news" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/feature_03_news" />
 
         </LinearLayout>
@@ -155,17 +158,18 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_dos" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/feature_04_dos" />
 
         </LinearLayout>
@@ -193,17 +197,18 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_quarantine" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/feature_05_quarantine" />
 
         </LinearLayout>
@@ -231,16 +236,17 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_faq" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:gravity="center"
                 android:text="@string/feature_06_faq" />
 
@@ -269,17 +275,18 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_discussion" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:text="@string/feature_07_live_updates" />
 
         </LinearLayout>
@@ -307,16 +314,17 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_56sdp"
-                android:layout_height="@dimen/_56sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_icons_emergency" />
 
             <xyz.palaocorona.base.ui.AppTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
                 android:gravity="center"
                 android:text="@string/feature_08_emergency" />
 
