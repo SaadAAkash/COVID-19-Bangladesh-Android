@@ -68,7 +68,7 @@
 
     <string name="text_quarantined">Quarantined</string>
     <string name="text_released">Released</string>
-    <string name="text_total_isolation_completeds">Total Isolation Completed</string>
+    <string name="text_total_isolation_completeds">Isolation Completed</string>
     <string name="text_isolated">Isolated</string>
 
     <string name="text_cases_source">

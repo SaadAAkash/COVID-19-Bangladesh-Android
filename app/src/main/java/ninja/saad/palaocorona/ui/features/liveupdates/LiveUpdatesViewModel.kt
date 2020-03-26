@@ -20,6 +20,8 @@ class LiveUpdatesViewModel @Inject constructor(val repository: LiveUpdateReposit
             val disposable = repository.getLiveUpdate()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { loader.value = true }
+                .doAfterTerminate { loader.value = false }
                 .subscribe({
                     Logger.d(it)
                     liveUpdates.value = it
@@ -35,6 +37,8 @@ class LiveUpdatesViewModel @Inject constructor(val repository: LiveUpdateReposit
             val disposable = repository.getLiveUpdateDGHS()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { loader.value = true }
+                .doAfterTerminate { loader.value = false }
                 .subscribe({
                     Logger.d(it)
                     liveUpdatesDGHS.value = it
