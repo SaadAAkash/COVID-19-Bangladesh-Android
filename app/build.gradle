@@ -15,6 +15,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -30,6 +31,17 @@ android {
             buildConfigField "String", "BASE_URL", "\"http://api.palaocorona.xyz/api/v1/\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == "com.android.support") {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion "26.+"
+            }
         }
     }
 }
