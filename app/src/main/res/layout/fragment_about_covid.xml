@@ -54,8 +54,10 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:clipToPadding="true"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
                     app:cardCornerRadius="@dimen/_8sdp"
                     app:cardPreventCornerOverlap="false"
                     app:cardUseCompatPadding="false">
@@ -68,15 +70,19 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <ninja.saad.palaocorona.base.ui.AppTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_about_covid_source"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:maxLines="1"
-                    android:text=""
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/grey_900" />
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:textColor="@color/grey_700"
+                    android:text="@string/text_about_covid_source"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/counter_confirmed"/>
 
                 <ninja.saad.palaocorona.base.ui.AppTextView
                     android:layout_width="match_parent"
@@ -85,8 +91,7 @@
                     android:lineSpacingExtra="@dimen/_10sdp"
                     android:text="@string/about_covid_part_02"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/grey_700"
-                    android:textStyle="bold" />
+                    android:textColor="@color/grey_700" />
 
             </LinearLayout>
 

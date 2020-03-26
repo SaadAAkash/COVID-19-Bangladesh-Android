@@ -99,6 +99,11 @@
 
     <string name="about_covid_part_01">COVID 19, a viral infection disease that has recently been declared as pandemic by World Health Organization ( WHO ). This disease is the newly discovered Specie of CoronaVirus and as of now the scientists couldn’t invent the vaccine to cure. The spread occurs of this Flu virus through the respiratory droplet (cough and sneeze of people) and gradually the Respiratory system of infected people get damaged when it’s severe level and the patient suffer from breathing difficulty. And when the infected persons have a mild situation they experience cough, Fever, sore throat and runny nose as its symptoms. </string>
     <string name="about_covid_part_02">Let’s try to understand how this idea of social distancing can flatten the infected curve with a simple simulation. Let\'s think there are 200 people in a city and one of them gets infected by COVID-19. All of them are moving around the city freely and thus affecting those who are around them in the process. These infected people are spreading the virus too. But if we can isolate 50 infected people, they lose the ability to get others infected. Thus the rate decreases and everyone gets disinfected as time goes by.</string>
+    <string name="text_about_covid_source">
+        <a href="https://www.washingtonpost.com/graphics/2020/health/corona-simulation-bengali/">
+            Source: Washington Post
+        </a>
+    </string>
 
     <string-array name="emergency_contact_name">
         <item>IEDCR (Institute of Epidemiology, Disease Control and Research)</item>
