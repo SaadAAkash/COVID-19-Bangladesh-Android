@@ -34,14 +34,14 @@ class NewsAdapter(private val callback: NewsAdapterCallback) : RecyclerView.Adap
         val item = items[position]
         val url = URL(item.source)
         val baseUrl: String = url.host
-        val formatter = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:dd.SSSXXX", Locale.ENGLISH)
-        val dateFormatter = SimpleDateFormat("hh:mm, dd MMM, yyyy", Locale.ENGLISH)
+        val formatter = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSXXX", Locale.ENGLISH)
+        val dateFormatter = SimpleDateFormat("dd MMM, yyyy", Locale.ENGLISH)
         val dateString = dateFormatter.format(formatter.parse(item.time)!!)
         holder.itemView.tvTitle.text = item.title
         holder.itemView.tvSubtitle.text = item.subtitle
         holder.itemView.tvSource.text = baseUrl
         holder.itemView.tvDate.text = dateString
-        Glide.with(holder.itemView.context).load(item.imageSrc).into(holder.itemView.ivNews)
+        Glide.with(holder.itemView.context).load(item.imageSrc).placeholder(R.drawable.ic_thumbnail).into(holder.itemView.ivNews)
         holder.itemView.onClick {
             callback.onNewsClick(item.source)
         }
