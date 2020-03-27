@@ -1,6 +1,8 @@
 package xyz.palaocorona.ui.features.main
 
+import android.content.Intent
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.text.Spannable
@@ -143,7 +145,14 @@ class MainActivity : BaseActivity<MainViewModel>() {
             .setTitle(R.string.update_available)
             .setMessage(R.string.updae_available_message)
             .setPositiveButton(R.string.update) { _, _ ->
-            
+                try {
+                    val webIntent = Intent(Intent.ACTION_VIEW)
+                    val Url = "https://palaocorona.xyz/palaocorona.apk"
+                    webIntent.data = Uri.parse(Url)
+                    startActivity(webIntent)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }.setNegativeButton(R.string.exit) { _, _ ->
             
             }
