@@ -34,7 +34,7 @@ class NewsAdapter(private val callback: NewsAdapterCallback) : RecyclerView.Adap
         val item = items[position]
         val url = URL(item.source)
         val baseUrl: String = url.host
-        val formatter = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSXXX", Locale.ENGLISH)
+        val formatter = SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSS", Locale.ENGLISH)
         val dateFormatter = SimpleDateFormat("HH:mm, dd MMM, yyyy", Locale.ENGLISH)
         val dateString = dateFormatter.format(formatter.parse(item.time)!!)
         holder.itemView.tvTitle.text = item.title
