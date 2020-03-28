@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_news.*
 import xyz.palaocorona.R
 import xyz.palaocorona.base.ui.BaseFragment
+import xyz.palaocorona.ui.dialogs.NoInternetConnectionDialog
 
 class NewsFragment: BaseFragment<NewsViewModel>(), NewsAdapter.NewsAdapterCallback {
     
@@ -23,6 +24,15 @@ class NewsFragment: BaseFragment<NewsViewModel>(), NewsAdapter.NewsAdapterCallba
         
         viewModel.news.observe(viewLifecycleOwner, Observer {
             (rvNews.adapter as NewsAdapter).setItems(it)
+        })
+        
+        viewModel.noInternetConnection.observe(viewLifecycleOwner, Observer {
+            showNoInternetConnectionDialog(object: NoInternetConnectionDialog.NoInternetDialogCallback {
+                override fun retry() {
+                    viewModel.getNews(getCurrentLocale().language, rvNews.adapter?.itemCount ?: 0)
+                }
+    
+            })
         })
         
         viewModel.getNews(getCurrentLocale().language, 0)
