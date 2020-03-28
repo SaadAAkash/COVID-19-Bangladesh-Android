@@ -94,6 +94,7 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
     
     private fun setupNormalRadio(question: Question) {
         var mView = LayoutInflater.from(context).inflate(R.layout.item_radio_normal, null)
+        viewPool.addView(mView)
         val childIds = mutableListOf<Int>()
         mView.id = Random.nextInt()
         (mView as LinearLayout).children.forEach {
@@ -119,12 +120,12 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             }
         }
         
-        viewPool.addView(mView)
         views.add(mView)
     }
     
     private fun setupChipRadio(question: Question) {
         var mView = LayoutInflater.from(context).inflate(R.layout.item_radio_chip, null)
+        viewPool.addView(mView)
         val childIds = mutableListOf<Int>()
         mView.id = Random.nextInt()
         (mView as LinearLayout).children.forEach {
@@ -171,12 +172,12 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             }
         }
     
-        viewPool.addView(mView)
         views.add(mView)
     }
     
     private fun setupButtonRadio(question: Question) {
         var mView = LayoutInflater.from(context).inflate(R.layout.item_radio_button, null)
+        viewPool.addView(mView)
         val childIds = mutableListOf<Int>()
         mView.id = Random.nextInt()
         (mView as LinearLayout).children.forEach {
@@ -199,7 +200,7 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                     setItems(texts = question.texts, images = question.images, currentLocale = this@TestYourselfFragment.getCurrentLocale())
                 }
         
-        viewPool.addView(mView)
+        
         viewPool.invalidate()
         mView.invalidate()
         mView.post {
@@ -210,6 +211,7 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
     
     private fun setupDropDown(question: Question) {
         var mView = LayoutInflater.from(context).inflate(R.layout.item_drop_down_option, null)
+        viewPool.addView(mView)
         val childIds = mutableListOf<Int>()
         mView.id = Random.nextInt()
         (mView as LinearLayout).children.forEach {
@@ -232,13 +234,13 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
                 viewModel.setAnswer(question, position)
             }
         actv.setAdapter(arrayAdapter)
-        
-        viewPool.addView(mView)
         views.add(mView)
+
     }
     
     private fun setupCheckbox(question: Question) {
         var mView = LayoutInflater.from(context).inflate(R.layout.item_checkbox, null)
+        viewPool.addView(mView)
         val childIds = mutableListOf<Int>()
         mView.id = Random.nextInt()
         (mView as LinearLayout).children.forEach {
@@ -251,13 +253,12 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
         mView.findViewById<AppCompatCheckBox>(childIds[0]).setOnCheckedChangeListener { _, isChecked ->
             viewModel.setChecked(question, isChecked)
         }
-    
-        viewPool.addView(mView)
         views.add(mView)
     }
     
     private fun setupEditText(question: Question) {
         var mView = LayoutInflater.from(context).inflate(R.layout.item_edit_text, null)
+        viewPool.addView(mView)
         val childIds = mutableListOf<Int>()
         mView.id = Random.nextInt()
         (mView as LinearLayout).children.forEach {
@@ -288,7 +289,6 @@ class TestYourselfFragment: BaseFragment<TestYourselfViewModel>() {
             }
     
         })
-        viewPool.addView(mView)
         views.add(mView)
     }
 }
