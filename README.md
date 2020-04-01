@@ -1,12 +1,12 @@
-<h1 align="center">COVID-19-Bangladesh-Android</h1>
-<h2 align="center">Palao Corona</h2>
+<h2 style="margin-bottom: 0;" align="center">COVID-19-Bangladesh-Android</h2>
+<h3 style="margin-top: 0;" align="center">Palao Corona</h3>
 <p align="center">
 	<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"/></a>
 	<a href="https://github.com/SaadAAkash/COVID-19-Bangladesh-Android/tree/master#contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
 	<a href="https://github.com/SaadAAkash/COVID-19-Bangladesh-Android/commits/master"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"/></a>
 	<a href="https://github.com/SaadAAkash/COVID-19-Bangladesh-Android/tree/master#license"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"/></a>
 	<a href="https://saad.ninja"><img src="https://img.shields.io/badge/Made%20with-Love-1f425f.svg"/></a>
-
+	<br> <br>
 <img src="https://github.com/YAS-opensource/PalaoCorona-frontend/blob/master/images/landing-blue.png" alt="alt text" style="width:200;height:200">
 
 An end to end tool & an awareness app with COVID-19 Facts, Mythbusters & Support to eradicate the language & context barrier of misinformation that's been spreading on social media & thus creating mass panic here in Bangladesh. Palao Corona, the app along with its website & social media support group, is a part of our movement against the COVID-19 outbreak which aims to prepare people to fight against the CoronaVirus by providing the necessary information, strategy and support. 
@@ -52,7 +52,7 @@ It's built using Kotlin with layers-by-features packaging, MVVM architecture & o
 
 <a href="https://palaocorona.xyz/palaocorona.apk"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="185" height="70"/></a>
 
-Head over to ```Releases``` in the repo and download the apk file from the latest release. Or, go to the following [link](https://palaocorona.xyz/palaocorona.apk) to download the app, if we continue the support for the domain and our movement. 
+Go to the following [link](https://palaocorona.xyz/palaocorona.apk) to download the app, if we continue the support for the domain and our movement. 
 
 ## Contributing
 
@@ -98,7 +98,7 @@ COVID-19-Bangladesh-Android/
 
 ### Build Instructions
 
-1.  Add a `build.gradle` (app-level) file in the path `app/build.gradle` like the following with all the libraries used in this project:
+* Add a `build.gradle` (app-level) file in the path `app/build.gradle` like the following with all the libraries used in this project:
 
 ```
 apply plugin: 'com.android.application'
@@ -218,11 +218,11 @@ dependencies {
 }
 ```
 
-1.  Connect your app to Firebase, Create a Database and add Firebase Android config files and the essentials (`google-services.json`). For more information, please visit [Installation & Setup on Android](https://firebase.google.com/docs/database/android/start)
+* Connect your app to Firebase, Create a Database and add Firebase Android config files and the essentials (`google-services.json`). For more information, please visit [Installation & Setup on Android](https://firebase.google.com/docs/database/android/start)
 
-1.  Optional] Create a directory `drawable` in the path `app/src/main/res` and add your own demo graphics, which have been removed to protect the content privacy of this movement, Palao Corona.  Alternatively, comment out the codes where they have been used to run the demo app 
+* [Optional] Create a directory `drawable` in the path `app/src/main/res` and add your own demo graphics, which have been removed to protect the content privacy of this movement, Palao Corona.  Alternatively, comment out the codes where they have been used to run the demo app 
 
-1.  [Optional] Create a directory `assests` in the path `app/src/main/` and put your animation files in it. Alternatively, comment out the codes where they have been used to run the demo app 
+* [Optional] Create a directory `assests` in the path `app/src/main/` and put your animation files in it. Alternatively, comment out the codes where they have been used to run the demo app 
 
 
 ### File Uses
@@ -260,6 +260,29 @@ dependencies {
 1.  Follow GitHub's instructions and open up a pull request.
 1.  If possible, include screenshots of visual changes.
 
+## Libraries Used
+
+* [Glide](https://github.com/bumptech/glide)
+* [SDP](https://github.com/intuit/sdp)
+* [SSP](https://github.com/intuit/ssp)
+* [Dexter](https://github.com/Karumi/Dexter)
+* [Lottie](https://github.com/airbnb/lottie-android)
+* [Android Image Slider](https://github.com/smarteist/Android-Image-Slider)
+* [Logger](https://github.com/orhanobut/logger)
+* [Android PinView/OtpView](https://github.com/mukeshsolanki/android-otpview-pinview)
+* [CircleImageView](https://github.com/hdodenhof/CircleImageView)
+
+## Contributors
+
+1. [Android - App](http://palaocorona.xyz/palaocorona.apk)
+	1. [Saad A Akash](https://github.com/SaadAAkash/)
+	2. [Shafayat Hossain Khan](https://github.com/shafayathossain)
+2. [Back End - API and Data Pipeline](https://gitlab.com/palao-corona)
+	1. [Manash Mandal](https://gitlab.com/manashmndl)
+	2. [Sihan tawsik](https://gitlab.com/sihantawsik)
+3. [Front End - Landing Page](http://palaocorona.xyz/)
+	1. [YAS-opensource](https://github.com/YAS-opensource/)
+	
 ## License
 ```
 MIT License
