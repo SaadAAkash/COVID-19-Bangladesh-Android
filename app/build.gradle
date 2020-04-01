@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+    defaultConfig {
+        applicationId "com.yourdomain"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 3
+        versionName "1.0.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", "\"http://yourdomain.com/api/base/v10/\""
+        }
+        release {
+            buildConfigField "String", "BASE_URL", "\"http://yourdomain.com/api/base/v10/\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def kotlin_version = '1.3.50'
+    def constraintLayoutVersion = '1.1.3'
+    def retrofitVersion = '2.5.0'
+    def okhttpInterceptorVersion = '3.13.1'
+    def sdpsspVersion = '1.0.6'
+    def rxandroidVersion = '2.1.1'
+    def rxjavaVersion = '2.2.8'
+    def lifecycleVersion = '1.1.1'
+    def ankoVersion = '0.10.8'
+    def lottieVersion = '3.0.7'
+    def dagger2Version = '2.25.2'
+    def supportLibraryVersion = '1.2.0-alpha05'
+    //test
+    def junitVersion = '4.12'
+    def espressoVersion = '3.2.0'
+    def testrunnerVersion = '1.1.1'
+
+    // firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.1'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.google.firebase:firebase-messaging:20.1.3'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta02'
+    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    //ui
+    implementation "com.google.android.material:material:$supportLibraryVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpInterceptorVersion"
+    //scalable size unit
+    implementation "com.intuit.sdp:sdp-android:$sdpsspVersion"
+    implementation "com.intuit.ssp:ssp-android:$sdpsspVersion"
+    //permissions
+    implementation 'com.karumi:dexter:6.0.2'
+    //reactive
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    //dagger
+    implementation "com.google.dagger:dagger-android:$dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$dagger2Version"
+    kapt "com.google.dagger:dagger-compiler:$dagger2Version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger2Version"
+    //livedata & viewmodel
+    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
+    //anko
+    implementation "org.jetbrains.anko:anko:$ankoVersion"
+    //lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+    //test
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$testrunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+    // slider
+    implementation 'com.github.smarteist:autoimageslider:1.3.2-appcompat'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    // otpview
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
+
+    // cicular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+}
