@@ -1,17 +1,15 @@
 <h1 align="center">COVID-19-Bangladesh-Android</h1>
 <h2 align="center">Palao Corona</h2>
 <p align="center">
-
-[![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]() [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![made-with-love](https://img.shields.io/badge/Made%20with-Love-1f425f.svg)](https://saad.ninja)
-
-<br/><br/>
+	<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"/></a>
+	<a href="https://github.com/SaadAAkash/COVID-19-Bangladesh-Android/tree/master#contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
+	<a href="https://github.com/SaadAAkash/COVID-19-Bangladesh-Android/commits/master"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"/></a>
+	<a href="https://github.com/SaadAAkash/COVID-19-Bangladesh-Android/tree/master#license"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"/></a>
+	<a href="https://saad.ninja"><img src="https://img.shields.io/badge/Made%20with-Love-1f425f.svg"/></a>
 
 <img src="https://github.com/YAS-opensource/PalaoCorona-frontend/blob/master/images/landing-blue.png" alt="alt text" style="width:200;height:200">
 
-<br></br>
 An end to end tool & an awareness app with COVID-19 Facts, Mythbusters & Support to eradicate the language & context barrier of misinformation that's been spreading on social media & thus creating mass panic here in Bangladesh. Palao Corona, the app along with its website & social media support group, is a part of our movement against the COVID-19 outbreak which aims to prepare people to fight against the CoronaVirus by providing the necessary information, strategy and support. 
-
-<br></br>
 
 It's built using Kotlin with layers-by-features packaging, MVVM architecture & other standard practices in Native Android development.
 
@@ -20,6 +18,8 @@ It's built using Kotlin with layers-by-features packaging, MVVM architecture & o
 ## Architecture Used
 
 <img src="https://github.com/YAS-opensource/PalaoCorona-frontend/blob/master/appscreenshots/mvvm.png" alt="MVVM Architecture from Jay Rambhia's Blog" style="width:200;height:200">
+
+<br>
 
 ## App Screenshots
 
@@ -98,7 +98,7 @@ COVID-19-Bangladesh-Android/
 
 ### Build Instructions
 
-Step 1. Add a `build.gradle` (app-level) file in the path `app/build.gradle` like the following with all the libraries used in this project:
+1.  Add a `build.gradle` (app-level) file in the path `app/build.gradle` like the following with all the libraries used in this project:
 
 ```
 apply plugin: 'com.android.application'
@@ -218,11 +218,11 @@ dependencies {
 }
 ```
 
-Step 2. Connect your app to Firebase, Create a Database and add Firebase Android config files and the essentials (`google-services.json`). For more information, please visit [Installation & Setup on Android](https://firebase.google.com/docs/database/android/start)
+1.  Connect your app to Firebase, Create a Database and add Firebase Android config files and the essentials (`google-services.json`). For more information, please visit [Installation & Setup on Android](https://firebase.google.com/docs/database/android/start)
 
-Step 3. [Optional] Create a directory `drawable` in the path `app/src/main/res` and add your own demo graphics, which have been removed to protect the content privacy of this movement, Palao Corona.  Alternatively, comment out the codes where they have been used to run the demo app 
+1.  Optional] Create a directory `drawable` in the path `app/src/main/res` and add your own demo graphics, which have been removed to protect the content privacy of this movement, Palao Corona.  Alternatively, comment out the codes where they have been used to run the demo app 
 
-Step 4. [Optional] Create a directory `assests` in the path `app/src/main/` and put your animation files in it. Alternatively, comment out the codes where they have been used to run the demo app 
+1.  [Optional] Create a directory `assests` in the path `app/src/main/` and put your animation files in it. Alternatively, comment out the codes where they have been used to run the demo app 
 
 
 ### File Uses
